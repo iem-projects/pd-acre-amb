@@ -13,9 +13,8 @@ Ambisonics Toolbox
 Ambisonics Toolbox is a collection of high level Pd abstraction, to implement Ambisonics integration either in a mixer or compositions or effects using iem_ambi.
 One goal is to easily integrate Ambisonics encoder, decoder and processing for various purposes as modules providing multichannel operations and signaling.
 
-This module extend the acre library with the base modules ``acre``, ``mxr`` and ``ds``, which has to be installed.
-It is based on the iem_ambi and some parts also on the iem_bin_ambi Pd-library, which is based on iemmatrix Pd-library.
-It also depends on the acre/acre and acre/mxr module of the acre library.
+This module extend the acre library with the base modules ``acre/acre``, ``acre/mxr`` and ``acre/ds``, which has to be installed.
+It is based on the `iem_ambi` and some parts also on the `iem_bin_ambi` Pd-library, which is based on `iemmatrix` Pd-library.
 
 Background
 ----------
@@ -53,13 +52,19 @@ Simple outs should only provide master fader.
 Installation
 ------------
 
+Needed libraries: acre_ base module, zexy, iemlib1, iemlib2, iemmatrix, iem_ambi, iem_bin_ambi
+ libraries not installed in the system, can be copied to "libs/"
+ (thus if checkout fresh it should be empty)
+
+.. _acre: https://git.iem.at/pd/acre
+
 acre-base module ``acre`` starting with version 2.0 should be installed in the Pd-search path.
 
 Install this library in your search path naming this directory ``amb``. 
 Do not set search path inside this library since objects are referred as amb/<object> in the patches and should not conflict
 with other namespaces.
 
-To install it clone it via git, download it from somewhere or download/install it via `deken`.
+To install it: clone it via git, download it from somewhere or download/install it via `deken`.
 
 Notes
 -----
