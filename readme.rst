@@ -11,7 +11,7 @@ Ambisonics Toolbox
 :Version: 0.72 development, mostly stable 
 
 Ambisonics Toolbox is a collection of high level Pd abstraction, to implement Ambisonics integration either in a mixer or compositions or effects using iem_ambi.
-One goal is to easily integrate Ambisonics encoder, decoder and processing for various purposes as modules. Another to provide Multichannel operations and signaling.
+One goal is to easily integrate Ambisonics encoder, decoder and processing for various purposes as modules providing multichannel operations and signaling.
 
 This module extend the acre library with the base modules ``acre``, ``mxr`` and ``ds``, which has to be installed.
 It is based on the iem_ambi and some parts also on the iem_bin_ambi Pd-library, which is based on iemmatrix Pd-library.
