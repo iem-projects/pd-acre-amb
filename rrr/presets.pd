@@ -1,0 +1,15 @@
+#N canvas 347 503 732 476 10;
+#X obj 35 85 loadbang;
+#X obj 55 112 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 32 181 \; \$2/program/load symbol amb/rrr/presets/default-setting.txt
+\; \$2/program/nr 0 \; \$2/program/recall bang, f 89;
+#X obj 183 97 ds/storage_logic /rrr;
+#X text 66 45 EXAMPLE storage for /rrr;
+#X text 220 135 Note: copy default-setting.txt to your preset file
+and edit /REV prefix to your RRR-id name chosen to use this.;
+#X text 54 22 amb/rrr/preset;
+#X obj 32 148 list append \$0 /rrr;
+#X connect 0 0 7 0;
+#X connect 1 0 7 0;
+#X connect 7 0 2 0;

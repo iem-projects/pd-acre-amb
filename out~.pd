@@ -1,6 +1,6 @@
-#N canvas 276 504 518 264 10;
+#N canvas 278 512 518 264 10;
 #X obj 6 228 outlet~;
-#N canvas 396 917 327 132 init 1;
+#N canvas 396 917 327 132 init 0;
 #X obj 59 73 s \$1/vol;
 #X msg 59 50 100;
 #X obj 135 75 s \$1/del;
@@ -19,18 +19,17 @@
 #X text 222 138 time compensation;
 #X obj 280 96 r \$1/del;
 #X obj 280 118 min 100;
-#X text 4 40 Out Channel \, eg used for compensation of time and Amplitude
+#X text 12 39 Out Channel \, eg used for compensation of time and Amplitude
 and master-gain.;
-#X obj 8 83 catch~ \$1;
-#X obj 69 228 s~ \$1;
-#X text 31 25 without master id id=0;
 #X text 14 7 amb/out~ <id> [master id];
 #X obj 7 184 mxr/master/gain~ \$2;
+#X obj 8 83 catch~ \$1~;
+#X obj 69 228 s~ \$1~;
 #X connect 2 0 6 0;
-#X connect 5 0 15 0;
+#X connect 5 0 12 0;
 #X connect 8 0 9 0;
 #X connect 9 0 5 0;
-#X connect 11 0 2 0;
-#X connect 15 0 0 0;
-#X connect 15 0 4 0;
-#X connect 15 0 12 0;
+#X connect 12 0 0 0;
+#X connect 12 0 4 0;
+#X connect 12 0 14 0;
+#X connect 13 0 2 0;

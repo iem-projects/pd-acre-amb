@@ -1,0 +1,188 @@
+#N canvas 915 99 887 543 10;
+#X obj 101 101 cnv 15 498 298 empty empty REVERB-\$1 2 10 0 12 -233017
+-66577 0;
+#X obj 123 326 cnv 8 1 1 empty empty delay_time 0 4 0 9 -262144 -1
+0;
+#X obj 459 325 cnv 8 1 1 empty empty ms 0 4 0 9 -262144 -1 0;
+#X obj 141 338 cnv 8 1 1 empty empty damping 0 4 0 9 -262144 -1 0;
+#X obj 162 155 vsl 15 90 0.16 16 1 0 \$1/early/cutoff \$1/early/cutoff
+empty 0 -8 0 8 -14404 -1 -1 0 1;
+#X obj 116 124 cnv 8 1 1 empty empty early 0 4 0 9 -262144 -1 0;
+#X obj 116 132 cnv 8 1 1 empty empty echoes 0 4 0 9 -262144 -1 0;
+#X obj 116 140 cnv 8 1 1 empty empty gain 0 4 0 9 -262144 -1 0;
+#X obj 163 126 cnv 8 1 1 empty empty early 0 4 0 9 -262144 -1 0;
+#X obj 163 134 cnv 8 1 1 empty empty cutoff 0 4 0 9 -262144 -1 0;
+#X obj 163 142 cnv 8 1 1 empty empty freq 0 4 0 9 -262144 -1 0;
+#X obj 205 157 vsl 15 121 0 120 0 0 \$0/rev/fad \$0/rev/fad empty 0
+-8 0 8 -11118 -1 -1 0 1;
+#X obj 206 136 cnv 8 1 1 empty empty reverb 0 4 0 9 -262144 -1 0;
+#X obj 206 144 cnv 8 1 1 empty empty gain 0 4 0 9 -262144 -1 0;
+#X obj 250 162 vsl 15 90 0.16 16 1 0 \$1/rev/cutoff \$1/rev/cutoff
+empty 0 -8 0 8 -15044 -1 -1 0 1;
+#X obj 251 133 cnv 8 1 1 empty empty reverb 0 4 0 9 -262144 -1 0;
+#X obj 251 141 cnv 8 1 1 empty empty cutoff 0 4 0 9 -262144 -1 0;
+#X obj 251 149 cnv 8 1 1 empty empty freq 0 4 0 9 -262144 -1 0;
+#X obj 301 157 vsl 15 121 0.1 60 1 0 \$1/rev/dec/l/time \$1/rev/dec/l/time
+empty 0 -8 0 8 -200880 -1 -1 0 1;
+#X obj 299 123 cnv 8 1 1 empty empty reverb 0 4 0 9 -262144 -1 0;
+#X obj 299 131 cnv 8 1 1 empty empty low 0 4 0 9 -262144 -1 0;
+#X obj 299 139 cnv 8 1 1 empty empty decay 0 4 0 9 -262144 -1 0;
+#X obj 299 147 cnv 8 1 1 empty empty time 0 4 0 9 -262144 -1 0;
+#X obj 384 158 vsl 15 121 0.1 60 1 0 \$1/rev/dec/m/time \$1/rev/dec/m/time
+empty 0 -8 0 8 -250685 -1 -1 0 1;
+#X obj 385 122 cnv 8 1 1 empty empty reverb 0 4 0 9 -262144 -1 0;
+#X obj 385 130 cnv 8 1 1 empty empty mid 0 4 0 9 -262144 -1 0;
+#X obj 385 138 cnv 8 1 1 empty empty decay 0 4 0 9 -262144 -1 0;
+#X obj 385 146 cnv 8 1 1 empty empty time 0 4 0 9 -262144 -1 0;
+#X obj 467 158 vsl 15 121 0.1 60 1 0 \$1/rev/dec/h/time \$1/rev/dec/h/time
+empty 0 -8 0 8 -255806 -1 -1 0 1;
+#X obj 462 121 cnv 8 1 1 empty empty reverb 0 4 0 9 -262144 -1 0;
+#X obj 462 129 cnv 8 1 1 empty empty high 0 4 0 9 -262144 -1 0;
+#X obj 462 137 cnv 8 1 1 empty empty decay 0 4 0 9 -262144 -1 0;
+#X obj 462 145 cnv 8 1 1 empty empty time 0 4 0 9 -262144 -1 0;
+#X obj 340 159 vsl 15 121 0.05 1 1 0 \$1/rev/dec/lm/freq \$1/rev/dec/lm/freq
+empty 0 -8 0 8 -24198 -1 -1 0 1;
+#X obj 336 122 cnv 8 1 1 empty empty reverb 0 4 0 9 -262144 -1 0;
+#X obj 336 130 cnv 8 1 1 empty empty low_mid 0 4 0 9 -262144 -1 0;
+#X obj 336 138 cnv 8 1 1 empty empty decay 0 4 0 9 -262144 -1 0;
+#X obj 336 146 cnv 8 1 1 empty empty freq 0 4 0 9 -262144 -1 0;
+#X obj 432 157 vsl 15 121 1 16 1 0 \$1/rev/dec/mh/freq \$1/rev/dec/mh/freq
+empty 0 -8 0 8 -110363 -1 -1 0 1;
+#X obj 427 120 cnv 8 1 1 empty empty reverb 0 4 0 9 -262144 -1 0;
+#X obj 427 128 cnv 8 1 1 empty empty mid_high 0 4 0 9 -262144 -1 0
+;
+#X obj 427 136 cnv 8 1 1 empty empty decay 0 4 0 9 -262144 -1 0;
+#X obj 427 144 cnv 8 1 1 empty empty freq 0 4 0 9 -262144 -1 0;
+#X obj 551 209 cnv 8 1 1 empty empty delay 0 4 0 9 -262144 -1 0;
+#X obj 512 147 cnv 8 1 1 empty empty reverb 0 4 0 9 -262144 -1 0;
+#X obj 512 156 cnv 8 1 1 empty empty modulation 0 4 0 9 -262144 -1
+0;
+#X obj 490 169 cnv 8 1 1 empty empty max: 0 4 0 9 -262144 -1 0;
+#X obj 491 186 cnv 8 1 1 empty empty min: 0 4 0 9 -262144 -1 0;
+#X obj 575 156 cnv 8 1 1 empty empty freq 0 4 0 9 -262144 -1 0;
+#X obj 512 210 cnv 8 1 1 empty empty reverb 0 4 0 9 -262144 -1 0;
+#X obj 513 219 cnv 8 1 1 empty empty modulation 0 4 0 9 -262144 -1
+0;
+#X obj 490 233 cnv 8 1 1 empty empty max: 0 4 0 9 -262144 -1 0;
+#X obj 490 249 cnv 8 1 1 empty empty min: 0 4 0 9 -262144 -1 0;
+#X obj 575 219 cnv 8 1 1 empty empty ampl 0 4 0 9 -262144 -1 0;
+#X obj 551 147 cnv 8 1 1 empty empty delay 0 4 0 9 -262144 -1 0;
+#X obj 524 326 cnv 8 1 1 empty empty reverb 0 4 0 9 -262144 -1 0;
+#X obj 524 335 cnv 8 1 1 empty empty delay_time 0 4 0 9 -262144 -1
+0;
+#X obj 501 350 cnv 8 1 1 empty empty max: 0 4 0 9 -262144 -1 0;
+#X obj 501 366 cnv 8 1 1 empty empty min: 0 4 0 9 -262144 -1 0;
+#X obj 115 296 nbx 4 12 0 120 0 0 \$1/early/gain \$1/early/gain dB
+0 -8 0 10 -262144 -1 -1 101 256;
+#X obj 115 153 vsl 15 121 0 120 0 0 \$0/early/fad \$0/early/fad empty
+0 -8 0 8 -6177 -1 -1 9000 1;
+#X obj 206 296 nbx 4 12 0 120 0 0 \$1/rev/gain \$1/rev/gain dB 0 -8
+0 10 -262144 -1 -1 0 256;
+#X obj 160 265 nbx 4 12 0 120 0 0 \$1/early/cutoff \$1/early/cutoff
+kHz 8 -8 0 10 -262144 -1 -1 0 256;
+#X obj 160 296 nbx 3 12 0.1 2 0 0 \$1/early/q \$1/early/q Q 0 -8 0
+10 -262144 -1 -1 0.1 256;
+#X obj 250 269 nbx 4 12 0 120 0 0 \$1/rev/cutoff \$1/rev/cutoff kHz
+8 -8 0 10 -262144 -1 -1 0 256;
+#X obj 250 296 nbx 3 12 0.1 2 0 0 \$1/rev/q \$1/rev/q Q 0 -8 0 10 -262144
+-1 -1 0.1 256;
+#X obj 292 295 nbx 4 12 0 120 0 0 \$1/rev/dec/l/time \$1/rev/dec/l/time
+sec 8 -8 0 10 -262144 -1 -1 0 256;
+#X obj 337 296 nbx 4 12 0 120 0 0 \$1/rev/dec/lm/freq \$1/rev/dec/lm/freq
+kHz 8 -8 0 10 -262144 -1 -1 0 256;
+#X obj 383 296 nbx 4 12 0 120 0 0 \$1/rev/dec/m/time \$1/rev/dec/m/time
+sec 8 -8 0 10 -262144 -1 -1 0 256;
+#X obj 428 295 nbx 4 12 0 120 0 0 \$1/rev/dec/mh/freq \$1/rev/dec/mh/freq
+kHz 8 -8 0 10 -262144 -1 -1 0 256;
+#X obj 473 295 nbx 4 12 0 120 0 0 \$1/rev/dec/h/time \$1/rev/dec/h/time
+sec 8 -8 0 10 -262144 -1 -1 0 256;
+#X obj 526 364 nbx 4 12 0.1 1000 0 0 \$1/rev/del/time/min \$1/rev/del/time/min
+ms 45 7 0 10 -262144 -1 -1 0.1 256;
+#X obj 527 349 nbx 4 12 0.1 1000 0 0 \$1/rev/del/time/max \$1/rev/del/time/max
+ms 45 7 0 10 -262144 -1 -1 0.1 256;
+#X obj 516 183 nbx 4 12 0.01 10 0 0 \$1/rev/mod/freq/min \$1/rev/mod/freq/min
+Hz 45 7 0 10 -262144 -1 -1 0.01 256;
+#X obj 516 166 nbx 4 12 0.01 10 0 0 \$1/rev/mod/freq/max \$1/rev/mod/freq/max
+Hz 45 7 0 10 -262144 -1 -1 0.01 256;
+#X obj 515 245 nbx 4 12 0.01 10 0 0 \$1/rev/mod/amp/min \$1/rev/mod/amp/min
+Cent 45 7 0 10 -262144 -1 -1 0.01 256;
+#X obj 515 230 nbx 4 12 0.01 10 0 0 \$1/rev/mod/amp/max \$1/rev/mod/amp/max
+Cent 45 7 0 10 -262144 -1 -1 0.01 256;
+#X obj 178 323 nbx 5 12 0.1 1000 0 0 \$1/early/delay/1 \$1/early/delay/1
+1 22 -7 0 10 -262144 -1 -1 0.1 256;
+#X obj 222 323 nbx 5 12 0.1 1000 0 0 \$1/early/delay/2 \$1/early/delay/2
+2 22 -7 0 10 -262144 -1 -1 0.1 256;
+#X obj 266 323 nbx 5 12 0.1 1000 0 0 \$1/early/delay/3 \$1/early/delay/3
+3 22 -7 0 10 -262144 -1 -1 0.1 256;
+#X obj 310 323 nbx 5 12 0.1 1000 0 0 \$1/early/delay/4 \$1/early/delay/4
+4 22 -7 0 10 -262144 -1 -1 0.1 256;
+#X obj 354 323 nbx 5 12 0.1 1000 0 0 \$1/early/delay/5 \$1/early/delay/5
+5 22 -7 0 10 -262144 -1 -1 0.1 256;
+#X obj 398 323 nbx 5 12 0.1 1000 0 0 \$1/early/delay/6 \$1/early/delay/6
+6 22 -7 0 10 -262144 -1 -1 0.1 256;
+#X obj 177 360 nbx 5 12 0.1 1000 0 0 \$1/early/delay/7 \$1/early/delay/7
+7 22 -7 0 10 -262144 -1 -1 0.1 256;
+#X obj 221 360 nbx 5 12 0.1 1000 0 0 \$1/early/delay/8 \$1/early/delay/8
+8 22 -7 0 10 -262144 -1 -1 0.1 256;
+#X obj 265 360 nbx 5 12 0.1 1000 0 0 \$1/early/delay/9 \$1/early/delay/9
+9 22 -7 0 10 -262144 -1 -1 0.1 256;
+#X obj 309 360 nbx 5 12 0.1 1000 0 0 \$1/early/delay/10 \$1/early/delay/10
+10 22 -7 0 10 -262144 -1 -1 0.1 256;
+#X obj 352 360 nbx 5 12 0.1 1000 0 0 \$1/early/delay/11 \$1/early/delay/11
+11 22 -7 0 10 -262144 -1 -1 0.1 256;
+#X obj 396 360 nbx 5 12 0.1 1000 0 0 \$1/early/delay/12 \$1/early/delay/12
+12 22 -7 0 10 -262144 -1 -1 0.1 256;
+#X obj 178 335 nbx 5 12 -100 0 0 0 \$1/early/damp/1 \$1/early/damp/1
+empty 22 -7 0 10 -262144 -1 -1 0 256;
+#X obj 222 335 nbx 5 12 -100 0 0 0 \$1/early/damp/2 \$1/early/damp/2
+empty 22 -7 0 10 -262144 -1 -1 0 256;
+#X obj 266 335 nbx 5 12 -100 0 0 0 \$1/early/damp/3 \$1/early/damp/3
+empty 22 -7 0 10 -262144 -1 -1 0 256;
+#X obj 310 335 nbx 5 12 -100 0 0 0 \$1/early/damp/4 \$1/early/damp/4
+empty 22 -7 0 10 -262144 -1 -1 0 256;
+#X obj 355 335 nbx 5 12 -100 0 0 0 \$1/early/damp/5 \$1/early/damp/5
+empty 22 -7 0 10 -262144 -1 -1 0 256;
+#X obj 399 335 nbx 5 12 -100 0 0 0 \$1/early/damp/6 \$1/early/damp/6
+empty 22 -7 0 10 -262144 -1 -1 0 256;
+#X obj 177 372 nbx 5 12 -100 0 0 0 \$1/early/damp/7 \$1/early/damp/7
+empty 22 -7 0 10 -262144 -1 -1 0 256;
+#X obj 221 372 nbx 5 12 -100 0 0 0 \$1/early/damp/8 \$1/early/damp/8
+empty 22 -7 0 10 -262144 -1 -1 0 256;
+#X obj 266 372 nbx 5 12 -100 0 0 0 \$1/early/damp/9 \$1/early/damp/9
+empty 22 -7 0 10 -262144 -1 -1 0 256;
+#X obj 310 372 nbx 5 12 -100 0 0 0 \$1/early/damp/10 \$1/early/damp/10
+empty 22 -7 0 10 -262144 -1 -1 0 256;
+#X obj 354 372 nbx 5 12 -100 0 0 0 \$1/early/damp/11 \$1/early/damp/11
+empty 22 -7 0 10 -262144 -1 -1 0 256;
+#X obj 399 372 nbx 5 12 -100 0 0 0 \$1/early/damp/12 \$1/early/damp/12
+empty 22 -7 0 10 -262144 -1 -1 0 256;
+#X text 111 411 New EDIT control by winfried \, with new parameter
+naming !;
+#X obj 94 35 gain_ctl \$0 \$1 rev;
+#X obj 500 16 minmax_ctl \$1/rev/mod/freq 0.01 10;
+#X obj 499 37 minmax_ctl \$1/rev/del/time 0.1 1000;
+#X obj 498 60 minmax_ctl \$1/rev/mod/amp 0.01 10;
+#X obj 94 11 gain_ctl \$0 \$1 early;
+#X symbolatom 210 103 32 0 0 0 - #1/set/name/set -, f 32;
+#X obj 250 441 r \$1/set/name;
+#X obj 148 511 s \$1/set/name;
+#X obj 250 510 s \$1/set/name/set;
+#X obj 125 439 t b s b;
+#X msg 125 461 1;
+#X msg 170 464 0;
+#X obj 250 490 spigot 1;
+#X obj 122 364 cnv 8 1 1 empty empty delay_time 0 4 0 9 -262144 -1
+0;
+#X obj 140 376 cnv 8 1 1 empty empty damping 0 4 0 9 -262144 -1 0;
+#X obj 458 362 cnv 8 1 1 empty empty ms 0 4 0 9 -262144 -1 0;
+#X obj 130 143 vfadscale;
+#X obj 220 148 vfadscale;
+#X connect 107 0 111 0;
+#X connect 108 0 114 0;
+#X connect 111 0 112 0;
+#X connect 111 1 109 0;
+#X connect 111 2 113 0;
+#X connect 112 0 114 1;
+#X connect 113 0 114 1;
+#X connect 114 0 110 0;
+#X coords 0 -1 1 1 500 300 1 100 100;

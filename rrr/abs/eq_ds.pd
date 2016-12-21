@@ -1,0 +1,16 @@
+#N canvas 890 417 339 401 10;
+#X obj 21 42 ds/register_map \$1 \$2/eq/1/freq;
+#X obj 21 62 ds/register_map \$1 \$2/eq/2/freq;
+#X obj 21 82 ds/register_map \$1 \$2/eq/3/freq;
+#X obj 21 102 ds/register_map \$1 \$2/eq/4/freq;
+#X obj 21 122 ds/register_map \$1 \$2/eq/5/freq;
+#X obj 21 162 ds/register_map \$1 \$2/eq/1/q;
+#X obj 21 182 ds/register_map \$1 \$2/eq/2/q;
+#X obj 21 202 ds/register_map \$1 \$2/eq/3/q;
+#X obj 21 222 ds/register_map \$1 \$2/eq/4/q;
+#X obj 21 242 ds/register_map \$1 \$2/eq/5/q;
+#X obj 21 282 ds/register_map \$1 \$2/eq/1/gain;
+#X obj 21 362 ds/register_map \$1 \$2/eq/5/gain;
+#X obj 21 342 ds/register_map \$1 \$2/eq/4/gain;
+#X obj 21 322 ds/register_map \$1 \$2/eq/3/gain;
+#X obj 21 302 ds/register_map \$1 \$2/eq/2/gain;

@@ -1,0 +1,8 @@
+#N canvas 811 342 450 300 10;
+#X obj 61 117 r \$1;
+#X obj 61 139 outlet;
+#X obj 66 66 inlet;
+#X obj 66 88 s \$1;
+#X text 64 30 comment;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
