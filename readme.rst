@@ -9,6 +9,7 @@ Ambisonics Toolbox
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
 :Copyright: winfried ritsch - IEM / algorythmics 2012+
 :Version: 0.72 development, mostly stable 
+:git master repo: https://git.iem.at/pd/acre-amb
 
 Ambisonics Toolbox is a collection of high level Pd abstraction, to implement Ambisonics integration either in a mixer or compositions or effects using iem_ambi.
 One goal is to easily integrate Ambisonics encoder, decoder and processing for various purposes as modules providing multichannel operations and signaling.
