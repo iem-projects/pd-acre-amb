@@ -1,4 +1,4 @@
-#N canvas 602 82 818 463 10;
+#N canvas 544 94 818 463 10;
 #N canvas 1047 253 542 590 config 0;
 #X floatatom 54 146 5 8 50 0 - - -, f 5;
 #X floatatom 182 47 3 0 100 0 - - -, f 3;
@@ -210,10 +210,8 @@
 #X connect 55 0 20 0;
 #X connect 56 0 20 0;
 #X restore 277 4 pd config;
-#X obj 35 404 s \$0_sphere_fromgui;
 #X obj 31 31 cnv 15 298 298 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 23 1 r \$0_sphere_togui;
 #N canvas 746 73 1001 897 send_receive_azm_elv_18x 0;
 #X obj 28 79 unpack 0 0;
 #X obj 28 117 t b f;
@@ -514,7 +512,6 @@
 #X connect 112 0 11 0;
 #X connect 113 0 10 0;
 #X restore 193 403 pd send_receive_azm_elv_18x;
-#X obj 152 2 r \$1_sphere_togui;
 #X obj 367 299 s \$0_sphere_togui;
 #X msg 362 62 1 1.22977 -68.7948 \, 2 13.5462 -100.911 \, 3 9.12002
 74.0986 \, 4 0 123.611 \, 5 7.90402 -17.6365 \, 6 23.4041 -68.4876
@@ -538,20 +535,25 @@
 0 8 -260818 -1 -1;
 #X obj 314 314 bng 15 250 50 0 \$0-rev-sued \$0-rev-sued Sued 0 -6
 0 8 -260818 -1 -1;
-#X obj 38 38 iemgui/cube_sphere 18 141 33 354 233016 4032 240 210 4032
-194 267 4032 35 210 4032 140 258 4032 216 146 4032 86 239 4032 143
-110 4032 76 150 4032 131 281 4032 213 253 4032 110 264 4032 130 236
-262080 176 201 262080 143 273 262080 95 267 262080 215 238 262080 108
-198 262080 176 262;
-#X connect 3 0 17 0;
-#X connect 5 0 17 0;
-#X connect 7 0 9 0;
-#X connect 7 0 10 0;
-#X connect 8 0 9 0;
-#X connect 8 0 10 0;
-#X connect 9 0 6 0;
-#X connect 11 0 7 0;
-#X connect 12 0 8 0;
-#X connect 14 0 7 0;
-#X connect 17 0 1 0;
+#X text 118 199 please install;
+#X text 69 167 iemgui or cube_sphere not found;
+#X obj 35 404 s \$0_sphere_fromgui;
+#X obj 23 1 r \$0_sphere_togui;
+#X obj 152 2 r \$1_sphere_togui;
+#X obj 38 38 iemgui/cube_sphere 18 141 33 354 233016 4032 271 90 4032
+259 163 4032 18 106 4032 24 218 4032 179 17 4032 238 102 4032 122 44
+4032 34 70 4032 186 273 4032 259 195 4032 61 256 4032 132 242 262080
+79 141 262080 201 141 262080 59 222 262080 222 222 262080 74 61 262080
+207 61;
+#X connect 4 0 6 0;
+#X connect 4 0 7 0;
+#X connect 5 0 6 0;
+#X connect 5 0 7 0;
+#X connect 6 0 3 0;
+#X connect 8 0 4 0;
+#X connect 9 0 5 0;
+#X connect 11 0 4 0;
+#X connect 17 0 19 0;
+#X connect 18 0 19 0;
+#X connect 19 0 16 0;
 #X coords 0 -1 1 1 300 300 1 30 30;
