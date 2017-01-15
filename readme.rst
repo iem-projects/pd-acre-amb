@@ -84,6 +84,8 @@ implementation
 
  - use clone for buses and others instead of dynamic patcher, which should clean the library.
 
+ 
+
 ambisonics mixer::
 
  - Distance from 0..1 (has to be discussed)
@@ -98,10 +100,33 @@ processing::
  - Binaural rendering
  - Headtracker support for binaural
  - 3D-Reverb
- - B-Format encoder for various microphones from A-format
+ - Bormat encoder for various microphones from A-format
  
 change names:
  - all signal objects with ~ at end like player, outs
+
+reorganize in folders for encapsulation: 
+
+
+amb - general objects 
+ order2chls, weights, weight, maxre
+ 
+
+spat
+ dsp ds ctl, encode2D -> 2D, encode3D -> 3D, dist
+ 
+ 
+dec - decoder and tools
+ coder, 
+ 
+ms - multisignal
+ outs, out, bus, dacs, adcs
+ 
+player
+ dsp, ctl, ds
+ 
+recoder
+ dsp, ctl ds
  
 additional docu
 ---------------
