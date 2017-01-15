@@ -107,15 +107,12 @@ change names:
 
 reorganize in folders for encapsulation: 
 
-
 amb - general objects 
  order2chls, weights, weight, maxre
- 
 
 spat
  dsp ds ctl, encode2D -> 2D, encode3D -> 3D, dist
- 
- 
+
 dec - decoder and tools
  coder, 
  
