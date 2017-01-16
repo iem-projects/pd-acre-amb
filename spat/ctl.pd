@@ -18,7 +18,7 @@ empty 17 7 0 10 -228856 -1 -1 0 1;
 rotz 0 -8 0 10 -228856 -1 -1 0 256;
 #X obj 327 39 r /amb/\$1/azimuth/rotate;
 #X obj 396 156 mod 360;
-#X text 109 25 spat_ctl <channel ID> <type>;
+#X text 109 25 spat/ctl <channel ID> <type>;
 #X obj 215 100 loadbang;
 #X obj 215 122 symbol \$2;
 #X obj 213 170 route 2D;

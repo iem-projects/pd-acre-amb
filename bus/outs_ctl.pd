@@ -18,7 +18,7 @@
 #X msg 150 132 clear \, text 0 10 \$1;
 #X obj 39 29 i \$2;
 #X obj 40 53 t f b;
-#X msg 38 215 obj \$1 10 amb/out_ctl \$3-\$2 \$3/\$2;
+#X msg 38 215 obj \$1 10 amb/bus/out_ctl \$3-\$2 \$3/\$2;
 #X connect 0 0 11 0;
 #X connect 1 0 13 0;
 #X connect 2 0 1 2;
@@ -43,7 +43,7 @@
 #X msg 134 193 \; pd-\$2-gui vis \$1;
 #X obj 134 171 pack 0 \$0;
 #X obj 109 116 tgl 25 0 empty empty V 8 13 0 14 -262130 -1 -1 1 1;
-#X text 93 58 amb/outs_ctl <ID> <nr of outs> <out-id>;
+#X text 93 58 amb/bus/outs_ctl <ID> <nr of outs> <out-id>;
 #X obj 282 236 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 302 232 Clear before save;

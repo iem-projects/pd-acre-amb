@@ -1,4 +1,4 @@
-#N canvas 1214 108 685 569 10;
+#N canvas 532 107 685 569 10;
 #X declare -lib iemlib1;
 #X declare -lib zexy;
 #X declare -stdpath iemlib;
@@ -30,12 +30,12 @@
 #X restore 317 9 pd declares;
 #X obj 199 77 tgl 15 0 3D 3D 3D 17 7 0 10 -262144 -1 -1 1 1;
 #X obj 111 76 nbx 3 14 -1e+37 1e+37 0 0 order order ORDER 0 -8 0 10
--262144 -1 -1 1 256;
+-262144 -1 -1 2 256;
 #X text 87 636 https://bitbucket.org/ambidecodertoolbox/adt.git;
 #X text 28 69 1.) Enter;
 #X text 196 93 else 2D;
-#N canvas 704 495 336 265 ambisonics 1;
-#X obj 19 165 amb/order2chls;
+#N canvas 706 557 336 265 ambisonics 0;
+#X obj 19 165 amb/amb/n;
 #X floatatom 19 187 5 0 0 0 - - -, f 5;
 #X msg 23 111 3D;
 #X obj 27 88 sel 1 0;
@@ -60,7 +60,7 @@
 #X text 31 286 3.) how Phantom channels;
 #X text 50 343 with 2D you normally do not need them;
 #X text 49 360 with 3D hemisphere at least one \, the south pole;
-#N canvas 304 165 554 459 calculation 0;
+#N canvas 305 169 554 459 calculation 0;
 #X obj 44 11 r calc;
 #X obj 43 66 t b b b;
 #X msg 43 248 \; dc begin_pseudo_inverse \; dc end_pseudo_inverse \;
@@ -87,9 +87,9 @@ bang \;;
 #X msg 71 250 connect 0 0 1 0 \, connect 1 0 2 0;
 #X obj 73 150 t b l l l;
 #X obj 71 280 s pd-decoder-config;
-#N canvas 830 105 449 240 decoder-config 1;
+#N canvas 575 57 449 240 decoder-config 0;
 #X obj 10 10 r dc;
-#X obj 10 30 ambi_decode3 1 3 5 5;
+#X obj 10 30 ambi_decode3 2 3 13 5;
 #X obj 10 50 s dc-out;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
@@ -128,8 +128,7 @@ bang \;;
 #X connect 25 0 23 0;
 #X connect 26 0 15 0;
 #X restore 295 60 pd decoder-generator;
-#N canvas 7 89 450 300 maxre 0;
-#X obj 63 131 amb/maxre;
+#N canvas 758 61 450 300 maxre 0;
 #X obj 64 155 pp ambi_weight;
 #X text 62 201 optimal weights;
 #X obj 90 79 r order;
@@ -137,11 +136,12 @@ bang \;;
 #X obj 65 48 r get-maxre;
 #X obj 64 179 s dc;
 #X text 59 24 calculate order weights;
-#X connect 0 0 1 0;
-#X connect 1 0 6 0;
-#X connect 3 0 4 1;
-#X connect 4 0 0 0;
-#X connect 5 0 4 0;
+#X obj 63 131 amb/amb/maxre;
+#X connect 0 0 5 0;
+#X connect 2 0 3 1;
+#X connect 3 0 7 0;
+#X connect 4 0 3 0;
+#X connect 7 0 0 0;
 #X restore 294 89 pd maxre calculator;
 #N canvas 757 99 450 300 matrix 0;
 #X obj 59 171 mtx;
@@ -237,11 +237,11 @@ understanding);
 #X restore 164 438 pd calculation;
 #X text 30 183 2.)set speaker channel count;
 #X obj 80 258 nbx 5 14 -1e+37 1e+37 0 0 speaker speaker speaker 0 -8
-0 10 -262144 -1 -1 5 256;
+0 10 -262144 -1 -1 13 256;
 #X text 23 255 Enter;
 #X obj 78 317 nbx 5 14 -1e+37 1e+37 0 0 phantoms phantoms phantoms
 0 -8 0 10 -262144 -1 -1 5 256;
-#N canvas 942 224 701 368 speaker-list 1;
+#N canvas 943 228 701 368 speaker-list 0;
 #X text 61 73 Example for 2D 8 speaker;
 #X msg 57 107 \; dc real_ls 1 0 \; dc real_ls 2 45 \; dc real_ls 3
 90 \; dc real_ls 4 135 \; dc real_ls 5 180 \; dc real_ls 6 225 \; dc
@@ -276,11 +276,11 @@ real_ls 7 270 \; dc real_ls 8 315;
 #X connect 2 0 3 0;
 #X restore 406 7 pd helps;
 #X obj 180 258 tgl 15 0 vis_speakerlist vis_speakerlist speakerlist
-17 7 0 10 -262144 -1 -1 1 1;
+17 7 0 10 -262144 -1 -1 0 1;
 #X obj 190 319 tgl 15 0 vis_phantomlist vis_phantomlist phantomlist
-17 7 0 10 -262144 -1 -1 1 1;
+17 7 0 10 -262144 -1 -1 0 1;
 #X text 178 242 Edit;
-#N canvas 761 426 523 300 phantom-list 1;
+#N canvas 763 434 523 300 phantom-list 0;
 #X text 13 64 on 2D normally none;
 #X text 222 17 3D hemisphere;
 #X text 257 77 at least south pole;

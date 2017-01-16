@@ -5,4 +5,4 @@
 #X obj 40 165 ds/register_map \$1 \$2/spat/jitter;
 #X obj 66 63 ds/register_map \$1 \$2/on;
 #X obj 65 86 # ds/register_map \$1 \$2/gain;
-#X obj 46 205 abs/spat_ds \$1 \$2;
+#X obj 46 205 amb/spat/ds \$1 \$2;

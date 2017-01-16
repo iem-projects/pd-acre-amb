@@ -1,4 +1,4 @@
-#N canvas 1505 435 468 233 10;
+#N canvas 1506 439 468 233 10;
 #N canvas 564 338 535 403 contruct-dacs 0;
 #X msg 168 93 clear;
 #X obj 41 117 t b f f f;
@@ -117,16 +117,16 @@
 #X text 123 119 dyn set nr of channels;
 #N canvas 338 130 680 239 \$0-dacs 0;
 #X restore 17 30 pd \$0-dacs;
-#X text 13 1 amb/dacs <ID> <nr channels> <ID out receives> [dac offset]
-;
 #X text 51 71 reconstruct;
 #X obj 77 94 r \$1/number;
 #X text 21 185 (c) GPL - acre \, ritsch;
 #X text 163 97 Be carfully some system go crazy with this;
 #X obj 16 97 t b;
-#X connect 1 0 13 0;
+#X text 13 1 amb/bus/dacs~ <ID> <nr channels> <ID out receives> [dac
+offset], f 63;
+#X connect 1 0 12 0;
 #X connect 2 0 0 1;
-#X connect 4 0 13 0;
+#X connect 4 0 12 0;
 #X connect 5 0 0 0;
-#X connect 10 0 5 0;
-#X connect 13 0 0 0;
+#X connect 9 0 5 0;
+#X connect 12 0 0 0;

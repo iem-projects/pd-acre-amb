@@ -1,5 +1,5 @@
-#N canvas 78 182 539 402 10;
-#N canvas 1412 529 421 296 contruct-outs 0;
+#N canvas 80 190 685 402 10;
+#N canvas 1413 533 421 296 contruct-outs 0;
 #X msg 160 90 clear;
 #X obj 81 15 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -21,7 +21,7 @@
 #X obj 240 40 i \$5;
 #X obj 37 199 pack 10 1 s;
 #X obj 37 222 list append \$4;
-#X msg 38 247 obj 10 \$1 amb/out~ \$3-\$2 \$4;
+#X msg 38 247 obj 10 \$1 amb/bus/out~ \$3-\$2 \$4;
 #X connect 0 0 3 0;
 #X connect 1 0 9 1;
 #X connect 2 0 9 0;
@@ -44,7 +44,7 @@
 #X connect 19 0 20 0;
 #X connect 20 0 4 0;
 #X restore 65 163 pd contruct-outs;
-#N canvas 88 213 241 521 \$0-dsp-outs 0;
+#N canvas 89 244 241 521 \$0-dsp-outs 0;
 #X restore 33 33 pd \$0-dsp-outs;
 #X obj 53 80 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -64,9 +64,9 @@
 #X obj 41 279 pack 0 s;
 #X obj 39 219 t f b;
 #X obj 83 244 symbol \$3;
-#X text 33 11 amb/outs~ <ID> <nr channels> <ID out receives> <master
-id> [out offset], f 73;
 #X msg 36 307 \; \$2-\$1/vol 100 \; \$2-\$1/del 0;
+#X text 33 12 amb/bus/outs~ <ID> <nr channels> <ID out receives> <master
+id> [out offset], f 77;
 #X connect 2 0 11 0;
 #X connect 3 0 0 1;
 #X connect 5 0 11 0;
@@ -76,7 +76,7 @@ id> [out offset], f 73;
 #X connect 11 1 0 0;
 #X connect 12 0 15 0;
 #X connect 13 0 12 0;
-#X connect 14 0 18 0;
+#X connect 14 0 17 0;
 #X connect 15 0 14 0;
 #X connect 15 1 16 0;
 #X connect 16 0 14 1;

@@ -1,4 +1,4 @@
-#N canvas 1454 587 528 372 10;
+#N canvas 1455 591 528 372 10;
 #X obj 15 181 mtx;
 #N canvas 181 323 491 402 \$0-decoder 0;
 #X restore 15 45 pd \$0-decoder;
@@ -152,10 +152,10 @@
 #X obj 14 69 r /amb/dec/\$1/load;
 #X obj 35 91 r /amb/dec/\$1/file;
 #X obj 80 139 r /amb/dec/\$1/print;
-#X obj 227 72 order2chls \$2 \$3;
-#X text 13 19 amb/decoder~ <ID> <dimen> <order> <ambibus ID> <out-id>
-<nr outs>, f 67;
+#X obj 227 72 amb/n \$2 \$3;
 #X obj 227 95 pack 13 \$6;
+#X text 13 19 amb/decoder/dsp~ <ID> <dimen> <order> <ambibus ID> <out-id>
+<nr outs>, f 71;
 #X connect 0 0 3 0;
 #X connect 0 0 13 0;
 #X connect 4 0 0 0;
@@ -172,5 +172,5 @@
 #X connect 18 0 10 0;
 #X connect 19 0 10 1;
 #X connect 20 0 0 0;
-#X connect 21 0 23 0;
-#X connect 23 0 16 0;
+#X connect 21 0 22 0;
+#X connect 22 0 16 0;

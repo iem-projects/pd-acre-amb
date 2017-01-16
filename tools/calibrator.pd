@@ -1,4 +1,4 @@
-#N canvas 367 109 989 661 10;
+#N canvas 370 121 989 661 10;
 #X declare -lib zexy;
 #X declare -lib iemlib1;
 #X declare -lib iemlib2;
@@ -10,7 +10,7 @@
 #X obj 25 80 declare -lib iemlib1;
 #X obj 29 104 declare -lib iemlib2;
 #X obj 32 11 declare -path ../../;
-#X obj 86 201 amb/initbangs;
+#X obj 86 201 amb/amb/initbangs;
 #X obj 43 135 loadbang;
 #X obj 132 155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -27,7 +27,7 @@
 #X connect 8 2 4 0;
 #X connect 10 0 11 0;
 #X restore 30 28 pd init;
-#N canvas 42 108 547 259 DSP 1;
+#N canvas 44 116 547 259 DSP 0;
 #N canvas 436 301 302 273 noise 0;
 #X obj 21 240 outlet~;
 #X obj 22 161 *~;
@@ -87,21 +87,21 @@
 #X connect 12 0 6 0;
 #X connect 16 0 1 0;
 #X restore 33 80 pd input;
-#N canvas 173 348 617 298 DACs 0;
+#N canvas 179 402 617 298 DACs 1;
 #X obj 107 66 r /amb/cal/initbang;
 #X obj 152 131 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 107 129 i 13;
 #X obj 272 69 ds/storage_logic /cal;
-#X obj 287 37 amb/outs_ds boxen 13 out /cal;
-#X msg 105 182 \; /amb/out/\$1/vol 100 \; /amb/out/\$1/del 0;
-#X obj 108 35 amb/outs boxen 13 out 0;
 #X obj 105 156 acre/count_until;
 #X obj 290 167 mxr/master/master~ 0;
+#X msg 105 182 \; out-\$1/vol 100 \; out-\$1/del 0;
+#X obj 108 35 amb/bus/outs boxen 13 out 0;
+#X obj 309 34 amb/bus/outs_ds /cal boxen 13 out;
 #X connect 0 0 2 0;
 #X connect 1 0 2 0;
-#X connect 2 0 7 0;
-#X connect 7 0 5 0;
+#X connect 2 0 4 0;
+#X connect 4 0 6 0;
 #X restore 108 32 pd DACs;
 #X obj 313 64 r /amb/cal/out/nr;
 #X obj 298 125 throw~ /amb/out/1;
@@ -109,11 +109,11 @@
 #X text 303 20 Routing of signal;
 #X text 149 57 generator;
 #X text 22 58 measurement input;
-#N canvas 583 365 633 346 ADC 0;
+#N canvas 584 369 633 346 ADC 0;
 #X obj 28 105 prvu~;
 #X obj 28 126 s /amb/cal/adc/vu;
 #X text 275 51 Set ADC number;
-#N canvas 9 82 450 300 gen-adc 0;
+#N canvas 10 86 450 300 gen-adc 0;
 #X obj 10 10 adc~ 1;
 #X obj 10 50 s~ in1;
 #X connect 0 0 1 0;
@@ -344,7 +344,7 @@ field;
 #X connect 17 0 0 2;
 #X connect 18 0 1 0;
 #X restore 309 31 pd write2outs;
-#X obj 481 74 amb/outs_ctl boxen 13 out;
+#X obj 481 74 amb/bus/outs_ctl boxen 13 out;
 #N canvas 205 151 450 449 OUT 0;
 #X obj 101 101 cnv 15 148 198 empty empty ADC/DAC 2 7 0 14 -233017
 -66577 0;

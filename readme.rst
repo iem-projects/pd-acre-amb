@@ -8,7 +8,7 @@ Ambisonics Toolbox
 :Author: Winfried Ritsch
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
 :Copyright: winfried ritsch - IEM / algorythmics 2012+
-:Version: 0.72 development, mostly stable 
+:Version: 0.73 development, mostly stable 
 :git master repo: https://git.iem.at/pd/acre-amb
 
 Ambisonics Toolbox is a collection of high level Pd abstraction, to implement Ambisonics integration either in a mixer or compositions or effects using iem_ambi.
@@ -21,7 +21,7 @@ Background
 ----------
 
 In Ambisonics domain an 3D or 2D Ambisonics signal is a multichannel audio-signal.
-With higher orders, better spatial resolutions are provided and more Ambisonics channels are needed.
+With higher orders a better spatial resolution is provided and more Ambisonics channels are needed.
 The channel count is calculated by the formulas ``n=(order+1)²`` for 3D and ``n=2*order+1`` for 2D. 
 Therefore Ambisonics buses has to be implemented, which handle, for example on 5th order 3D 36 channels.
 Until there is a snake functionality standard in Pd[snake]_ , we handle Ambisonics buses with abstraction and dynamic generated ``catch~/throw~`` and/or ``send~/receive~`` pairs to prevent excessive Pd cabling.
@@ -84,8 +84,6 @@ implementation
 
  - use clone for buses and others instead of dynamic patcher, which should clean the library.
 
- 
-
 ambisonics mixer::
 
  - Distance from 0..1 (has to be discussed)
@@ -94,36 +92,21 @@ ambisonics mixer::
  - rotate, mirror
  - widening
  - virtual microphones
+ - recoder dsp, ctl ds
 
 processing::
 
  - Binaural rendering
  - Headtracker support for binaural
  - 3D-Reverb
- - Bormat encoder for various microphones from A-format
+ - B-format encoder for various microphones from A-format
+
+DONE
+----
  
 change names:
  - all signal objects with ~ at end like player, outs
-
-reorganize in folders for encapsulation: 
-
-amb - general objects 
- order2chls, weights, weight, maxre
-
-spat
- dsp ds ctl, encode2D -> 2D, encode3D -> 3D, dist
-
-dec - decoder and tools
- coder, 
  
-ms - multisignal
- outs, out, bus, dacs, adcs
- 
-player
- dsp, ctl, ds
- 
-recoder
- dsp, ctl ds
  
 additional docu
 ---------------
