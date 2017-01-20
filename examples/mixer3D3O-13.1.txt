@@ -1,10 +1,11 @@
 #scene 0
+/set::/ch/1/azimuth/rotz/incr 3
+/set::/ch/1/elevation 10
+/set::/ch/1/azimuth 0
+/set::/ch/1/dist 1
 /set::player/on 1
 /set::player/loop 1
 /set::player/gain 90.5
-/set::/amb/ch1/dist 1
-/set::/amb/ch1/elevation 10
-/set::/amb/ch1/azimuth 0
 /set::1/pulse/time 200
 /set::1/pulse/on 1
 /set::1/vol 90
