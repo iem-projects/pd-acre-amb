@@ -1,0 +1,36 @@
+#N canvas 534 65 592 300 10;
+#X obj 101 101 cnv 15 98 48 empty empty \$1 2 8 0 10 -233017 -66577
+0;
+#X obj 328 93 metro 100;
+#X obj 328 138 f 0;
+#X obj 398 133 + 1;
+#X obj 327 194 s /amb/\$1/azimuth;
+#X obj 107 124 tgl 15 0 \$1/azimuth/rotz \$1/azimuth/rotz on 17 7 0
+10 -262144 -1 -1 1 1;
+#X obj 153 125 nbx 3 14 -360 360 0 0 \$1/azimuth/rotz/incr \$1/azimuth/rotz/incr
+rotz 0 -8 0 10 -262144 -1 -1 1 256;
+#X obj 396 156 mod 360;
+#X msg 233 242 pos 105 180;
+#X msg 90 227 pos 105 230;
+#X obj 327 39 r \$1/azimuth/rotate;
+#X obj 398 109 r \$1/azimuth;
+#X obj 439 131 r \$1/azimuth/incr;
+#X obj 383 65 r /mxr/fadetime;
+#X obj 95 196 amb/amb/2D3D \$2;
+#X obj 94 168 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 94 268 (c) GPL \, acre winfried ritsch;
+#X text 91 46 simple rotate around z-axis;
+#X text 86 11 spat/rotz_ctl <channel ID> <type>;
+#X connect 1 0 2 0;
+#X connect 2 0 4 0;
+#X connect 3 0 7 0;
+#X connect 7 0 2 1;
+#X connect 10 0 1 0;
+#X connect 11 0 3 0;
+#X connect 12 0 3 1;
+#X connect 13 0 1 1;
+#X connect 14 0 9 0;
+#X connect 14 1 8 0;
+#X connect 15 0 14 0;
+#X coords 0 -1 1 1 100 50 2 100 100;
