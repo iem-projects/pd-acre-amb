@@ -1,4 +1,4 @@
-#N canvas 532 107 685 569 10;
+#N canvas 533 111 685 569 10;
 #X declare -lib iemlib1;
 #X declare -lib zexy;
 #X declare -stdpath iemlib;
@@ -28,9 +28,9 @@
 #X obj 20 28 declare -path iemlib;
 #X obj 22 7 declare -path ../../;
 #X restore 317 9 pd declares;
-#X obj 199 77 tgl 15 0 3D 3D 3D 17 7 0 10 -262144 -1 -1 1 1;
+#X obj 199 77 tgl 15 0 3D 3D 3D 17 7 0 10 -262144 -1 -1 0 1;
 #X obj 111 76 nbx 3 14 -1e+37 1e+37 0 0 order order ORDER 0 -8 0 10
--262144 -1 -1 2 256;
+-262144 -1 -1 3 256;
 #X text 87 636 https://bitbucket.org/ambidecodertoolbox/adt.git;
 #X text 28 69 1.) Enter;
 #X text 196 93 else 2D;
@@ -89,7 +89,7 @@ bang \;;
 #X obj 71 280 s pd-decoder-config;
 #N canvas 575 57 449 240 decoder-config 0;
 #X obj 10 10 r dc;
-#X obj 10 30 ambi_decode3 2 3 13 5;
+#X obj 10 30 ambi_decode3 3 3 13 5;
 #X obj 10 50 s dc-out;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
@@ -237,15 +237,12 @@ understanding);
 #X restore 164 438 pd calculation;
 #X text 30 183 2.)set speaker channel count;
 #X obj 80 258 nbx 5 14 -1e+37 1e+37 0 0 speaker speaker speaker 0 -8
-0 10 -262144 -1 -1 13 256;
+0 10 -262144 -1 -1 7 256;
 #X text 23 255 Enter;
 #X obj 78 317 nbx 5 14 -1e+37 1e+37 0 0 phantoms phantoms phantoms
 0 -8 0 10 -262144 -1 -1 5 256;
-#N canvas 943 228 701 368 speaker-list 0;
-#X text 61 73 Example for 2D 8 speaker;
-#X msg 57 107 \; dc real_ls 1 0 \; dc real_ls 2 45 \; dc real_ls 3
-90 \; dc real_ls 4 135 \; dc real_ls 5 180 \; dc real_ls 6 225 \; dc
-real_ls 7 270 \; dc real_ls 8 315;
+#N canvas 368 212 807 368 speaker-list 0;
+#X text 45 68 Example for 2D 8 speaker;
 #X text 307 58 Example for 3D 13 speaker;
 #X msg 574 114 \; dc real_ls 1 0 0;
 #X text 583 84 own list;
@@ -265,7 +262,14 @@ real_ls 7 270 \; dc real_ls 8 315;
 30 320 \; dc real_ls 13 85 0 \;;
 #X msg 24 272 \; dc real_ls 1 0 45 \; dc real_ls 2 0 135 \; dc real_ls
 3 0 225 \; dc real_ls 4 0 315 \; dc real_ls 5 90 0;
-#X connect 5 0 10 0;
+#X msg 22 100 \; dc real_ls 1 0 \; dc real_ls 2 45 \; dc real_ls 3
+90 \; dc real_ls 4 135 \; dc real_ls 5 180 \; dc real_ls 6 225 \; dc
+real_ls 7 270 \; dc real_ls 8 315;
+#X text 565 161 2D 7speaker;
+#X msg 559 187 \; dc real_ls 1 0 \; dc real_ls 2 51.4286 \; dc real_ls
+3 102.857 \; dc real_ls 4 154.286 \; dc real_ls 5 205.714 \; dc real_ls
+6 257.143 \; dc real_ls 7 308.571;
+#X connect 4 0 12 0;
 #X restore 270 253 pd speaker-list;
 #N canvas 1183 193 450 300 helps 0;
 #X obj 32 22 r vis_speakerlist;
@@ -276,7 +280,7 @@ real_ls 7 270 \; dc real_ls 8 315;
 #X connect 2 0 3 0;
 #X restore 406 7 pd helps;
 #X obj 180 258 tgl 15 0 vis_speakerlist vis_speakerlist speakerlist
-17 7 0 10 -262144 -1 -1 0 1;
+17 7 0 10 -262144 -1 -1 1 1;
 #X obj 190 319 tgl 15 0 vis_phantomlist vis_phantomlist phantomlist
 17 7 0 10 -262144 -1 -1 0 1;
 #X text 178 242 Edit;

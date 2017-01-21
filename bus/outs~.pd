@@ -1,4 +1,4 @@
-#N canvas 80 190 685 402 10;
+#N canvas 81 194 569 402 10;
 #N canvas 1413 533 421 296 contruct-outs 0;
 #X msg 160 90 clear;
 #X obj 81 15 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -46,26 +46,24 @@
 #X restore 65 163 pd contruct-outs;
 #N canvas 89 244 241 521 \$0-dsp-outs 0;
 #X restore 33 33 pd \$0-dsp-outs;
-#X obj 53 80 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 79 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 166 137 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 175 141 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 185 137 clear before save !;
+#X text 194 141 clear before save !;
 #X obj 33 61 r /amb/businit;
 #X obj 174 86 max 1;
-#X text 71 83 reconstruct;
+#X text 97 109 reconstruct;
 #X obj 174 64 r \$1/channels;
 #X text 172 45 dyn set channel count;
-#X text 33 361 (c) GPL - acre \, ritsch;
+#X text 33 351 (c) GPL - acre \, ritsch;
 #X obj 33 100 t b b;
-#X obj 37 194 acre/count_until \$2;
-#X obj 9 147 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 41 279 pack 0 s;
-#X obj 39 219 t f b;
-#X obj 83 244 symbol \$3;
-#X msg 36 307 \; \$2-\$1/vol 100 \; \$2-\$1/del 0;
-#X text 33 12 amb/bus/outs~ <ID> <nr channels> <ID out receives> <master
+#X obj 33 194 acre/count_until \$2;
+#X obj 33 269 pack 0 s;
+#X obj 33 219 t f b;
+#X obj 77 244 symbol \$3;
+#X msg 33 289 \; \$2-\$1/vol 100 \; \$2-\$1/del 0;
+#X text 24 5 amb/bus/outs~ <ID> <nr channels> <ID out receives> <master
 id> [out offset], f 77;
 #X connect 2 0 11 0;
 #X connect 3 0 0 1;
@@ -74,9 +72,8 @@ id> [out offset], f 77;
 #X connect 8 0 6 0;
 #X connect 11 0 12 0;
 #X connect 11 1 0 0;
-#X connect 12 0 15 0;
-#X connect 13 0 12 0;
-#X connect 14 0 17 0;
-#X connect 15 0 14 0;
-#X connect 15 1 16 0;
-#X connect 16 0 14 1;
+#X connect 12 0 14 0;
+#X connect 13 0 16 0;
+#X connect 14 0 13 0;
+#X connect 14 1 15 0;
+#X connect 15 0 13 1;

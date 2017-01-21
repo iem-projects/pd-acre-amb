@@ -1,4 +1,4 @@
-#N canvas 547 114 608 463 10;
+#N canvas 550 126 608 463 10;
 #X obj 31 31 cnv 15 98 98 empty empty \$1 2 7 0 8 -233017 -66577 0
 ;
 #X obj 34 139 s \$0_sphere_fromgui;
@@ -6,7 +6,7 @@
 #X text 39 94 not found;
 #X text 34 79 cube_sphere;
 #X text 41 72 iemgui or;
-#X obj 37 45 cube_sphere 1 42 12 225279 62783 354 42 42;
+#X obj 37 45 cube_sphere 1 42 12 225279 233016 354 42 9;
 #X obj 199 48 r \$0_sphere_fromgui;
 #X obj 199 70 route 1;
 #X obj 199 92 unpack 0 0;
@@ -38,13 +38,17 @@
 #X text 63 406 (c) GPL \, acre winfried ritsch;
 #X obj 460 219 * 0.8;
 #X obj 458 242 + 4;
-#N canvas 4 57 450 300 configure 0;
+#N canvas 5 61 450 300 configure 0;
 #X obj 39 200 s \$0_sphere_togui;
 #X msg 45 162 size \$1;
 #X floatatom 50 138 5 0 0 0 - - -, f 5;
 #X text 33 8 parameter are stored in object !;
+#X msg 139 163 frame_col \$1;
+#X floatatom 144 130 5 0 0 0 - - -, f 5;
 #X connect 1 0 0 0;
 #X connect 2 0 1 0;
+#X connect 4 0 0 0;
+#X connect 5 0 4 0;
 #X restore 36 234 pd configure;
 #X connect 2 0 6 0;
 #X connect 6 0 1 0;
