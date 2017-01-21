@@ -1,0 +1,5 @@
+#N canvas 922 136 444 190 10;
+#X text 30 146 (c)GPL \, algorythmics \, winfried ritsch;
+#X text 31 30 amb/spat/rotz_ds <domain> <ch id>;
+#X obj 36 105 ds/register_map \$1 \$2/azimuth/rotz/incr;
+#X obj 36 79 ds/register_map \$1 \$2/azimuth/rotz;

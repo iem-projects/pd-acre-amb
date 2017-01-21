@@ -1,0 +1,18 @@
+#N canvas 996 610 353 230 10;
+#X obj 52 64 r \$1/min;
+#X obj 139 65 r \$1/max;
+#X text 48 23 minmax_ctl <nameprefix> <min> <max>;
+#X obj 139 114 max \$3;
+#X obj 139 158 s \$1/max;
+#X obj 54 114 min \$2;
+#X obj 54 158 s \$1/min;
+#X obj 54 136 change \$2;
+#X obj 139 136 change \$3;
+#X connect 0 0 3 0;
+#X connect 0 0 5 1;
+#X connect 1 0 5 0;
+#X connect 1 0 3 1;
+#X connect 3 0 8 0;
+#X connect 5 0 7 0;
+#X connect 7 0 6 0;
+#X connect 8 0 4 0;

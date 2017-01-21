@@ -1,16 +1,16 @@
-#N canvas 353 76 989 661 10;
+#N canvas 370 121 989 661 10;
 #X declare -lib zexy;
 #X declare -lib iemlib1;
 #X declare -lib iemlib2;
 #X declare -path ../../;
 #X declare -stdpath iemlib;
 #X declare -path cal;
-#N canvas 446 168 450 464 init 0;
+#N canvas 446 167 450 464 init 0;
 #X obj 28 55 declare -lib zexy;
 #X obj 25 80 declare -lib iemlib1;
 #X obj 29 104 declare -lib iemlib2;
 #X obj 32 11 declare -path ../../;
-#X obj 86 201 amb/initbangs;
+#X obj 86 201 amb/amb/initbangs;
 #X obj 43 135 loadbang;
 #X obj 132 155 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -27,8 +27,8 @@
 #X connect 8 2 4 0;
 #X connect 10 0 11 0;
 #X restore 30 28 pd init;
-#N canvas 42 111 547 259 DSP 0;
-#N canvas 436 275 302 273 noise 0;
+#N canvas 44 116 547 259 DSP 0;
+#N canvas 436 301 302 273 noise 0;
 #X obj 21 240 outlet~;
 #X obj 22 161 *~;
 #X obj 86 75 dbtorms;
@@ -53,7 +53,7 @@
 #X connect 11 0 1 0;
 #X restore 148 83 pd noise;
 #X obj 157 109 throw~ out~;
-#N canvas 497 437 381 300 input 0;
+#N canvas 497 463 381 300 input 0;
 #X obj 20 56 r~ in1;
 #X obj 20 110 *~;
 #X obj 60 145 limiter~;
@@ -87,21 +87,21 @@
 #X connect 12 0 6 0;
 #X connect 16 0 1 0;
 #X restore 33 80 pd input;
-#N canvas 173 350 617 298 DACs 0;
+#N canvas 179 402 617 298 DACs 1;
 #X obj 107 66 r /amb/cal/initbang;
 #X obj 152 131 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 107 129 i 13;
-#X obj 290 167 mxr/master/master~;
 #X obj 272 69 ds/storage_logic /cal;
-#X obj 287 37 amb/outs_ds boxen 13 out /cal;
-#X msg 105 182 \; /amb/out/\$1/vol 100 \; /amb/out/\$1/del 0;
-#X obj 108 35 amb/outs boxen 13 out 0;
 #X obj 105 156 acre/count_until;
+#X obj 290 167 mxr/master/master~ 0;
+#X msg 105 182 \; out-\$1/vol 100 \; out-\$1/del 0;
+#X obj 108 35 amb/bus/outs boxen 13 out 0;
+#X obj 309 34 amb/bus/outs_ds /cal boxen 13 out;
 #X connect 0 0 2 0;
 #X connect 1 0 2 0;
-#X connect 2 0 8 0;
-#X connect 8 0 6 0;
+#X connect 2 0 4 0;
+#X connect 4 0 6 0;
 #X restore 108 32 pd DACs;
 #X obj 313 64 r /amb/cal/out/nr;
 #X obj 298 125 throw~ /amb/out/1;
@@ -109,12 +109,12 @@
 #X text 303 20 Routing of signal;
 #X text 149 57 generator;
 #X text 22 58 measurement input;
-#N canvas 583 366 633 346 ADC 0;
+#N canvas 584 369 633 346 ADC 0;
 #X obj 28 105 prvu~;
 #X obj 28 126 s /amb/cal/adc/vu;
 #X text 275 51 Set ADC number;
-#N canvas 9 83 450 300 gen-adc 0;
-#X obj 10 10 adc~ 3;
+#N canvas 10 86 450 300 gen-adc 0;
+#X obj 10 10 adc~ 1;
 #X obj 10 50 s~ in1;
 #X connect 0 0 1 0;
 #X restore 187 132 pd gen-adc;
@@ -158,7 +158,7 @@
 #X restore 29 32 pd ADC;
 #X obj 299 36 catch~ out~;
 #X obj 33 185 correlation 16384;
-#N canvas 4 58 450 187 compansate_latency 0;
+#N canvas 4 57 450 187 compansate_latency 0;
 #X obj 51 28 inlet~;
 #X obj 51 50 delwrite~ \$0-latenzdelay 1000;
 #X obj 49 145 outlet~;
@@ -298,7 +298,7 @@ field;
 #X connect 40 0 36 0;
 #X restore 161 28 pd automeasurement;
 #X obj 477 416 ds/ctl /cal;
-#N canvas 844 293 450 404 write2outs 0;
+#N canvas 844 292 450 404 write2outs 0;
 #X obj 21 68 for++ 1 13 10 1;
 #X obj 25 10 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -344,7 +344,7 @@ field;
 #X connect 17 0 0 2;
 #X connect 18 0 1 0;
 #X restore 309 31 pd write2outs;
-#X obj 481 74 amb/outs_ctl boxen 13 out;
+#X obj 481 74 amb/bus/outs_ctl boxen 13 out;
 #N canvas 205 151 450 449 OUT 0;
 #X obj 101 101 cnv 15 148 198 empty empty ADC/DAC 2 7 0 14 -233017
 -66577 0;
@@ -361,11 +361,11 @@ field;
 #X obj 66 41 vu 15 120 /amb/cal/in/vu input -1 -8 0 10 -66577 -1 1
 0;
 #X obj 17 40 vsl 15 128 0 127 0 0 /amb/cal/in/vol /amb/cal/in/vol vol
-0 -9 0 10 -204786 -1 -1 10100 1;
+0 -9 0 10 -204786 -1 -1 0 1;
 #X obj 17 174 nbx 3 14 -1e+37 1e+37 0 0 /amb/cal/in/vol /amb/cal/in/vol
-empty 0 -8 0 10 -204786 -1 -1 101 256;
+empty 0 -8 0 10 -204786 -1 -1 0 256;
 #X obj 50 42 vsl 8 100 -100 0 0 0 /amb/cal/in/lim /amb/cal/in/lim lim
--5 -9 0 10 -262144 -1 -1 9900 1;
+-5 -9 0 10 -262144 -1 -1 0 1;
 #X coords 0 -1 1 1 100 200 1 10 10;
 #X restore 374 205 pd signal_in;
 #N canvas 247 357 257 258 signal_gen 0;
@@ -382,40 +382,38 @@ empty 0 -8 0 10 -204786 -1 -1 100 256;
 #X coords 0 -1 1 1 100 200 2 10 10;
 #X restore 124 205 pd signal_gen;
 #X obj 24 205 mxr/master/ctl;
-#X obj 270 140 nbx 3 14 1 256 0 0 /cal/adc/nr /cal/adc/nr /cal/adc/nr
-0 -8 0 10 -262144 -1 -1 3 256;
-#X text 20 68 1.) Set Speaker number;
-#X obj 193 76 nbx 5 14 1 256 0 0 /amb/outs/boxen/number /amb/outs/boxen/number
-SPK_NUMBER 0 -8 0 10 -262144 -1 -1 2 256;
+#X obj 280 133 nbx 3 14 1 256 0 0 /cal/adc/nr /cal/adc/nr /cal/adc/nr
+0 -8 0 10 -262144 -1 -1 1 256;
+#X obj 200 71 nbx 5 14 1 256 0 0 /amb/outs/boxen/number /amb/outs/boxen/number
+SPK_NUMBER 0 -8 0 10 -262144 -1 -1 1 256;
 #X obj 119 93 bng 30 250 50 0 /amb/initbang /amb/initbang REINIT -1
 -5 0 10 -262144 -1 -1;
 #X text 53 97 Reinit;
 #X text 331 96 and visual the outs:;
-#X text 20 133 2.) choose ADC measurement number;
 #X text 19 417 4.) Turn on Noise-gen with noise level set to 100;
 #X text 19 437 and raise Master volume to an reasonable Volume to measure
 in the room;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array spk_amplitudes 2 float 3;
-#A 0 0.185089 0.170552;
-#X coords 0 0.185089 2 0 200 140 1 0 0;
+#X array spk_amplitudes 13 float 3;
+#A 0 0.185089 0.170552 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 0.185089 13 0 200 140 1 0 0;
 #X restore 645 33 graph;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array spk_delays 2 float 3;
-#A 0 69.7708 69.75;
-#X coords 0 69.7708 2 0 200 140 1 0 0;
+#X array spk_delays 13 float 3;
+#A 0 69.7708 69.75 0 0 0 0 0 0 0 0 0 0 0;
+#X coords 0 69.7708 13 0 200 140 1 0 0;
 #X restore 646 200 graph;
 #X obj 34 551 bng 15 250 50 0 /cal/auto/measure /cal/auto/measure AUTO_MEASURE
 17 7 0 10 -262144 -1 -1;
 #X obj 138 553 nbx 5 14 -1e+37 1e+37 0 0 /amb/cal/out/nr /amb/cal/out/nr
-out_nr 0 -8 0 10 -228856 -1 -1 2 256;
+out_nr 0 -8 0 10 -228856 -1 -1 0 256;
 #X obj 196 550 bng 15 250 50 0 /cal/auto/end /cal/auto/end end 17 7
 0 10 -228856 -1 -1;
 #X obj 293 521 nbx 5 14 -1e+37 1e+37 0 0 /corr/window/size /corr/window/size
 window_size 0 -8 0 10 -262144 -1 -1 16384 256;
 #X obj 476 205 correlation_ctl;
 #X obj 371 521 nbx 5 14 -1e+37 1e+37 0 0 /corr/window/time /corr/window/time
-window_time 0 -8 0 10 -262144 -1 -1 341.333 256;
+window_time 0 -8 0 10 -262144 -1 -1 371.519 256;
 #X text 18 522 6.) Be quiet and press automeasure;
 #X text 21 575 7.) set Volumes to outs;
 #X obj 204 574 bng 15 250 50 0 /cal/outs/set /cal/outs/set set_outs
@@ -433,3 +431,5 @@ and changed., f 33;
 input (-10dB) without limiting !;
 #X text 26 598 8.) save cal data in storage with "store" and "save"
 see storage dialog;
+#X text 21 68 1.) Set numbe of speaker;
+#X text 20 133 2.) choose ADC Number of microphone;

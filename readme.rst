@@ -8,26 +8,25 @@ Ambisonics Toolbox
 :Author: Winfried Ritsch
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
 :Copyright: winfried ritsch - IEM / algorythmics 2012+
-:Version: 0.71 development, mostly stable but clone could be used
-          for Pd Versions 0.47.1 instead of dynmic patching
-
-.. _`../docu/acre_title.rst`:  ../docu/acre_title.rst
+:Version: 0.74 development
+:git master repo: https://git.iem.at/pd/acre-amb
 
 Ambisonics Toolbox is a collection of high level Pd abstraction, to implement Ambisonics integration either in a mixer or compositions or effects using iem_ambi.
-One goal is to easily integrate Ambisonics encoder, decoder and processing for various purposes as modules. Another to provide Multichannel operations and signaling.
+One goal is to easily integrate Ambisonics encoder, decoder and processing for various purposes as modules providing multichannel operations and signaling.
 
-This module is based on the iem_ambi and some parts also on the iem_bin_ambi Pd-library, which is based on iemmatrix Pd-library.
-It also depends on the acre/acre and acre/mxr module of the acre library.
+This module extend the acre library with the base modules ``acre/acre``, ``acre/mxr`` and ``acre/ds``, which has to be installed.
+It is based on the `iem_ambi` and some parts also on the `iem_bin_ambi` Pd-library, which is based on `iemmatrix` Pd-library.
 
 Background
 ----------
 
-In Ambisonics 3D or 2D Ambisonics signal is a multichannel audio-signal.
-With higher orders, better spatial resolutions are provided and more Ambisonics channels are needed.
+In Ambisonics domain an 3D or 2D Ambisonics signal is a multichannel audio-signal.
+With higher orders a better spatial resolution is provided and more Ambisonics channels are needed.
 The channel count is calculated by the formulas ``n=(order+1)²`` for 3D and ``n=2*order+1`` for 2D. 
 Therefore Ambisonics buses has to be implemented, which handle, for example on 5th order 3D 36 channels.
 Until there is a snake functionality standard in Pd[snake]_ , we handle Ambisonics buses with abstraction and dynamic generated ``catch~/throw~`` and/or ``send~/receive~`` pairs to prevent excessive Pd cabling.
-The order of the Ambisonics channels is important. Within 'amb' it complies with the ACN [ACN], N3D standard, which is used troughout the iem_ambi library.
+The order of the Ambisonics channels is important. 
+Within 'amb' it complies with the ACN [ACN], N3D standard, which is used troughout the iem_ambi library.
 
 Structure
 ---------
@@ -36,8 +35,6 @@ Buses
 .....
 
 Ambisonics buses have a name asiocated within an abstractions, which uses it. The chosen name ``<bus-id>`` also needs the order ``<order>`` and dimensionality to be defined. An abstraction with lower order, but same dimensionality, can be used to add to an Ambisonics bus with 'catch~'es and also to read from one with 'receive~'s, therefore a bus catches Ambisonics signals and sends.
-
-
 
 Encoders and decoders
 .....................
@@ -52,14 +49,33 @@ The outputs can be calibrated with Volume and delay and also host the master fad
 
 Simple outs should only provide master fader.
 
+
+Installation
+------------
+
+Needed libraries: acre_ base module, zexy, iemlib1, iemlib2, iemmatrix, iem_ambi, iem_bin_ambi
+ libraries not installed in the system, can be copied to "libs/"
+ (thus if checkout fresh it should be empty)
+
+.. _acre: https://git.iem.at/pd/acre
+
+acre-base module ``acre`` starting with version 2.0 should be installed in the Pd-search path.
+
+Install this library in your search path naming this directory ``amb``. 
+Do not set search path inside this library since objects are referred as amb/<object> in the patches and should not conflict
+with other namespaces.
+
+To install it: clone it via git, download it from somewhere or download/install it via `deken`.
+
 Notes
 -----
 
-- parts are from an Implementation of the CUBEmixer
+- parts are from an implementation of the CUBEmixer from 2000+.
 
 - since simple dynamic patching is used, r~/s~ and catch~/throw~ pairs can be created in a wrong order which drops an error warning on the console.
 Since [savebang] is not implemented in Pd until now, we have to clear these abstractions before saving when developing to reduce warnings a little bit.
-To prevent this a little bit more the initialization order is important, see example, using own initbang order.
+To prevent unnecessary warnings a little bit more, the initialization order is important, see example, using own initbang order.
+
 
 Todo
 ----
@@ -76,25 +92,29 @@ ambisonics mixer::
  - rotate, mirror
  - widening
  - virtual microphones
+ - recoder dsp, ctl ds
 
 processing::
 
  - Binaural rendering
  - Headtracker support for binaural
  - 3D-Reverb
- - B-Format encoder for various microphones from A-format
+ - B-format encoder for various microphones from A-format
 
+DONE
+----
  
 change names:
  - all signal objects with ~ at end like player, outs
  
+ 
 additional docu
 ---------------
 
-for an introduction see `../docu/acre_intro.rst`_ ,
-for more documentation explore docu_ .
+for an introduction see `acre/docu/`_  in the acre base module.
+for more documentation explore docu_ here as `amb.rst`.
 
-.. _docu: ../docu/
+.. _docu: docu/
 
 .. _`../docu/acre_intro.rst`: acre_acre.rst
 

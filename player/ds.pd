@@ -1,0 +1,7 @@
+#N canvas 1091 154 450 300 10;
+#X obj 35 79 ds/register_map \$1 \$2/gain;
+#X obj 37 102 ds/register_map \$1 \$2/loop;
+#X text 32 24 Parameter for multichannel player;
+#X text 35 2 amb/player/ds <domain> <id>;
+#X text 28 163 (c) GPL \, acre winfried ritsch;
+#X obj 36 131 ds/register_map \$1 \$2/on;

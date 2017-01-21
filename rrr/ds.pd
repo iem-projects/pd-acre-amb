@@ -1,0 +1,10 @@
+#N canvas 1088 142 450 300 10;
+#X obj 39 122 abs/rev_parameter_ds \$1 \$2;
+#X text 32 24 Parameter for RRR;
+#X obj 39 144 abs/eq_ds \$1 \$2;
+#X obj 40 165 ds/register_map \$1 \$2/spat/jitter;
+#X obj 39 63 ds/register_map \$1 \$2/on;
+#X obj 38 86 # ds/register_map \$1 \$2/gain;
+#X obj 46 205 amb/spat/ds \$1 \$2;
+#X text 37 6 amb/rrr/ds <domain> <id>;
+#X text 48 240 (c) GPL \, acre winfried ritsch;

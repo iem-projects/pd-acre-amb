@@ -1,0 +1,10 @@
+#N canvas 1108 598 608 217 10;
+#X text 33 11 amb/outs <ID> <nr channels> <ID out receives> <master
+id> [dac offset], f 72;
+#X text 53 55 shortcut for amb/outs and amb/dacs for backward compatibility
+(NOTE: Master id was added);
+#X text 41 37 deprecated use both outs~ and dacs~ instead will be removed
+;
+#X text 47 157 (c) GPL \, acre winfried ritsch;
+#X obj 39 108 amb/bus/outs~ \$1 \$2 \$3 \$4 0;
+#X obj 40 133 amb/bus/dacs~ \$1-dacs \$2 \$3 \$5;

@@ -1,0 +1,36 @@
+#N canvas 537 77 461 300 10;
+#X obj 101 101 cnv 15 98 98 empty empty \$1_\$2 2 8 0 10 -233017 -66577
+0;
+#X obj 111 154 nbx 5 14 -1e+37 1e+37 0 0 \$1/azimuth \$1/azimuth azimuth
+0 -8 0 10 -262144 -1 -1 -2816.63 256;
+#X obj 111 127 nbx 5 14 0 100 0 0 \$1/dist \$1/dist dist 0 -8 0 10
+-262144 -1 -1 0 256;
+#X text 108 28 spat/ctl <channel ID> <type>;
+#X obj 215 100 loadbang;
+#X obj 215 122 symbol \$2;
+#X obj 213 170 route 2D;
+#X obj 213 192 t b;
+#X obj 253 191 t b;
+#X obj 109 174 cnv 15 50 25 empty /amb/\$1/elevation_no ----- 10 12
+0 10 -233017 -66577 0;
+#X obj 110 180 nbx 5 14 -1e+37 1e+37 0 0 \$1/elevation \$1/elevation
+elevation 0 -8 0 10 -262144 -1 -1 63 256;
+#X obj 295 95 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 214 147 \$1, f 2;
+#X text 96 266 Note: to extended with extra graphical GUIs;
+#X text 92 281 (c) GPL \, acre \, winfried ritsch;
+#X text 112 59 Spatial control interface 2D and 3D;
+#X msg 233 241 pos 110 180;
+#X msg 213 216 pos 110 230;
+#X connect 4 0 5 0;
+#X connect 5 0 12 0;
+#X connect 6 0 7 0;
+#X connect 6 1 8 0;
+#X connect 7 0 17 0;
+#X connect 8 0 16 0;
+#X connect 11 0 5 0;
+#X connect 12 0 6 0;
+#X connect 16 0 10 0;
+#X connect 17 0 10 0;
+#X coords 0 -1 1 1 100 100 2 100 100;

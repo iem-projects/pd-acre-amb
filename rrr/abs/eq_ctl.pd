@@ -1,0 +1,85 @@
+#N canvas 733 121 1052 671 10;
+#X obj 101 101 cnv 15 298 98 empty empty EQ-\$1 2 10 0 12 -233017 -66577
+0;
+#X obj 34 245 loadbang;
+#X msg 34 267 1220 705 330 47 33 2 2 2 2 2 -4 -4 -4 -6 -6;
+#X obj 34 292 unpack 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+#X obj 34 395 s \$1/eq/1/freq;
+#X obj 105 500 s \$1/eq/1/q;
+#X obj 220 395 s \$1/eq/1/gain;
+#X obj 54 375 s \$1/eq/2/freq;
+#X obj 74 355 s \$1/eq/3/freq;
+#X obj 94 335 s \$1/eq/4/freq;
+#X obj 114 315 s \$1/eq/5/freq;
+#X obj 240 375 s \$1/eq/2/gain;
+#X obj 260 355 s \$1/eq/3/gain;
+#X obj 280 335 s \$1/eq/4/gain;
+#X obj 300 315 s \$1/eq/5/gain;
+#X obj 125 480 s \$1/eq/2/q;
+#X obj 145 460 s \$1/eq/3/q;
+#X obj 165 440 s \$1/eq/4/q;
+#X obj 185 420 s \$1/eq/5/q;
+#X obj 214 122 nbx 5 14 2 20000 1 0 \$1/eq/1/freq \$1/eq/1/freq Hz
+55 8 0 10 -262144 -1 -1 1220 256;
+#X obj 286 123 nbx 3 14 0.1 100 1 0 \$1/eq/1/q \$1/eq/1/q Q 38 8 0
+10 -262144 -1 -1 2 256;
+#X obj 334 123 nbx 3 14 -20 0 0 0 \$1/eq/1/gain \$1/eq/1/gain dB 38
+8 0 10 -262144 -1 -1 -4 256;
+#X text 181 121 Eq1:;
+#X obj 214 136 nbx 5 14 2 20000 1 0 \$1/eq/2/freq \$1/eq/2/freq Hz
+55 8 0 10 -262144 -1 -1 705 256;
+#X obj 286 137 nbx 3 14 0.1 100 1 0 \$1/eq/2/q \$1/eq/2/q Q 38 8 0
+10 -262144 -1 -1 2 256;
+#X obj 334 137 nbx 3 14 -20 0 0 0 \$1/eq/2/gain \$1/eq/2/gain dB 38
+8 0 10 -262144 -1 -1 -4 256;
+#X obj 214 150 nbx 5 14 2 20000 1 0 \$1/eq/3/freq \$1/eq/3/freq Hz
+55 8 0 10 -262144 -1 -1 330 256;
+#X obj 286 151 nbx 3 14 0.1 100 1 0 \$1/eq/3/q \$1/eq/3/q Q 38 8 0
+10 -262144 -1 -1 2 256;
+#X obj 334 151 nbx 3 14 -20 0 0 0 \$1/eq/3/gain \$1/eq/3/gain dB 38
+8 0 10 -262144 -1 -1 -4 256;
+#X obj 214 164 nbx 5 14 2 20000 1 0 \$1/eq/4/freq \$1/eq/4/freq Hz
+55 8 0 10 -262144 -1 -1 47 256;
+#X obj 286 165 nbx 3 14 0.1 100 1 0 \$1/eq/4/q \$1/eq/4/q Q 38 8 0
+10 -262144 -1 -1 2 256;
+#X obj 334 165 nbx 3 14 -20 0 0 0 \$1/eq/4/gain \$1/eq/4/gain dB 38
+8 0 10 -262144 -1 -1 -6 256;
+#X obj 214 178 nbx 5 14 2 20000 1 0 \$1/eq/5/freq \$1/eq/5/freq Hz
+55 8 0 10 -262144 -1 -1 33 256;
+#X obj 286 179 nbx 3 14 0.1 100 1 0 \$1/eq/5/q \$1/eq/5/q Q 38 8 0
+10 -262144 -1 -1 2 256;
+#X obj 334 179 nbx 3 14 -20 0 0 0 \$1/eq/5/gain \$1/eq/5/gain dB 38
+8 0 10 -262144 -1 -1 -6 256;
+#X text 181 135 Eq2:;
+#X text 181 149 Eq3:;
+#X text 181 162 Eq4:;
+#X text 181 177 Eq5:;
+#X text 191 102 Manual Feedback supression !;
+#X obj 109 122 nbx 4 14 -1e+37 1e+37 0 0 \$1/eq/1/vu \$1/eq/1/vu dB
+48 7 0 10 -204786 -1 -1 0 256;
+#X obj 109 136 nbx 4 14 -1e+37 1e+37 0 0 \$1/eq/2/vu \$1/eq/2/vu dB
+48 7 0 10 -204786 -1 -1 0 256;
+#X obj 109 150 nbx 4 14 -1e+37 1e+37 0 0 \$1/eq/3/vu \$1/eq/3/vu dB
+48 7 0 10 -204786 -1 -1 0 256;
+#X obj 109 164 nbx 4 14 -1e+37 1e+37 0 0 \$1/eq/4/vu \$1/eq/4/vu dB
+48 7 0 10 -204786 -1 -1 0 256;
+#X obj 109 178 nbx 4 14 -1e+37 1e+37 0 0 \$1/eq/5/vu \$1/eq/5/vu dB
+48 7 0 10 -204786 -1 -1 0 256;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 1 7 0;
+#X connect 3 2 8 0;
+#X connect 3 3 9 0;
+#X connect 3 4 10 0;
+#X connect 3 5 5 0;
+#X connect 3 6 15 0;
+#X connect 3 7 16 0;
+#X connect 3 8 17 0;
+#X connect 3 9 18 0;
+#X connect 3 10 6 0;
+#X connect 3 11 11 0;
+#X connect 3 12 12 0;
+#X connect 3 13 13 0;
+#X connect 3 14 14 0;
+#X coords 0 -1 1 1 300 100 1 100 100;

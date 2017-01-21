@@ -1,0 +1,28 @@
+#N canvas 1415 525 450 300 10;
+#X obj 67 100 vsl 30 131 0 130 0 0 \$0/fad \$0/fad empty 1 140 0 8
+-233017 -1 -1 0 1;
+#X obj 67 234 nbx 3 14 -1e+37 1e+37 0 0 \$0/gain \$0/gain empty 0 -8
+0 10 -262144 -1 -1 0 256;
+#X obj 188 120 mxr/fader/db2;
+#X obj 188 206 mxr/fader/db;
+#X msg 188 142 set \$1;
+#X text 101 125 +3;
+#X text 100 110 +10;
+#X text 100 154 -3;
+#X obj 190 93 r \$0/gain;
+#X obj 188 164 s \$0/fad;
+#X obj 189 187 r \$0/fad;
+#X obj 188 226 s \$0/gain;
+#X text 189 72 for calibration;
+#X text 100 171 -10;
+#X text 100 187 -20;
+#X text 100 199 -30;
+#X text 100 211 -50;
+#X text 101 99 >12;
+#X text 100 140 -0-;
+#X connect 2 0 4 0;
+#X connect 3 0 11 0;
+#X connect 4 0 9 0;
+#X connect 8 0 2 0;
+#X connect 10 0 3 0;
+#X coords 0 -1 1 1 30 130 2 100 100;

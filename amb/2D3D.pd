@@ -1,0 +1,23 @@
+#N canvas 630 167 450 300 10;
+#X obj 98 93 loadbang;
+#X obj 49 120 symbol \$2;
+#X obj 47 168 route 2D;
+#X obj 47 190 t b;
+#X obj 101 190 t b;
+#X msg 48 145 \$1, f 2;
+#X obj 49 91 inlet;
+#X obj 124 223 outlet 3D;
+#X obj 48 222 outlet 2D;
+#X text 47 71 default 3D;
+#X text 47 52 discriminate arg 2D and 3D type on loadbang and bang
+input;
+#X text 48 31 amb/amb/2D3D <type>;
+#X text 44 252 comment;
+#X connect 0 0 1 0;
+#X connect 1 0 5 0;
+#X connect 2 0 3 0;
+#X connect 2 1 4 0;
+#X connect 3 0 8 0;
+#X connect 4 0 7 0;
+#X connect 5 0 2 0;
+#X connect 6 0 1 0;
