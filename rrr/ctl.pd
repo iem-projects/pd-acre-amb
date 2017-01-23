@@ -1,4 +1,4 @@
-#N canvas 1045 115 552 250 10;
+#N canvas 810 123 552 250 10;
 #X text 184 38 open_close_EDIT;
 #X obj 187 18 abs/rrr_ctl \$1;
 #X obj 295 111 t f b;
@@ -11,7 +11,7 @@
 #X msg 133 172 \; \$2 vis \$1;
 #X obj 180 125 symbol \$1-EDIT;
 #X obj 10 10 abs/master_ctl \$1;
-#X obj 176 87 r \$1/vis;
+#X obj 135 101 r \$1/vis;
 #X connect 2 0 3 0;
 #X connect 2 1 5 0;
 #X connect 3 0 4 0;

@@ -34,12 +34,12 @@ Structure
 Buses
 .....
 
-Ambisonics buses have a name asiocated within an abstractions, which uses it. The chosen name ``<bus-id>`` also needs the order ``<order>`` and dimensionality to be defined. An abstraction with lower order, but same dimensionality, can be used to add to an Ambisonics bus with 'catch~'es and also to read from one with 'receive~'s, therefore a bus catches Ambisonics signals and sends.
+Ambisonics buses have a name associated within an abstractions, which uses it. The chosen name ``<bus-id>`` also needs the order ``<order>`` and dimensions to be defined. An abstraction with lower order, but same dimensions, can be used to add to an Ambisonics bus with 'catch~'es and also to read from one with 'receive~'s, therefore a bus catches Ambisonics signals and sends.
 
 Encoders and decoders
 .....................
 
-Encoders use Ambisonics Busses to throw their signals to them and decoders read from a Ambisonics bus and distribute it to speaker outs.
+Encoders use Ambisonics Buses to throw their signals to them and decoders read from a Ambisonics bus and distribute it to speaker outs.
 
 
 Outs

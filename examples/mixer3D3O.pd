@@ -1,4 +1,4 @@
-#N canvas 452 245 910 471 10;
+#N canvas 452 249 910 471 10;
 #X declare -lib iemlib1;
 #X declare -lib zexy;
 #X declare -stdpath iemlib;
@@ -45,7 +45,7 @@ lib;
 #X obj 20 8 declare -path iemlib;
 #X restore 17 54 pd declares;
 #X text 16 82 patch should work in parent dir;
-#N canvas 164 165 978 525 GUI 1;
+#N canvas 165 169 978 525 GUI 1;
 #X obj 248 55 mxr/test/tones_ctl 1;
 #X obj 119 55 ds/ctl /set;
 #X obj 22 34 bng 15 250 50 0 /amb/initbang /amb/initbang REINIT 17
@@ -61,7 +61,7 @@ lib;
 #X obj 248 455 amb/spat/rotz_ctl /ch/1;
 #X obj 363 260 amb/spat/ch_ctl /ch/2 2D;
 #X obj 248 255 amb/spat/ch_hemi /ch/1 3D;
-#N canvas 7 69 778 505 decoder 0;
+#N canvas 8 73 778 505 decoder 0;
 #X obj 25 55 ds/ctl /cal;
 #X text 28 8 Calibration stores volumes and delays of outs;
 #X obj 161 65 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -81,7 +81,7 @@ print_decoder 17 7 0 10 -262144 -1 -1;
 #X obj 27 270 r /amb/inited;
 #X connect 2 0 3 0;
 #X connect 3 0 6 0;
-#X restore 26 334 pd decoder;
+#X restore 131 262 pd decoder;
 #X text 117 34 parameter storage;
 #X text 255 31 Testchannel 1;
 #X text 365 33 sample looper;
@@ -90,13 +90,9 @@ print_decoder 17 7 0 10 -262144 -1 -1;
 #X text 729 33 Reverb 6 in;
 #X text 365 367 spat in 2D 3O;
 #X text 362 382 rendered to 3D;
-#N canvas 507 108 450 358 sphere 0;
-#X obj 56 100 amb/sphere/hemi /inputs;
-#X obj 57 81 tgl 15 0 /sphere/hemi/inputs/edit /sphere/hemi/inputs/edit
-edit_inputs 17 7 0 10 -262144 -1 -1 0 1;
-#X msg 49 31 \; /sphere/hemi/inputs edit;
-#X text 291 61 TO BE DONE;
-#X restore 30 385 pd sphere;
+#X obj 19 308 amb/sphere/hemi /inputs;
+#X obj 124 288 tgl 15 0 /inputs/edit /inputs/edit edit_inputs 17 7
+0 10 -262144 -1 -1 0 1;
 #X restore 213 28 pd GUI;
 #X text 10 241 --- Out Kanaele (DACs) und Monitor ---;
 #X text 18 130 --- Ambisonics Bus AMB1/Decoder ---;
