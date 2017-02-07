@@ -1,0 +1,12 @@
+#N canvas 0 22 235 159 10;
+#X obj 25 2 catch~ ch\$1;
+#X obj 25 127 s~ ch\$1;
+#X obj 25 51 lp2~ 20000 0.707 100;
+#X obj 25 97 hp2~ 50 0.707 100;
+#X obj 67 24 r lowpass;
+#X obj 59 74 r highpass;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 1 0;
+#X connect 4 0 2 1;
+#X connect 5 0 3 1;

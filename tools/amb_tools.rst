@@ -2,6 +2,10 @@ Ambisonics Tools
 ================
 
 :author: winfried ritsch, iem 2015+
+:Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
+:Copyright: GPL for acre from authors noted below
+:Version: 0.74 development
+:git master repo: https://git.iem.at/pd/acre-amb
 
 Collection of standalone applications for supporting to set up of an Ambisonics system.
 
@@ -9,8 +13,10 @@ This tools have to be adapted for the actual setup and therefore should be seen 
 Copy them in your project and modify them.
 
 
-A) Calibrator
--------------
+Calibrator
+----------
+
+Original from Iohannes Zmöling for CUBEmixer, adapted by winfried ritsch
 
 To calibrate a speaker setup with delays and levels using an appropriate microphone.
 This is preferable a omni directional condensor microphone put in the middle of
@@ -53,8 +59,10 @@ Microphone position
 latency 
  of computer should be measured first, but since only relative delay values are used, absolute value is not really important.
 
-B) Simple Decoder Matrix calculator
------------------------------------
+Simple Decoder Matrix calculator
+--------------------------------
+
+Original from Thomas Musil for Cubemixer 2002+, adapted for acre winfried ritsch
 
 Note: Not working properly at the moment for complex setups, please use allrad.
 
@@ -70,6 +78,21 @@ see patch
 Hints
 .....
  The inverse of the speaker matrix is calculated, but this can be singular. Especially for hemisphere arrangement of speakers, use phantom speakers to fill the sphere.
+
+
+
+Ambisonics Visualizer with Gem
+------------------------------
+
+Copyright: GPL, Matthias Kronlachner 2013+ for Ambix, adapted by winfried ritsch for acre
+
+
+Ambisonics Bus Signal is visualized as VU-Meters in 3D space on an sphere and MAP and many other features.
+
+Start pd with start script in linux ( 16 channel in) and connect the Ambisonics Bus e.g. via jack to it.
+
+Note: Since it could use quite a lot of CPU power, start this patch within an extra Pd instance and maybe without realtime and bigger buffersize.
+
 
 References
 ----------
