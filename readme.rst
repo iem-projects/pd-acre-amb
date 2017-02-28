@@ -11,8 +11,10 @@ Ambisonics Toolbox
 :Version: 0.74 development
 :git master repo: https://git.iem.at/pd/acre-amb
 
-Ambisonics Toolbox is a collection of high level Pd abstraction, to implement Ambisonics integration either in a mixer or compositions or effects using iem_ambi.
-One goal is to easily integrate Ambisonics encoder, decoder and processing for various purposes as modules providing multichannel operations and signaling.
+
+
+Ambisonics Toolbox is a collection of high level Pd abstraction, to implement Ambisonics functionality for Ambisonics mixer and processor, especially compositions and effects using ``iem-ambi'' external library.
+One goal is to easily integrate Ambisonics encoder, decoder and processing for various purposes as modules providing dynamic multichannel operations and signaling enabling fast prototyping of Ambisonics algorithms.
 
 This module extend the acre library with the base modules ``acre/acre``, ``acre/mxr`` and ``acre/ds``, which has to be installed.
 It is based on the `iem_ambi` and some parts also on the `iem_bin_ambi` Pd-library, which is based on `iemmatrix` Pd-library.
