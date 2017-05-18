@@ -1,0 +1,120 @@
+<!DOCTYPE patchbay>
+<patchbay version="0.4.4" name="jack_binaural">
+ <output-sockets>
+  <socket client="system" name="system" type="jack-audio" exclusive="off">
+   <plug>capture_1</plug>
+   <plug>capture_2</plug>
+  </socket>
+  <socket client="PulseAudio JACK Sink" name="PulseAudio JACK Sink" type="jack-audio" exclusive="off">
+   <plug>front-left</plug>
+   <plug>front-right</plug>
+  </socket>
+  <socket client="PulseAudio JACK Sink-01" name="PulseAudio JACK Sink-01" type="jack-audio" exclusive="off">
+   <plug>front-left</plug>
+   <plug>front-right</plug>
+   <plug>rear-left</plug>
+   <plug>rear-right</plug>
+  </socket>
+  <socket client="ambix_binaural_standalone_o5" name="ambix_binaural_standalone_o5" type="jack-audio" exclusive="off">
+   <plug>out_1</plug>
+   <plug>out_2</plug>
+  </socket>
+  <socket client="Midi Through" name="Midi Through" type="alsa-midi" exclusive="off">
+   <plug>Midi Through Port-0</plug>
+  </socket>
+  <socket client="Pd-mixer3D3O" name="Pd-stereo" type="jack-audio" exclusive="off">
+   <plug>output0</plug>
+   <plug>output1</plug>
+  </socket>
+  <socket client="Pd-mixer3D3O" name="Pd-Mon" type="jack-audio" exclusive="off">
+   <plug>output19</plug>
+  </socket>
+  <socket client="Pd-mixer3D3O" name="Pd-Ambisonics" type="jack-audio" exclusive="off">
+   <plug>output2</plug>
+   <plug>output3</plug>
+   <plug>output4</plug>
+   <plug>output5</plug>
+   <plug>output6</plug>
+   <plug>output7</plug>
+   <plug>output8</plug>
+   <plug>output9</plug>
+   <plug>output10</plug>
+   <plug>output11</plug>
+   <plug>output12</plug>
+   <plug>output13</plug>
+   <plug>output14</plug>
+   <plug>output15</plug>
+   <plug>output16</plug>
+   <plug>output17</plug>
+  </socket>
+ </output-sockets>
+ <input-sockets>
+  <socket client="system" name="system" type="jack-audio" exclusive="off">
+   <plug>playback_1</plug>
+   <plug>playback_2</plug>
+   <plug>playback_3</plug>
+   <plug>playback_4</plug>
+  </socket>
+  <socket client="PulseAudio JACK Source" name="PulseAudio JACK Source" type="jack-audio" exclusive="off">
+   <plug>front-left</plug>
+   <plug>front-right</plug>
+  </socket>
+  <socket client="PulseAudio JACK Source-01" name="PulseAudio JACK Source-01" type="jack-audio" exclusive="off">
+   <plug>front-left</plug>
+   <plug>front-right</plug>
+  </socket>
+  <socket client="ambix_binaural_standalone_o5" name="ambix_binaural_standalone_o5" type="jack-audio" exclusive="off">
+   <plug>in_1</plug>
+   <plug>in_2</plug>
+   <plug>in_3</plug>
+   <plug>in_4</plug>
+   <plug>in_5</plug>
+   <plug>in_6</plug>
+   <plug>in_7</plug>
+   <plug>in_8</plug>
+   <plug>in_9</plug>
+   <plug>in_10</plug>
+   <plug>in_11</plug>
+   <plug>in_12</plug>
+   <plug>in_13</plug>
+   <plug>in_14</plug>
+   <plug>in_15</plug>
+   <plug>in_16</plug>
+   <plug>in_17</plug>
+   <plug>in_18</plug>
+   <plug>in_19</plug>
+   <plug>in_20</plug>
+   <plug>in_21</plug>
+   <plug>in_22</plug>
+   <plug>in_23</plug>
+   <plug>in_24</plug>
+   <plug>in_25</plug>
+   <plug>in_26</plug>
+   <plug>in_27</plug>
+   <plug>in_28</plug>
+   <plug>in_29</plug>
+   <plug>in_30</plug>
+   <plug>in_31</plug>
+   <plug>in_32</plug>
+   <plug>in_33</plug>
+   <plug>in_34</plug>
+   <plug>in_35</plug>
+   <plug>in_36</plug>
+  </socket>
+  <socket client="Midi Through" name="Midi Through" type="alsa-midi" exclusive="off">
+   <plug>Midi Through Port-0</plug>
+  </socket>
+ </input-sockets>
+ <slots/>
+ <cables>
+  <cable output="system" type="jack-audio" input="PulseAudio JACK Source-01"/>
+  <cable output="system" type="jack-audio" input="PulseAudio JACK Source"/>
+  <cable output="PulseAudio JACK Sink" type="jack-audio" input="system"/>
+  <cable output="PulseAudio JACK Sink-01" type="jack-audio" input="system"/>
+  <cable output="ambix_binaural_standalone_o5" type="jack-audio" input="system"/>
+  <cable output="Pd-stereo" type="jack-audio" input="system"/>
+  <cable output="Pd-Ambisonics" type="jack-audio" input="ambix_binaural_standalone_o5"/>
+  <cable output="Pd-Mon" type="jack-audio" input="system"/>
+ </cables>
+</patchbay>
+
