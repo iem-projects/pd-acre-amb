@@ -1,0 +1,29 @@
+#N canvas 540 92 636 371 10;
+#X obj 101 101 cnv 15 98 98 empty empty dec_\$1 2 8 0 10 -233017 -66577
+0;
+#X text 108 28 spat/ctl <channel ID> <type>;
+#X text 96 266 Note: to extended with extra graphical GUIs;
+#X text 92 281 (c) GPL \, acre \, winfried ritsch;
+#X text 112 59 Spatial control interface 2D and 3D;
+#X obj 102 183 bng 15 250 50 0 \$1/print $/print print 17 7 0 10 -262130
+-1 -1;
+#X obj 102 165 bng 15 250 50 0 empty empty load 17 7 0 10 -13381 -1
+-1;
+#X obj 146 166 bng 15 250 50 0 empty empty reload 17 7 0 10 -13381
+-1 -1;
+#X obj 342 219 openpanel;
+#X obj 340 123 route bang;
+#X obj 361 193 symbol;
+#X obj 339 101 r \$1/filename;
+#X obj 342 240 s \$1/load;
+#X obj 103 144 nbx 3 14 -1e+37 1e+37 0 0 \$1/amb/n \$1/amb/n ins 0
+-8 0 10 -228856 -1 -1 0 256;
+#X obj 147 145 nbx 3 14 -1e+37 1e+37 0 0 \$1/channels \$1/channels
+outs 0 -8 0 10 -228856 -1 -1 0 256;
+#X connect 6 0 10 0;
+#X connect 7 0 12 0;
+#X connect 8 0 12 0;
+#X connect 9 1 10 1;
+#X connect 10 0 8 0;
+#X connect 11 0 9 0;
+#X coords 0 -1 1 1 100 100 2 100 100;
