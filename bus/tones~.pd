@@ -1,5 +1,5 @@
-#N canvas 898 421 464 307 10;
-#N canvas 575 372 450 300 init 1;
+#N canvas 649 382 464 307 10;
+#N canvas 575 372 450 300 init 0;
 #X obj 103 58 loadbang;
 #X obj 231 68 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -12,7 +12,7 @@
 #X restore 356 112 pd init;
 #X obj 276 134 switch~;
 #X obj 276 112 r \$1/on;
-#N canvas 1416 548 542 296 contruct-outs 0;
+#N canvas 1418 558 542 296 contruct-outs 0;
 #X msg 160 90 clear;
 #X obj 81 15 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -35,6 +35,8 @@
 #X obj 111 160 symbol \$3;
 #X obj 37 202 list append \$1;
 #X msg 37 222 obj 10 \$1 amb/bus/tones_osc~ \$3-\$2 \$4 \$2;
+#X obj 105 12 inlet;
+#X obj 77 43 s \$1/channels;
 #X connect 0 0 16 0;
 #X connect 1 0 6 0;
 #X connect 2 0 6 0;
@@ -44,6 +46,7 @@
 #X connect 4 0 15 0;
 #X connect 5 0 0 0;
 #X connect 6 0 7 0;
+#X connect 6 0 22 0;
 #X connect 7 0 8 0;
 #X connect 7 1 0 0;
 #X connect 8 0 3 0;
@@ -56,72 +59,47 @@
 #X connect 18 0 15 2;
 #X connect 19 0 20 0;
 #X connect 20 0 17 0;
-#X restore 65 213 pd contruct-outs;
+#X connect 21 0 6 1;
+#X restore 65 199 pd contruct-outs;
 #X obj 79 156 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 175 191 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 175 177 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 194 191 clear before save !;
+#X text 194 177 clear before save !;
 #X obj 33 111 r /amb/businit;
 #X obj 174 106 max 1;
 #X text 97 159 reconstruct;
 #X obj 174 84 r \$1/channels;
 #X text 172 65 dyn set channel count;
 #X obj 33 150 t b b;
-#N canvas 220 397 362 521 \$0-dsp-tones 0;
-#X obj 10 20 amb/bus/tones_osc~ out-1 TEST 1;
-#X obj 10 40 amb/bus/tones_osc~ out-2 TEST 2;
-#X obj 10 60 amb/bus/tones_osc~ out-3 TEST 3;
-#X obj 10 80 amb/bus/tones_osc~ out-4 TEST 4;
-#X obj 10 100 amb/bus/tones_osc~ out-5 TEST 5;
-#X obj 10 120 amb/bus/tones_osc~ out-6 TEST 6;
-#X obj 10 140 amb/bus/tones_osc~ out-7 TEST 7;
-#X obj 10 160 amb/bus/tones_osc~ out-8 TEST 8;
-#X obj 10 180 amb/bus/tones_osc~ out-9 TEST 9;
-#X obj 10 200 amb/bus/tones_osc~ out-10 TEST 10;
-#X obj 10 220 amb/bus/tones_osc~ out-11 TEST 11;
-#X obj 10 240 amb/bus/tones_osc~ out-12 TEST 12;
-#X obj 10 260 amb/bus/tones_osc~ out-13 TEST 13;
-#X obj 10 280 amb/bus/tones_osc~ out-14 TEST 14;
-#X obj 10 300 amb/bus/tones_osc~ out-15 TEST 15;
-#X obj 10 320 amb/bus/tones_osc~ out-16 TEST 16;
-#X obj 10 340 amb/bus/tones_osc~ out-17 TEST 17;
-#X obj 10 360 amb/bus/tones_osc~ out-18 TEST 18;
-#X obj 10 380 amb/bus/tones_osc~ out-19 TEST 19;
-#X obj 10 400 amb/bus/tones_osc~ out-20 TEST 20;
-#X obj 10 420 amb/bus/tones_osc~ out-21 TEST 21;
-#X obj 10 440 amb/bus/tones_osc~ out-22 TEST 22;
-#X obj 10 460 amb/bus/tones_osc~ out-23 TEST 23;
-#X obj 10 480 amb/bus/tones_osc~ out-24 TEST 24;
-#X obj 10 500 amb/bus/tones_osc~ out-25 TEST 25;
-#X obj 10 520 amb/bus/tones_osc~ out-26 TEST 26;
-#X obj 10 540 amb/bus/tones_osc~ out-27 TEST 27;
-#X obj 10 560 amb/bus/tones_osc~ out-28 TEST 28;
-#X obj 10 580 amb/bus/tones_osc~ out-29 TEST 29;
-#X obj 10 600 amb/bus/tones_osc~ out-30 TEST 30;
-#X obj 10 620 amb/bus/tones_osc~ out-31 TEST 31;
-#X obj 10 640 amb/bus/tones_osc~ out-32 TEST 32;
-#X obj 10 660 amb/bus/tones_osc~ out-33 TEST 33;
-#X obj 10 680 amb/bus/tones_osc~ out-34 TEST 34;
-#X obj 10 700 amb/bus/tones_osc~ out-35 TEST 35;
+#N canvas 223 493 362 521 \$0-dsp-tones 0;
 #X restore 33 83 pd \$0-dsp-tones;
 #X text 36 7 mxr/test/tones~ <id> <nr channels> <out receives>;
-#N canvas 718 674 450 300 init 0;
+#N canvas 722 694 450 300 init 0;
 #X obj 231 61 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X msg 103 107 \; \$1/pulse/on 0 \; \$1/pulse/time 500 \; \$1/sel 0
-\; \$1/pitch 40 \; \$1/vol 60;
 #X obj 103 85 list append \$1;
 #X obj 103 58 inlet;
-#X connect 0 0 2 0;
+#X msg 103 107 \; \$1/pulse/on 0 \; \$1/pulse/time 500 \; \$1/sel 0
+\; \$1/pitch 40 \; \$1/vol 60 \; \$1/pitch/step 1;
+#X connect 0 0 1 0;
+#X connect 1 0 3 0;
 #X connect 2 0 1 0;
-#X connect 3 0 2 0;
-#X restore 34 240 pd init;
+#X restore 31 274 pd init;
+#X obj 43 248 s \$1/outname;
+#X obj 344 167 loadbang;
+#X obj 344 189 symbol 3;
+#X obj 344 211 s \$1/outname;
+#X obj 43 226 symbol \$3;
 #X connect 2 0 1 0;
 #X connect 4 0 12 0;
-#X connect 5 0 3 1;
+#X connect 5 0 3 2;
 #X connect 7 0 12 0;
-#X connect 8 0 3 0;
+#X connect 8 0 3 1;
 #X connect 10 0 8 0;
 #X connect 12 0 15 0;
+#X connect 12 0 20 0;
 #X connect 12 1 3 0;
+#X connect 17 0 18 0;
+#X connect 18 0 19 0;
+#X connect 20 0 16 0;

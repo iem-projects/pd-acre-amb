@@ -1,4 +1,4 @@
-#N canvas 1119 576 599 439 10;
+#N canvas 1121 586 599 439 10;
 #X obj 401 100 bng 15 250 50 0 empty empty clear 17 7 0 10 -262144
 -1 -1;
 #X text 356 89 before save !;
@@ -28,7 +28,7 @@
 #X obj 37 469 s pd-\$0-player;
 #X obj 362 548 s pd-\$0-player;
 #X obj 220 88 s pd-\$0-player;
-#X msg 378 287 obj 10 30 readsf~ 16 \, f 32;
+#X msg 378 287 obj 10 30 readsf~ 36 \, f 72;
 #X msg 7 15 24;
 #X obj 379 207 t b f f;
 #X obj 442 209 * 2;
@@ -46,7 +46,7 @@
 #X msg 406 392 add2 200;
 #X obj 209 358 + 90;
 #X msg 393 423 obj 10 60 multiline~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-200;
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 200;
 #X msg 442 332 set obj 10 60 multiline~;
 #X msg 37 438 connect 5 \$1 \$2 0 \, connect 4 \$1 5 \$1;
 #X obj 70 319 + 6;
@@ -117,7 +117,7 @@ obj 175 5 throw~ \$1-ch1;
 #X obj 425 70 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 30 226 s \$0-player;
-#N canvas 611 57 594 992 \$0-player 0;
+#N canvas 613 58 594 995 \$0-player 0;
 #X restore 30 56 pd \$0-player;
 #X obj 118 153 openpanel;
 #X obj 30 126 t b b;
@@ -125,7 +125,7 @@ obj 175 5 throw~ \$1-ch1;
 #X obj 30 104 sel 1 0;
 #X msg 67 161 0;
 #X obj 30 248 r \$0-fromplayer;
-#X text 39 5 amb/player~ <id> <channels> <bus ID>;
+#X text 30 5 amb/player~ <id> <channels> <bus ID>;
 #X obj 299 92 f \$2;
 #X obj 300 40 inlet channels;
 #X text 43 322 not ready to play;
@@ -134,7 +134,7 @@ obj 175 5 throw~ \$1-ch1;
 #X text 250 173 bang for preload;
 #X text 39 385 (c) GPL \, acre - winfried ritsch;
 #X obj 389 218 switch~;
-#N canvas 6 146 250 273 on+gain 0;
+#N canvas 7 178 250 273 on+gain 0;
 #X obj 37 64 t b b;
 #X msg 67 84 0;
 #X msg 37 154 0;
@@ -189,8 +189,8 @@ obj 175 5 throw~ \$1-ch1;
 #X obj 184 319 s \$1/play;
 #X obj 273 233 r \$1/loop;
 #X text 234 283 Loop;
-#X text 191 339 Note: first simple implementation...;
-#X text 185 360 TODO: filename storage \, playlist;
+#X text 182 341 Note: first simple implementation...;
+#X text 182 357 TODO: filename storage \, playlist;
 #X obj 479 290 catch~ \$0-ch1;
 #X text 476 248 dummy throw;
 #X obj 479 268 throw~ \$0-ch1;

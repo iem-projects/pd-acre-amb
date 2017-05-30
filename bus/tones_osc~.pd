@@ -1,4 +1,4 @@
-#N canvas 811 428 464 476 10;
+#N canvas 814 443 421 476 10;
 #X obj 57 261 mux~ . . .;
 #X obj 27 172 noise~;
 #X obj 29 134 osc~ 220;
@@ -32,6 +32,8 @@
 #X obj 31 50 r \$2/pitch;
 #X obj 106 305 r \$2/vol;
 #X obj 58 214 r \$2/sel;
+#X obj 127 78 * \$3;
+#X obj 127 56 r \$2/pitch/step;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
 #X connect 2 0 0 1;
@@ -64,3 +66,5 @@
 #X connect 29 0 24 0;
 #X connect 30 0 19 0;
 #X connect 31 0 0 0;
+#X connect 32 0 24 1;
+#X connect 33 0 32 0;

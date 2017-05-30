@@ -1,0 +1,13 @@
+#N canvas 545 117 499 289 10;
+#X obj 101 101 cnv 15 98 48 empty empty dec_\$1 2 8 0 10 -233017 -66577
+0;
+#X text 98 237 Note: to extended with extra graphical GUIs;
+#X text 94 252 (c) GPL \, acre \, winfried ritsch;
+#X obj 166 108 nbx 3 10 -1e+37 1e+37 0 0 \$1/channels \$1/channels
+x 0 -4 0 8 -228856 -1 -1 36 256;
+#X text 108 28 amb/decoder/blur_ctl <ID>;
+#X obj 179 128 tgl 15 0 \$1/verbose \$1/verbose v 5 7 0 10 -257985
+-1 -1 1 1;
+#X obj 105 131 nbx 5 14 0 100 0 0 \$1/blur \$1/blur blur 0 -8 0 10
+-262144 -1 -1 100 256;
+#X coords 0 -1 1 1 100 50 2 100 100;

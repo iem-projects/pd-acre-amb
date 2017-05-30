@@ -1,4 +1,4 @@
-#N canvas 805 105 409 470 10;
+#N canvas 808 120 409 470 10;
 #X obj 45 36 inlet;
 #X obj 50 433 outlet;
 #X obj 45 58 min 1;
@@ -6,7 +6,7 @@
 #X text 55 98 0..1;
 #X text 88 57 list of weights dependend on order from 0 to 1;
 #X text 65 8 amb/weight <ch.id> <dimen> <order>;
-#N canvas 0 446 1305 471 weight-tables 0;
+#N canvas 7 466 1305 471 weight-tables 1;
 #N canvas 3 52 450 250 (subpatch) 0;
 #X array \$0-weight-1 101 float 3;
 #A 0 0 0.000248164 0.000989497 0.00222325 0.00394824 0.0061627 0.00886452
@@ -99,7 +99,7 @@
 #X obj 162 108 array set \$0-weight-4;
 #X obj 204 83 array set \$0-weight-5;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array \$0-weight-5 100 float 3;
+#X array \$0-weight-5 101 float 3;
 #A 0 0 9.41225e-19 9.48575e-16 5.43181e-14 9.59442e-13 8.88907e-12
 5.47364e-11 2.54167e-10 9.59675e-10 3.09341e-09 8.7997e-09 2.26214e-08
 5.348e-08 1.17829e-07 2.44451e-07 4.81465e-07 9.06233e-07 1.63893e-06
@@ -114,7 +114,7 @@
 0.395485 0.423924 0.453079 0.482842 0.513092 0.543703 0.574537 0.605447
 0.636283 0.666885 0.697092 0.726737 0.755653 0.783672 0.810626 0.836353
 0.860693 0.883492 0.904604 0.923891 0.941228 0.956498 0.969599 0.980443
-0.988955 0.995077 0.998767;
+0.988955 0.995077 0.998767 1;
 #X coords 0 1 100 0 200 140 1 0 0;
 #X restore 898 229 graph;
 #X msg 707 116 \; \$2-weight-\$1 resize 101 \; \$2-weight-\$1 bounds
@@ -149,20 +149,15 @@ ylabel -0 0 0.2 0.4 0.6 0.8 1 \;;
 #X restore 141 109 pd weight-tables;
 #X obj 45 176 * 100;
 #X obj 70 243 tabread \$0-weight-1;
-#X obj 50 366 pack 1 1 1 1 1 1 1;
 #X msg 45 221 1;
 #X obj 45 198 t b f f f f f;
-#X obj 91 266 tabread \$0-weight-1;
-#X obj 111 292 tabread \$0-weight-1;
-#X obj 132 315 tabread \$0-weight-1;
-#X obj 152 335 tabread \$0-weight-1;
 #X obj 49 405 list split 5;
 #X obj 221 403 i \$3;
 #X obj 221 425 + 1;
 #X obj 226 369 loadbang;
 #X obj 279 406 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#N canvas 1223 217 450 634 calc-tables 0;
+#N canvas 1225 227 450 634 calc-tables 1;
 #X obj 65 182 + 1;
 #X obj 86 271 pow 2;
 #X obj 65 156 cos;
@@ -205,17 +200,15 @@ ylabel -0 0 0.2 0.4 0.6 0.8 1 \;;
 #X connect 14 0 15 0;
 #X connect 16 0 5 4;
 #X restore 141 87 pd calc-tables;
-#N canvas 768 406 493 343 tablestorage 1;
+#N canvas 683 491 466 343 tablestorage 1;
 #X obj 54 248 acre/count_until;
 #X obj 55 274 pack 0 \$0;
 #X obj 54 203 i \$3;
-#X obj 54 225 + 1;
 #X obj 53 182 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 53 87 acre/count_until;
 #X obj 53 113 pack 0 \$0;
 #X obj 53 42 i \$3;
-#X obj 53 64 + 1;
 #X obj 90 44 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 53 19 loadbang;
@@ -223,38 +216,45 @@ ylabel -0 0 0.2 0.4 0.6 0.8 1 \;;
 #X text 111 45 default try to load from somewhere in the pathes;
 #X msg 53 137 \; \$2-weight-\$1 read ../data/weight-\$1.txt;
 #X msg 57 303 \; \$2-weight-\$1 write ../data/weight-\$1.txt;
+#X obj 53 64 + 0;
+#X obj 54 225 + 0;
 #X connect 0 0 1 0;
-#X connect 1 0 14 0;
-#X connect 2 0 3 0;
-#X connect 3 0 0 0;
-#X connect 4 0 2 0;
-#X connect 5 0 6 0;
+#X connect 1 0 12 0;
+#X connect 2 0 14 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 5 0 11 0;
 #X connect 6 0 13 0;
-#X connect 7 0 8 0;
-#X connect 8 0 5 0;
-#X connect 9 0 7 0;
-#X connect 10 0 7 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 13 0 4 0;
+#X connect 14 0 0 0;
 #X restore 138 148 pd tablestorage;
+#X obj 91 266 tabread \$0-weight-2;
+#X obj 111 292 tabread \$0-weight-3;
+#X obj 132 315 tabread \$0-weight-4;
+#X obj 152 335 tabread \$0-weight-5;
+#X obj 50 366 pack 1 1 1 1 1 1;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 8 0;
-#X connect 8 0 12 0;
-#X connect 9 0 10 1;
-#X connect 10 0 17 0;
+#X connect 8 0 11 0;
+#X connect 9 0 23 1;
+#X connect 10 0 23 0;
 #X connect 11 0 10 0;
-#X connect 12 0 11 0;
-#X connect 12 1 9 0;
-#X connect 12 2 13 0;
-#X connect 12 3 14 0;
-#X connect 12 4 15 0;
-#X connect 12 5 16 0;
-#X connect 13 0 10 2;
-#X connect 14 0 10 3;
-#X connect 15 0 10 4;
-#X connect 16 0 10 5;
-#X connect 17 0 1 0;
-#X connect 18 0 19 0;
-#X connect 19 0 17 1;
-#X connect 20 0 18 0;
-#X connect 21 0 18 0;
-#X connect 22 0 7 0;
+#X connect 11 1 9 0;
+#X connect 11 2 19 0;
+#X connect 11 3 20 0;
+#X connect 11 4 21 0;
+#X connect 11 5 22 0;
+#X connect 12 0 1 0;
+#X connect 13 0 14 0;
+#X connect 14 0 12 1;
+#X connect 15 0 13 0;
+#X connect 16 0 13 0;
+#X connect 17 0 7 0;
+#X connect 19 0 23 2;
+#X connect 20 0 23 3;
+#X connect 21 0 23 4;
+#X connect 22 0 23 5;
+#X connect 23 0 12 0;
