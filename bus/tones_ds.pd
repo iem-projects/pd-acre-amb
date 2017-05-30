@@ -1,6 +1,5 @@
-#N canvas 757 361 450 300 10;
+#N canvas 758 366 450 300 10;
 #X text 38 6 mxr/test/tones_ds <domain <id>;
-#X obj 38 85 ds/register_map \$1 \$2/freq;
 #X obj 40 112 ds/register_map \$1 \$2/sel;
 #X obj 42 136 ds/register_map \$1 \$2/mute;
 #X obj 42 166 ds/register_map \$1 \$2/vol;
@@ -10,3 +9,4 @@
 #X text 34 52 should not be stored by default;
 #X text 230 35 copy to your patch an uncomment;
 #X text 40 254 (c) GPL \, acre winfried ritsch;
+#X obj 38 85 ds/register_map \$1 \$2/pitch;

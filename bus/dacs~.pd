@@ -1,4 +1,4 @@
-#N canvas 1508 449 468 233 10;
+#N canvas 1509 454 468 233 10;
 #N canvas 565 343 535 403 contruct-dacs 0;
 #X msg 168 93 clear;
 #X obj 41 117 t b f f f;
@@ -115,7 +115,7 @@
 #X obj 16 54 r /amb/businit;
 #X obj 77 116 max 1;
 #X text 123 119 dyn set nr of channels;
-#N canvas 340 140 680 239 \$0-dacs 1;
+#N canvas 340 140 680 239 \$0-dacs 0;
 #X restore 17 30 pd \$0-dacs;
 #X text 51 71 reconstruct;
 #X obj 77 94 r \$1/number;

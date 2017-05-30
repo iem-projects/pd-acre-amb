@@ -1,7 +1,7 @@
-#N canvas 818 417 514 317 10;
+#N canvas 819 422 514 317 10;
 #X text 86 24 (c) GPL \, acre - winfried ritsch;
-#N canvas 136 475 721 259 \$0-gui 1;
-#X text 0 10 AMBI;
+#N canvas 137 480 721 259 \$0-gui 1;
+#X text 0 10 out;
 #X coords 48 85 770 225 0 0 0;
 #X restore 195 110 pd \$0-gui;
 #N canvas 955 443 407 291 contruct-outs 0;
