@@ -1,0 +1,56 @@
+#N canvas 1325 359 450 330 10;
+#X obj 145 216 list split 1;
+#X obj 15 127 until;
+#X obj 145 189 list append;
+#X obj 15 96 t b l b;
+#X obj 15 209 i 0;
+#X obj 53 211 + 1;
+#X obj 15 149 t b b;
+#X obj 79 249 * 2;
+#X obj 79 271 + 1;
+#X msg 107 126 0;
+#X obj 11 76 inlet;
+#X obj 77 294 outlet channels;
+#X obj 203 274 outlet arg;
+#X obj 290 274 outlet end;
+#X obj 290 218 t b b;
+#X text 116 241 each order: (n+1)²-n²=n²+2n+1-n²=2n+1 channels
+;
+#X text 15 13 amb/foreach_order;
+#X text 52 77 <list of argument for each order>;
+#X text 10 29 calculates the channel count for each order out of an
+klist of arguments for each order \, e.g. 1 0.5 0.25 for 3rd order
+decreasing;
+#X text 15 317 part of acre/amb library (c) GPL \, winfried ritsch
+;
+#X obj 6 296 outlet i;
+#X obj 19 234 t f f;
+#X obj 15 182 spigot 1;
+#X msg 182 153 0;
+#X msg 74 126 1;
+#X connect 0 0 12 0;
+#X connect 0 1 2 1;
+#X connect 0 2 14 0;
+#X connect 1 0 6 0;
+#X connect 2 0 0 0;
+#X connect 3 0 1 0;
+#X connect 3 1 2 1;
+#X connect 3 2 9 0;
+#X connect 3 2 24 0;
+#X connect 4 0 5 0;
+#X connect 4 0 21 0;
+#X connect 5 0 4 1;
+#X connect 6 0 22 0;
+#X connect 6 1 2 0;
+#X connect 7 0 8 0;
+#X connect 8 0 11 0;
+#X connect 9 0 4 1;
+#X connect 10 0 3 0;
+#X connect 14 0 13 0;
+#X connect 14 1 1 1;
+#X connect 14 1 23 0;
+#X connect 21 0 20 0;
+#X connect 21 1 7 0;
+#X connect 22 0 4 0;
+#X connect 23 0 22 1;
+#X connect 24 0 22 1;

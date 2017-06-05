@@ -1,4 +1,4 @@
-#N canvas 248 199 868 417 10;
+#N canvas 250 209 868 417 10;
 #X obj 38 175 textfile;
 #X obj 38 199 list split 1;
 #X msg 59 136 rewind, f 7;
@@ -26,16 +26,17 @@ add 10 1 0.978228 0.935394 0.872895 0.792762 0.697587 0.590427 0.474702
 #X obj 38 82 t b b f;
 #X obj 38 297 list;
 #X obj 38 321 outlet;
-#X obj 28 362 liststorage;
-#X text 36 31 get maxre out of order;
 #X text 83 59 order;
 #X obj 79 277 s \$0-maxre;
-#X text 275 361 maxre for spheres is taken from algorithmus;
 #X text 356 18 apply or reciprocal apply spherical max_re weighting
 to suppress sidelobes according to Zotter \, Frank "All-Round Ambisonic
 Panning and Decoding";
 #X text 41 6 amb/maxre;
-#X text 28 385 from zexy: not documented so not used;
+#X text 278 322 maxre for spheres is calculated from algorithmn see
+papers...;
+#X text 36 31 get maxre out of order max 11th;
+#X text 45 357 part of acre/amb library (c) GPL \, winfried ritschh
+;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X connect 1 1 12 1;
@@ -46,7 +47,7 @@ Panning and Decoding";
 #X connect 6 0 5 0;
 #X connect 7 0 6 0;
 #X connect 8 0 6 0;
-#X connect 9 0 17 0;
+#X connect 9 0 15 0;
 #X connect 10 0 11 0;
 #X connect 11 0 0 0;
 #X connect 11 1 2 0;

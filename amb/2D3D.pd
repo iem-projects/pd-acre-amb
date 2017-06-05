@@ -1,4 +1,4 @@
-#N canvas 630 167 450 300 10;
+#N canvas 631 172 450 300 10;
 #X obj 98 93 loadbang;
 #X obj 49 120 symbol \$2;
 #X obj 47 168 route 2D;
@@ -12,7 +12,6 @@
 #X text 47 52 discriminate arg 2D and 3D type on loadbang and bang
 input;
 #X text 48 31 amb/amb/2D3D <type>;
-#X text 44 252 comment;
 #X connect 0 0 1 0;
 #X connect 1 0 5 0;
 #X connect 2 0 3 0;
