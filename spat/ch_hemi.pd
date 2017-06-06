@@ -1,4 +1,4 @@
-#N canvas 550 126 608 463 10;
+#N canvas 553 141 608 463 10;
 #X obj 31 31 cnv 15 98 98 empty empty \$1 2 7 0 8 -233017 -66577 0
 ;
 #X obj 34 139 s \$0_sphere_fromgui;
@@ -31,10 +31,8 @@
 #X msg 199 301 src_dp 1 \$1 \$2;
 #X obj 413 241 + 4;
 #X obj 413 219 * 0.7;
-#X text 183 10 amb/spat/sphere <id> [type optional];
-#X text 59 382 Note on 3D the fonz size is distance;
 #X obj 92 30 nbx 4 14 0 1 0 0 \$1/dist \$1/dist dist -20 8 0 8 -262144
--1 -1 1 256;
+-1 -1 0 256;
 #X text 63 406 (c) GPL \, acre winfried ritsch;
 #X obj 460 219 * 0.8;
 #X obj 458 242 + 4;
@@ -50,6 +48,8 @@
 #X connect 4 0 0 0;
 #X connect 5 0 4 0;
 #X restore 36 234 pd configure;
+#X text 183 10 amb/spat/ch_hemi <id> [type optional];
+#X text 59 382 Note on 3D the font size shows distance;
 #X connect 2 0 6 0;
 #X connect 6 0 1 0;
 #X connect 7 0 8 0;
@@ -69,13 +69,13 @@
 #X connect 22 0 25 0;
 #X connect 24 0 23 0;
 #X connect 25 0 30 0;
-#X connect 25 0 35 0;
+#X connect 25 0 33 0;
 #X connect 26 0 15 0;
 #X connect 27 0 26 0;
 #X connect 27 1 26 1;
 #X connect 28 0 16 0;
 #X connect 29 0 27 0;
 #X connect 30 0 29 0;
-#X connect 35 0 36 0;
-#X connect 36 0 24 0;
+#X connect 33 0 34 0;
+#X connect 34 0 24 0;
 #X coords 0 -1 1 1 100 100 2 30 30;
