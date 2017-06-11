@@ -1,4 +1,4 @@
-#N canvas 912 146 450 300 10;
+#N canvas 914 156 450 300 10;
 #X obj 39 122 abs/rev_parameter_ds \$1 \$2;
 #X text 32 24 Parameter for RRR;
 #X obj 39 144 abs/eq_ds \$1 \$2;

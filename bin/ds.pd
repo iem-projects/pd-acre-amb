@@ -1,0 +1,5 @@
+#N canvas 915 161 450 300 10;
+#X obj 39 63 ds/register_map \$1 \$2/on;
+#X text 38 130 (c) GPL \, acre winfried ritsch;
+#X text 37 6 amb/bin/ds <domain> <id>;
+#X obj 38 86 ds/register_map \$1 \$2/gain;

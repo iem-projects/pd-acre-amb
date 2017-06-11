@@ -1,4 +1,4 @@
-#N canvas 553 141 608 463 10;
+#N canvas 554 146 608 463 10;
 #X obj 31 31 cnv 15 98 98 empty empty \$1 2 7 0 8 -233017 -66577 0
 ;
 #X obj 34 139 s \$0_sphere_fromgui;
@@ -31,7 +31,7 @@
 #X msg 199 301 src_dp 1 \$1 \$2;
 #X obj 413 241 + 4;
 #X obj 413 219 * 0.7;
-#X obj 92 30 nbx 4 14 0 1 0 0 \$1/dist \$1/dist dist -20 8 0 8 -262144
+#X obj 91 31 nbx 4 14 0 1 0 0 \$1/dist \$1/dist dist -20 8 0 8 -262144
 -1 -1 0 256;
 #X text 63 406 (c) GPL \, acre winfried ritsch;
 #X obj 460 219 * 0.8;
