@@ -1,4 +1,4 @@
-#N canvas 783 241 554 162 10;
+#N canvas 786 254 554 162 10;
 #N canvas 438 138 621 474 contruct-buses 0;
 #X msg 173 71 clear;
 #X obj 38 5 inlet;

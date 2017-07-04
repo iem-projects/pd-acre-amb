@@ -1,4 +1,4 @@
-#N canvas 232 58 746 514 10;
+#N canvas 235 71 746 514 10;
 #X declare -lib iem_bin_ambi;
 #X declare -lib iem_spec2;
 #X obj 28 265 abs/bin_ambi_decode_4o_3d_32ls_fft~ 256 ____________
@@ -56,6 +56,7 @@
 #X obj 462 345 prvu~;
 #X obj 462 367 s \$1/vu2;
 #X obj 93 305 r \$1/gain;
+#X text 143 10 amb/bin/dsp~ <ID> <Ambisonicsbus>;
 #X connect 0 0 7 0;
 #X connect 0 0 49 0;
 #X connect 0 1 7 1;
