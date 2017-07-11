@@ -1,0 +1,113 @@
+#N canvas 263 66 825 642 10;
+#X declare -path . -path abs -path data;
+#X declare -path libs;
+#X declare -lib zexy;
+#X declare -lib iemmatrix/mtx_mul~;
+#X declare -lib iemmatrix/mtx_add;
+#X declare -lib iemmatrix/mtx_mul;
+#X declare -lib iemmatrix/mtx_0x210x3d;
+#X declare -lib iemmatrix/mtx_0x21;
+#X declare -lib iemmatrix/mtx_0x260x26;
+#X declare -lib iemmatrix/mtx_0x26;
+#X declare -lib iemmatrix/mtx_0x2a0x7e;
+#X declare -lib iemmatrix/mtx_0x2a;
+#X declare -lib iemmatrix/mtx_0x2b;
+#X declare -lib iemmatrix/mtx_0x2d;
+#X declare -lib iemmatrix/mtx_0x2e0x2a;
+#X declare -lib iemmatrix/mtx_0x2e0x2f;
+#X declare -lib iemmatrix/mtx_0x2e0x5e;
+#X declare -lib iemmatrix/mtx_0x2f;
+#X declare -lib iemmatrix/mtx_0x3a;
+#X declare -lib iemmatrix/mtx_0x3c0x3c;
+#X declare -lib iemmatrix/mtx_0x3c0x3d;
+#X declare -lib iemmatrix/mtx_0x3c;
+#X declare -lib iemmatrix/mtx_0x3d0x3d;
+#X declare -lib iemmatrix/mtx_0x3e0x3d;
+#X declare -lib iemmatrix/mtx_0x3e0x3e;
+#X declare -lib iemmatrix/mtx_0x3e;
+#X declare -lib iemmatrix/mtx_0x7c0x7c;
+#X declare -lib iemmatrix/mtx_0x7c;
+#X declare -lib iem_bin_ambi;
+#X declare -lib iem_ambi;
+#X declare -lib iemmatrix;
+#X declare -path libs/iemlib -stdpath iemlib;
+#X declare -lib iemlib/iemlib1 -lib iemlib/iemlib2;
+#X declare -path libs/iemmatrix -stdpath iemmatrix;
+#X declare -path libs/iem_ambi -stdpath iem_ambi;
+#X declare -path libs/acre -stdpath acre;
+#X declare -path libs/iem_bin_ambi -stdpath iem_bin_ambi;
+#X declare -path libs/iem_spec2 -stdpath iem_spec2;
+#X declare -lib iem_spec2;
+#X obj 31 155 declare -path . -path abs -path data;
+#X obj 31 175 declare -path libs;
+#X obj 404 299 declare -lib zexy;
+#N canvas 659 253 424 343 matrix_specialnames 0;
+#X obj 13 15 declare -lib iemmatrix/mtx_mul~;
+#X obj 13 35 declare -lib iemmatrix/mtx_add;
+#X obj 13 55 declare -lib iemmatrix/mtx_mul;
+#X obj 12 80 declare -lib iemmatrix/mtx_0x210x3d;
+#X obj 12 100 declare -lib iemmatrix/mtx_0x21;
+#X obj 12 120 declare -lib iemmatrix/mtx_0x260x26;
+#X obj 12 140 declare -lib iemmatrix/mtx_0x26;
+#X obj 12 160 declare -lib iemmatrix/mtx_0x2a0x7e;
+#X obj 12 180 declare -lib iemmatrix/mtx_0x2a;
+#X obj 12 200 declare -lib iemmatrix/mtx_0x2b;
+#X obj 12 220 declare -lib iemmatrix/mtx_0x2d;
+#X obj 12 240 declare -lib iemmatrix/mtx_0x2e0x2a;
+#X obj 12 260 declare -lib iemmatrix/mtx_0x2e0x2f;
+#X obj 12 280 declare -lib iemmatrix/mtx_0x2e0x5e;
+#X obj 12 300 declare -lib iemmatrix/mtx_0x2f;
+#X obj 42 380 declare -lib iemmatrix/mtx_0x3a;
+#X obj 42 400 declare -lib iemmatrix/mtx_0x3c0x3c;
+#X obj 42 420 declare -lib iemmatrix/mtx_0x3c0x3d;
+#X obj 42 440 declare -lib iemmatrix/mtx_0x3c;
+#X obj 42 480 declare -lib iemmatrix/mtx_0x3d0x3d;
+#X obj 42 500 declare -lib iemmatrix/mtx_0x3e0x3d;
+#X obj 42 520 declare -lib iemmatrix/mtx_0x3e0x3e;
+#X obj 42 540 declare -lib iemmatrix/mtx_0x3e;
+#X obj 42 580 declare -lib iemmatrix/mtx_0x7c0x7c;
+#X obj 42 600 declare -lib iemmatrix/mtx_0x7c;
+#X restore 555 365 pd matrix_specialnames;
+#X obj 411 456 declare -lib iem_bin_ambi;
+#X obj 384 416 declare -lib iem_ambi;
+#X text 295 153 project paths;
+#X text 172 176 project libnraries path;
+#X obj 387 366 declare -lib iemmatrix;
+#X obj 41 240 declare -path libs/iemlib -stdpath iemlib;
+#X obj 391 242 declare -lib iemlib/iemlib1 -lib iemlib/iemlib2;
+#X obj 27 363 declare -path libs/iemmatrix -stdpath iemmatrix;
+#X obj 24 416 declare -path libs/iem_ambi -stdpath iem_ambi;
+#X obj 31 541 declare -path libs/acre -stdpath acre;
+#X obj 27 456 declare -path libs/iem_bin_ambi -stdpath iem_bin_ambi
+;
+#X obj 28 477 declare -path libs/iem_spec2 -stdpath iem_spec2;
+#X obj 412 477 declare -lib iem_spec2;
+#N canvas 834 148 450 300 spec2_specialnames 0;
+#X obj 21 34 spec2_mul~;
+#X obj 23 54 spec2_add~;
+#X obj 22 78 spec2_sub~;
+#X obj 104 53 spec2_add_scalar~;
+#X obj 104 33 spec2_mul_scalar~;
+#X restore 578 477 pd spec2_specialnames;
+#X text 37 17 Collection of declare statements needed for dependencies
+;
+#X text 44 105 externals: first search local in libs \, second in system
+--- \, if installed there so both path are listed here;
+#X text 44 301 zexy set path itself \, dont know why ...;
+#X text 32 208 iemlib is oldest (and therefore sometimes outdated from
+path usage or names... but essential;
+#X text 29 274 Zexy \, second oldest \; -) from IEM.;
+#X text 29 334 IEM-Matrix new version (not iem-matrix !);
+#X text 384 338 Trick: if library is split in multiple lib files \,
+extended used to do this \, find names like *~ with specialnames,
+f 65;
+#X text 23 389 Ambilib was a first implementation of spherical harmonics
+calcs and usefull up to now.;
+#X text 21 438 for binaural tools an old binaural rendere needs iem_spec2
+;
+#X text 30 513 ACRE Library base (abstractions only until now);
+#X text 45 45 Declares should be in main patch file \, first loaded
+so do not use it as an abstraction \, since maybe it is loaded to late
+(at least fo Version 0.47.1) \, so copy these and paste in your patch
+;
+#X text 399 594 GPL \, acre \, IEM - winfried ritsch;
