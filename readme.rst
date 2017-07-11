@@ -8,7 +8,7 @@ Ambisonics Toolbox
 :Author: Winfried Ritsch
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
 :Copyright: winfried ritsch - IEM / algorythmics 2012+
-:Version: 0.74 development
+:Version: 0.80a development
 :git master repo: https://git.iem.at/pd/acre-amb
 
 

@@ -12,7 +12,18 @@ fi
 
 echo using PD=$PD
 
-# start pd with 18 channels out: 1,2= Stereo, 3-18 Ambisonics BUS, 19=SUB, 20=monitoring
-$PD -jack -jackname Pd-mixer3D3O -inchannels 2 -outchannels 20  mixer3D3O.pd
+# 18 channels in: 1,2 stereo in, 3-18 Ambisonics In see patch
+INCHANNELS=18
+# 20 channels out: 1,2= Stereo, 3-18 Ambisonics BUS, 19=SUB, 20=monitoring
+OUTCHANNELS=20
+
+
+$PD -jack -jackname Pd-mixer3D3O -inchannels $INCHANNELS -outchannels $OUTCHANNELS  mixer3D3O.pd
+
+if [ $? -ne 0 ]; then
+	echo try without jackname
+	$PD -jack -inchannels $INCHANNELS -outchannels $OUTCHANNELS  mixer3D3O.pd
+fi
+
 
 cd $calldir

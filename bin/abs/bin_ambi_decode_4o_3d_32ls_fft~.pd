@@ -1,4 +1,4 @@
-#N canvas 16 7 1012 718 10;
+#N canvas 16 79 1366 740 10;
 #X obj 31 535 outlet~;
 #X obj 161 534 outlet~;
 #X obj 29 35 inlet~;
@@ -137,7 +137,7 @@
 -1;
 #X obj 468 219 clip 0 100;
 #X obj 468 241 * 0.01;
-#X floatatom 464 196 5 0 100 0 - - -;
+#X floatatom 464 196 5 0 100 0 - - -, f 5;
 #X obj 287 544 init_fft_HRIR_fadeout_win \$0 HRIR_fadeout_win \$1;
 #X obj 287 588 create_HRTF_tables \$0 HRTF_re HRTF_im 25 \$1;
 #X obj 494 325 r \$0-table_init_ready;
@@ -149,45 +149,45 @@ HRTF_im \$1;
 #X obj 287 613 init_rect_win \$0_rect_win \$1;
 #X obj 287 566 create_HRIR_tables \$0 L_HRIR 32 \$1;
 #X text 500 566 real;
-#X msg 905 210 1 90 0;
-#X msg 814 359 32 -90 0;
-#X msg 925 232 2 \$1 0 \, 3 \$1 72 \, 4 \$1 144 \, 5 \$1 216 \, 6 \$1
+#X msg 976 210 1 90 0;
+#X msg 885 359 32 -90 0;
+#X msg 996 232 2 \$1 0 \, 3 \$1 72 \, 4 \$1 144 \, 5 \$1 216 \, 6 \$1
 288;
-#X msg 907 253 7 \$1 36 \, 8 \$1 108 \, 9 \$1 180 \, 10 \$1 252 \,
+#X msg 978 253 7 \$1 36 \, 8 \$1 108 \, 9 \$1 180 \, 10 \$1 252 \,
 11 \$1 324;
-#X msg 899 274 12 \$1 0 \, 13 \$1 72 \, 14 \$1 144 \, 15 \$1 216 \,
+#X msg 970 274 12 \$1 0 \, 13 \$1 72 \, 14 \$1 144 \, 15 \$1 216 \,
 16 \$1 288;
-#X msg 867 338 27 \$1 36 \, 28 \$1 108 \, 29 \$1 180 \, 30 \$1 252
+#X msg 938 338 27 \$1 36 \, 28 \$1 108 \, 29 \$1 180 \, 30 \$1 252
 \, 31 \$1 324;
-#X msg 867 316 22 \$1 0 \, 23 \$1 72 \, 24 \$1 144 \, 25 \$1 216 \,
+#X msg 938 316 22 \$1 0 \, 23 \$1 72 \, 24 \$1 144 \, 25 \$1 216 \,
 26 \$1 288;
-#X msg 892 295 17 \$1 36 \, 18 \$1 108 \, 19 \$1 180 \, 20 \$1 252
+#X msg 963 295 17 \$1 36 \, 18 \$1 108 \, 19 \$1 180 \, 20 \$1 252
 \, 21 \$1 324;
-#X msg 866 274 11.6;
-#X msg 853 295 -11.6;
-#X msg 827 338 -52.7;
-#X msg 892 232 52.7;
-#X msg 879 253 26;
-#X msg 840 316 -26;
-#X obj 712 189 t b b b b b b b b b b b b b b b b;
-#X msg 802 407 1 L90e000a.wav;
-#X obj 920 389 pack 0 0 0;
-#X obj 819 664 pack f s;
+#X msg 937 274 11.6;
+#X msg 924 295 -11.6;
+#X msg 898 338 -52.7;
+#X msg 963 232 52.7;
+#X msg 950 253 26;
+#X msg 911 316 -26;
+#X obj 783 189 t b b b b b b b b b b b b b b b b;
+#X msg 873 407 1 L90e000a.wav;
+#X obj 991 389 pack 0 0 0;
+#X obj 759 671 pack f s;
 #X obj 287 475 loadbang;
-#X msg 712 634 32 L-90e000a.wav;
+#X msg 783 634 32 L-90e000a.wav;
 #X obj 440 106 route ambi_weight mirror_weight HRIR_onset HRIR_pathname
 HRIR_length;
-#X msg 789 429 2 L53e000a.wav \, 3 L53e072a.wav \, 4 L53e144a.wav \,
+#X msg 860 429 2 L53e000a.wav \, 3 L53e072a.wav \, 4 L53e144a.wav \,
 5 L53e216a.wav \, 6 L53e288a.wav;
-#X msg 776 465 7 L26e036a.wav \, 8 L26e108a.wav \, 9 L26e180a.wav \,
+#X msg 847 465 7 L26e036a.wav \, 8 L26e108a.wav \, 9 L26e180a.wav \,
 10 L26e252a.wav \, 11 L26e324a.wav;
-#X msg 763 498 12 L12e000a.wav \, 13 L12e072a.wav \, 14 L12e144a.wav
+#X msg 834 498 12 L12e000a.wav \, 13 L12e072a.wav \, 14 L12e144a.wav
 \, 15 L12e216a.wav \, 16 L12e288a.wav;
-#X msg 750 532 17 L-12e036a.wav \, 18 L-12e108a.wav \, 19 L-12e180a.wav
+#X msg 821 532 17 L-12e036a.wav \, 18 L-12e108a.wav \, 19 L-12e180a.wav
 \, 20 L-12e252a.wav \, 21 L-12e324a.wav;
-#X msg 737 566 22 L-26e000a.wav \, 23 L-26e072a.wav \, 24 L-26e144a.wav
+#X msg 808 566 22 L-26e000a.wav \, 23 L-26e072a.wav \, 24 L-26e144a.wav
 \, 25 L-26e216a.wav \, 26 L-26e288a.wav;
-#X msg 724 600 27 L-53e036a.wav \, 28 L-53e108a.wav \, 29 L-53e180a.wav
+#X msg 795 600 27 L-53e036a.wav \, 28 L-53e108a.wav \, 29 L-53e180a.wav
 \, 30 L-53e252a.wav \, 31 L-53e324a.wav;
 #X obj 373 281 bin_ambi_reduced_decode_control_fft2 \$0 L_HRIR HRTF_re
 HRTF_im HRIR_fadeout_win Kemar_HRIR 20 4 3 32 0 \$1 2;
