@@ -88,7 +88,7 @@
 #X connect 37 0 10 3;
 #X connect 38 0 19 3;
 #X restore 207 116 pd contruct-buses;
-#N canvas 133 591 977 226 \$0-dsp-buses 1;
+#N canvas 133 591 977 226 \$0-dsp-buses 0;
 #X restore 40 89 pd \$0-dsp-buses;
 #X obj 349 115 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -98,12 +98,12 @@
 #X obj 321 65 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X text 338 65 reconstruct;
-#X text 32 9 amb/bus/bus~ <ID ambisonic bus> <nr channels> [channel
-offset], f 65;
 #X text 39 29 a bus is adding signals with catch~ to send them s~ with
 same name;
 #X obj 207 87 i \$2;
+#X text 32 9 amb/bus/bus~ <ID bus> <nr channels> [channel offset],
+f 65;
 #X connect 2 0 0 1;
-#X connect 4 0 10 0;
-#X connect 6 0 10 0;
-#X connect 10 0 0 0;
+#X connect 4 0 9 0;
+#X connect 6 0 9 0;
+#X connect 9 0 0 0;
