@@ -1,0 +1,5 @@
+#N canvas 759 371 450 131 10;
+#X text 45 92 (c) GPL \, acre winfried ritsch;
+#X obj 42 38 ds/register_map \$1 \$2/blur;
+#X text 38 6 amb/decoder/blur_ds <domain <id>;
+#X obj 40 59 ds/register_map \$1 \$2/on;

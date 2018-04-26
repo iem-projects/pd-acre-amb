@@ -1,5 +1,4 @@
 #N canvas 759 371 450 300 10;
-#X text 38 6 mxr/test/tones_ds <domain <id>;
 #X obj 40 133 ds/register_map \$1 \$2/sel;
 #X obj 42 159 ds/register_map \$1 \$2/mute;
 #X obj 42 179 ds/register_map \$1 \$2/vol;
@@ -11,3 +10,4 @@
 #X text 40 254 (c) GPL \, acre winfried ritsch;
 #X obj 38 85 ds/register_map \$1 \$2/pitch;
 #X obj 38 105 ds/register_map \$1 \$2/pitch/step;
+#X text 38 6 amb/bus/tones_ds <domain <id>;

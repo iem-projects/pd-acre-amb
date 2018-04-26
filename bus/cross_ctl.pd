@@ -1,0 +1,8 @@
+#N canvas 1139 568 356 330 10;
+#X obj 101 101 cnv 15 98 46 empty empty cross_\$1 1 7 0 10 -204800
+-66577 0;
+#X text 98 306 (c) GPL \, acre - winfried ritsch;
+#X text 90 20 amb/bus/cross_ctl <id/prefix>;
+#X obj 133 120 nbx 5 14 -1e+37 1e+37 0 0 \$1/freq \$1/freq ptch -25
+7 0 10 -262144 -1 -1 0 256;
+#X coords 0 -1 1 1 100 50 2 100 100;

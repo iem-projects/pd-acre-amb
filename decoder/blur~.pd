@@ -30,7 +30,7 @@
 #X obj 605 130 until;
 #X msg 605 161 add2 1;
 #X msg 585 198 add2 50;
-#X msg 565 229 obj 1210 120 multiline~ 1 1 1 1 1 1 1 1 1 1 1 50;
+#X msg 565 229 obj 730 120 multiline~ 1 1 1 1 1 1 1 50;
 #X obj 565 130 * 100;
 #X obj 565 77 t f b f f;
 #X obj 301 13 t l l l l;

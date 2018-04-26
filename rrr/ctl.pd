@@ -1,6 +1,6 @@
-#N canvas 810 123 552 250 10;
-#X text 184 38 open_close_EDIT;
-#X obj 187 18 abs/rrr_ctl \$1;
+#N canvas 810 123 524 258 10;
+#X text 126 79 open_close_EDIT;
+#X obj 129 62 abs/rrr_ctl \$1;
 #X obj 295 111 t f b;
 #X obj 293 131 pack f s;
 #X msg 293 153 \; \$2 vis \$1;
@@ -12,6 +12,9 @@
 #X obj 180 125 symbol \$1-EDIT;
 #X obj 10 10 abs/master_ctl \$1;
 #X obj 135 101 r \$1/vis;
+#X text 127 17 amb/rrr/ctl <ID>;
+#X text 126 33 RRR-Reverb with for 6 feeds \, 12 first reflections
+and \, 6 late reverbs;
 #X connect 2 0 3 0;
 #X connect 2 1 5 0;
 #X connect 3 0 4 0;

@@ -1,0 +1,16 @@
+#N canvas 702 234 408 245 10;
+#X text 11 212 (c) GPL - acre \, ritsch;
+#X obj 16 60 r~ \$1~;
+#X obj 65 182 s~ \$3~;
+#X obj 14 181 s~ \$2~;
+#X text 14 7 amb/cross~ <id>;
+#X obj 61 83 r \$4/freq;
+#X obj 16 106 lop~ 300;
+#X obj 33 147 -~;
+#X text 116 134 simple 1storder cross;
+#X connect 1 0 7 0;
+#X connect 1 0 6 0;
+#X connect 5 0 6 1;
+#X connect 6 0 3 0;
+#X connect 6 0 7 1;
+#X connect 7 0 2 0;

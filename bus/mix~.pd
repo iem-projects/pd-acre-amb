@@ -143,11 +143,10 @@
 #X connect 56 0 51 0;
 #X connect 57 0 18 1;
 #X restore 11 190 pd contruct-mix;
-#X text 18 23 Collects signals from s~ and mix in multi channel bus
-with throw~ with optional number offset and optional adc number offset.
-, f 76;
 #X text 13 1 amb/bus/mix~ <ID> <nr channels> <ID received signals>
 <Bus ID> [in offset] [bus offset], f 89;
+#X text 18 23 Collects signals from s~ and mix in multi channel bus
+with throw~ with optional number ins offset and outs., f 76;
 #X connect 0 0 10 0;
 #X connect 1 0 12 1;
 #X connect 3 0 10 0;
