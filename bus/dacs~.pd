@@ -1,5 +1,5 @@
 #N canvas 1509 454 468 233 10;
-#N canvas 565 343 535 403 contruct-dacs 0;
+#N canvas 565 343 535 403 contruct-dacs 1;
 #X msg 168 93 clear;
 #X obj 41 117 t b f f f;
 #X obj 87 17 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -50,6 +50,7 @@
 #X obj 252 136 - 1;
 #X obj 252 114 max 1;
 #X obj 254 191 + 0;
+#X obj 350 57 inlet offset;
 #X connect 0 0 39 0;
 #X connect 1 1 10 0;
 #X connect 1 2 5 0;
@@ -106,6 +107,7 @@
 #X connect 46 0 48 1;
 #X connect 47 0 46 0;
 #X connect 48 0 13 2;
+#X connect 49 0 45 0;
 #X restore 16 164 pd contruct-dacs;
 #X obj 31 74 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -113,9 +115,15 @@
 -1 -1;
 #X text 145 142 clear before save !;
 #X obj 16 54 r /amb/businit;
-#X obj 77 116 max 1;
+#X obj 77 112 max 1;
 #X text 123 119 dyn set nr of channels;
-#N canvas 340 140 680 239 \$0-dacs 0;
+#N canvas 340 140 680 239 \$0-dacs 1;
+#X obj 0 10 r~ mo-1~;
+#X obj 0 50 dac~ 7;
+#X obj 80 30 r~ mo-2~;
+#X obj 80 50 dac~ 8;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
 #X restore 17 30 pd \$0-dacs;
 #X text 51 71 reconstruct;
 #X obj 77 94 r \$1/number;
@@ -124,9 +132,17 @@
 #X obj 16 97 t b;
 #X text 13 1 amb/bus/dacs~ <ID> <nr channels> <ID out receives> [dac
 offset], f 63;
+#X obj 146 32 r \$1/offset;
+#X obj 146 53 t b f;
+#X obj 173 74 max 0;
+#X text 229 33 carefully \, since a reconstruct is done;
 #X connect 1 0 12 0;
 #X connect 2 0 0 1;
 #X connect 4 0 12 0;
 #X connect 5 0 0 0;
 #X connect 9 0 5 0;
 #X connect 12 0 0 0;
+#X connect 14 0 15 0;
+#X connect 15 0 1 0;
+#X connect 15 1 16 0;
+#X connect 16 0 0 2;

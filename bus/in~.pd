@@ -1,8 +1,8 @@
 #N canvas 279 464 518 264 10;
-#N canvas 396 459 327 132 init 0;
+#N canvas 396 513 327 132 init 0;
 #X msg 59 50 100;
 #X obj 59 29 loadbang;
-#X obj 59 73 s \$3-vol;
+#X obj 59 73 s \$2-vol;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
 #X restore 335 11 pd init;
@@ -10,9 +10,9 @@
 #X obj 8 83 r~ \$1~;
 #X text 13 38 In Channel \, eg used for fading bus ins.;
 #X text 14 7 amb/in~ <id> <ctlname eg. parent unique>;
-#X obj 6 111 mxr/fader/fader~ \$3-vol;
 #X obj 8 137 throw~ \$2~;
 #X obj 128 138 mxr/prvu/send~ \$2/vu;
-#X connect 2 0 5 0;
-#X connect 5 0 6 0;
-#X connect 5 0 7 0;
+#X obj 6 111 mxr/fader/fader~ \$2;
+#X connect 2 0 7 0;
+#X connect 7 0 5 0;
+#X connect 7 0 6 0;

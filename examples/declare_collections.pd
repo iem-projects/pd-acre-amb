@@ -1,6 +1,4 @@
-#N canvas 263 66 825 642 10;
-#X declare -path . -path abs -path data;
-#X declare -path libs;
+#N canvas 263 66 727 601 10;
 #X declare -lib zexy;
 #X declare -lib iemmatrix/mtx_mul~;
 #X declare -lib iemmatrix/mtx_add;
@@ -38,9 +36,8 @@
 #X declare -path libs/iem_bin_ambi -stdpath iem_bin_ambi;
 #X declare -path libs/iem_spec2 -stdpath iem_spec2;
 #X declare -lib iem_spec2;
-#X obj 31 155 declare -path . -path abs -path data;
-#X obj 31 175 declare -path libs;
-#X obj 404 299 declare -lib zexy;
+#X declare -path . -path abs -path data -path libs;
+#X obj 31 283 declare -lib zexy;
 #N canvas 659 253 424 343 matrix_specialnames 0;
 #X obj 13 15 declare -lib iemmatrix/mtx_mul~;
 #X obj 13 35 declare -lib iemmatrix/mtx_add;
@@ -67,47 +64,42 @@
 #X obj 42 540 declare -lib iemmatrix/mtx_0x3e;
 #X obj 42 580 declare -lib iemmatrix/mtx_0x7c0x7c;
 #X obj 42 600 declare -lib iemmatrix/mtx_0x7c;
-#X restore 555 365 pd matrix_specialnames;
-#X obj 411 456 declare -lib iem_bin_ambi;
-#X obj 384 416 declare -lib iem_ambi;
-#X text 295 153 project paths;
-#X text 172 176 project libnraries path;
-#X obj 387 366 declare -lib iemmatrix;
-#X obj 41 240 declare -path libs/iemlib -stdpath iemlib;
-#X obj 391 242 declare -lib iemlib/iemlib1 -lib iemlib/iemlib2;
-#X obj 27 363 declare -path libs/iemmatrix -stdpath iemmatrix;
-#X obj 24 416 declare -path libs/iem_ambi -stdpath iem_ambi;
-#X obj 31 541 declare -path libs/acre -stdpath acre;
-#X obj 27 456 declare -path libs/iem_bin_ambi -stdpath iem_bin_ambi
+#X restore 167 350 pd matrix_specialnames;
+#X obj 16 510 declare -lib iem_bin_ambi;
+#X obj 22 414 declare -lib iem_ambi;
+#X obj 24 349 declare -lib iemmatrix;
+#X obj 31 199 declare -path libs/iemlib -stdpath iemlib;
+#X obj 32 219 declare -lib iemlib/iemlib1 -lib iemlib/iemlib2;
+#X obj 24 327 declare -path libs/iemmatrix -stdpath iemmatrix;
+#X obj 22 395 declare -path libs/iem_ambi -stdpath iem_ambi;
+#X obj 25 553 declare -path libs/acre -stdpath acre;
+#X obj 19 465 declare -path libs/iem_bin_ambi -stdpath iem_bin_ambi
 ;
-#X obj 28 477 declare -path libs/iem_spec2 -stdpath iem_spec2;
-#X obj 412 477 declare -lib iem_spec2;
+#X obj 18 488 declare -path libs/iem_spec2 -stdpath iem_spec2;
+#X obj 174 510 declare -lib iem_spec2;
 #N canvas 834 148 450 300 spec2_specialnames 0;
 #X obj 21 34 spec2_mul~;
 #X obj 23 54 spec2_add~;
 #X obj 22 78 spec2_sub~;
 #X obj 104 53 spec2_add_scalar~;
 #X obj 104 33 spec2_mul_scalar~;
-#X restore 578 477 pd spec2_specialnames;
-#X text 37 17 Collection of declare statements needed for dependencies
-;
-#X text 44 105 externals: first search local in libs \, second in system
+#X restore 317 511 pd spec2_specialnames;
+#X text 45 105 externals: first search local in libs \, second in system
 --- \, if installed there so both path are listed here;
-#X text 44 301 zexy set path itself \, dont know why ...;
-#X text 32 208 iemlib is oldest (and therefore sometimes outdated from
-path usage or names... but essential;
-#X text 29 274 Zexy \, second oldest \; -) from IEM.;
-#X text 29 334 IEM-Matrix new version (not iem-matrix !);
-#X text 384 338 Trick: if library is split in multiple lib files \,
+#X text 28 268 zexy set path itself \, dont know why ...;
+#X text 27 307 IEM-Matrix new version (not iem-matrix !);
+#X text 317 340 Trick: if library is split in multiple lib files \,
 extended used to do this \, find names like *~ with specialnames,
 f 65;
-#X text 23 389 Ambilib was a first implementation of spherical harmonics
-calcs and usefull up to now.;
-#X text 21 438 for binaural tools an old binaural rendere needs iem_spec2
+#X text 28 535 ACRE Library base (abstractions only until now);
+#X text 285 557 GPL \, acre \, IEM - winfried ritsch;
+#X text 44 46 Declares should be copied to main patch as subpatch \,
+(will not work as an abstraction at least fo Version 0.47.1);
+#X text 37 17 Collection/Suggestion of declare statements;
+#X obj 31 155 declare -path . -path abs -path data -path libs;
+#X text 31 184 iemlib is old and historical and therefore weird organized.
 ;
-#X text 30 513 ACRE Library base (abstractions only until now);
-#X text 45 45 Declares should be in main patch file \, first loaded
-so do not use it as an abstraction \, since maybe it is loaded to late
-(at least fo Version 0.47.1) \, so copy these and paste in your patch
-;
-#X text 399 594 GPL \, acre \, IEM - winfried ritsch;
+#X text 21 368 Ambilib was a first implementation of spherical harmonics
+calcs and useful;
+#X text 14 441 for binaural tools an old binaural decoder iem_spec2
+needed;
