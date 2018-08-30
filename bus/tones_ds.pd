@@ -10,4 +10,4 @@
 #X text 40 254 (c) GPL \, acre winfried ritsch;
 #X obj 38 85 ds/register_map \$1 \$2/pitch;
 #X obj 38 105 ds/register_map \$1 \$2/pitch/step;
-#X text 38 6 amb/bus/tones_ds <domain <id>;
+#X text 38 6 amb/bus/tones_ds <domain> <id>;
