@@ -22,14 +22,17 @@ Most and more actual documentation is in the abstractions in the libraries as co
 Background
 ----------
 
-In Ambisonics domain an 3D or 2D Ambisonics signal or in plain wave domain the signals can been seen as one multichannel audio-signal.
+In Ambisonics domain an 3D or 2D Ambisonics signal the signals can been seen as one multichannel audio-signal. 
+Also multichannel buses should be treated as one bus signal.
+Additionally, the channel count should be changeable during runtime.
 With higher orders a better spatial resolution is provided and more Ambisonics channels are needed.
-With more speakers, real or virtual more plain wave signals are represented.
-The channel count is calculated by the formulas ``n=(order+1)²`` for 3D and ``n=2*order+1`` for 2D and arbritary for plain wave signals.
-Therefore Ambisonics buses and plain wave buses has to be implemented, which handle, for example on 5th order 3D 36 channels or 32 virtual speaker channels.
+With more speakers, real or virtual more signals as multisignal are used.
+The channel count is calculated by the formulas ``n=(order+1)²`` for 3D and ``n=2*order+1`` for 2D and arbritary for multisignals.
+Therefore Ambisonics buses and multichannel buses has to be implemented, which handle, for example on 5th order 3D 36 channels or 32 virtual speaker channels.
 Until there is a snake functionality standard in Pd[snake]_ , we handle Ambisonics buses with abstraction and dynamic generated ``catch~/throw~`` and/or ``send~/receive~`` pairs to prevent excessive Pd cabling.
 The alignments of the Ambisonics channels is important. 
 Within the ambisonics functions it should comply with the ACN N3D standard [ACN], which is used throughout the iem_ambi library.
+Multichannel buses with ``s~/r~`` and ``catch~/throw~`` could also be made with the new clone object, but clone cannot dynamically change the instance count at runtime.
 
 Structure
 ---------
