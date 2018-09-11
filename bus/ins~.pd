@@ -17,25 +17,7 @@
 #X obj 77 244 symbol \$3;
 #X text 24 5 amb/bus/ins~ <ID> <nr channels> <bus ID> [in offset],
 f 77;
-#N canvas 62 193 306 521 \$0-dsp-ins 0;
-#X obj 10 20 amb/bus/in~ mics-1 mic-1 1070;
-#X obj 10 40 amb/bus/in~ mics-2 mic-2 1070;
-#X obj 10 60 amb/bus/in~ mics-3 mic-3 1070;
-#X obj 10 80 amb/bus/in~ mics-4 mic-4 1070;
-#X obj 10 100 amb/bus/in~ mics-5 mic-5 1070;
-#X obj 10 120 amb/bus/in~ mics-6 mic-6 1070;
-#X obj 10 140 amb/bus/in~ mics-7 mic-7 1070;
-#X obj 10 160 amb/bus/in~ mics-8 mic-8 1070;
-#X obj 10 180 amb/bus/in~ mics-9 mic-9 1070;
-#X obj 10 200 amb/bus/in~ mics-10 mic-10 1070;
-#X obj 10 220 amb/bus/in~ mics-11 mic-11 1070;
-#X obj 10 240 amb/bus/in~ mics-12 mic-12 1070;
-#X obj 10 260 amb/bus/in~ mics-13 mic-13 1070;
-#X obj 10 280 amb/bus/in~ mics-14 mic-14 1070;
-#X obj 10 300 amb/bus/in~ mics-15 mic-15 1070;
-#X obj 10 320 amb/bus/in~ mics-16 mic-16 1070;
-#X obj 10 340 amb/bus/in~ mics-17 mic-17 1070;
-#X obj 10 360 amb/bus/in~ mics-18 mic-18 1070;
+#N canvas 67 478 306 521 \$0-dsp-ins 0;
 #X restore 33 33 pd \$0-dsp-ins;
 #X msg 33 289 \; \$2-\$1/vol 100;
 #N canvas 703 58 574 296 contruct-ins 0;

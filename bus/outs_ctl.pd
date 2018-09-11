@@ -1,15 +1,9 @@
 #N canvas 819 509 514 317 10;
 #X text 86 24 (c) GPL \, acre - winfried ritsch;
-#N canvas 1046 726 852 257 \$0-gui 1;
-#X obj 0 10 amb/bus/out_ctl speaker-1 speaker/1;
-#X obj 50 10 amb/bus/out_ctl speaker-2 speaker/2;
-#X obj 100 10 amb/bus/out_ctl speaker-3 speaker/3;
-#X obj 150 10 amb/bus/out_ctl speaker-4 speaker/4;
-#X obj 200 10 amb/bus/out_ctl speaker-5 speaker/5;
-#X obj 250 10 amb/bus/out_ctl speaker-6 speaker/6;
+#N canvas 1046 726 852 257 \$0-gui 0;
 #X coords 48 85 770 225 0 0 0;
 #X restore 195 110 pd \$0-gui;
-#N canvas 955 443 407 291 contruct-outs 1;
+#N canvas 663 622 407 291 contruct-outs 1;
 #X obj 41 2 inlet;
 #X obj 40 187 pack 10 1 s;
 #X obj 36 242 s pd-\$0-gui;
@@ -33,6 +27,7 @@
 #X connect 4 1 1 1;
 #X connect 4 2 13 0;
 #X connect 5 0 14 0;
+#X connect 5 0 12 0;
 #X connect 6 0 3 0;
 #X connect 7 0 4 0;
 #X connect 8 0 9 0;

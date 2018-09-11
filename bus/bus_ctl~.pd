@@ -170,12 +170,12 @@
 #X text 298 184 rebuild;
 #X text 305 261 clear before save !;
 #X obj 374 181 r /amb/guiinit;
-#X text 93 58 amb/bus/ctl~ <type 2D|3D> <order> <Ambibus ID>;
 #X obj 276 212 i \$2;
-#X connect 3 0 15 0;
+#X text 93 58 amb/bus/bus_ctl~ <BUS ID> <nr of channels>;
+#X connect 3 0 14 0;
 #X connect 6 0 5 0;
 #X connect 7 0 6 0;
 #X connect 10 0 1 1;
-#X connect 13 0 15 0;
-#X connect 15 0 1 0;
+#X connect 13 0 14 0;
+#X connect 14 0 1 0;
 #X coords 0 -1 1 1 50 50 2 100 100;

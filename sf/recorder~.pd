@@ -1,4 +1,4 @@
-#N canvas 699 58 599 439 10;
+#N canvas 699 107 599 439 10;
 #X obj 401 133 bng 15 250 50 0 empty empty clear 17 7 0 10 -262144
 -1 -1;
 #X text 422 121 before save !;
@@ -66,7 +66,7 @@
 #X text 476 248 dummy throw;
 #X obj 479 268 throw~ \$0-ch1;
 #X text 30 5 amb/sf/recorder~ <id> <channels> <receives ID>;
-#N canvas 199 58 492 494 \$0-recorder 0;
+#N canvas 1248 476 492 494 \$0-recorder 0;
 #X restore 30 56 pd \$0-recorder;
 #N canvas 971 380 788 669 contruct-recorder 0;
 #X msg 220 68 clear;
@@ -97,11 +97,10 @@
 #X obj 362 548 s pd-\$0-recorder;
 #X obj 37 469 s pd-\$0-recorder;
 #X obj 220 88 s pd-\$0-recorder;
-#X msg 378 287 obj 10 450 writesf~ 18 \, f 54;
+#X msg 378 287 obj 10 230 writesf~ 7 \, f 21;
 #X msg 173 411 obj \$1 \$2 r~ \$4-\$3~;
 #X msg 37 438 connect \$2 0 5 \$1 \, connect 5 \$1 4 \$1;
-#X msg 389 472 obj 10 420 multiline~ 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 200;
+#X msg 389 472 obj 10 200 multiline~ 0 0 0 0 0 0 0 200;
 #X msg 360 514 connect 0 0 4 0 \, connect 2 0 5 \$1 \, connect 5 0
 3 0;
 #X obj 368 310 t f b b f f;
