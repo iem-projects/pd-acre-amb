@@ -88,7 +88,7 @@
 #X connect 37 0 10 3;
 #X connect 38 0 19 3;
 #X restore 207 116 pd contruct-buses;
-#N canvas 133 591 977 226 \$0-dsp-buses 1;
+#N canvas 133 591 977 226 \$0-dsp-buses 0;
 #X restore 40 89 pd \$0-dsp-buses;
 #X obj 349 115 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
