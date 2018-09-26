@@ -1,11 +1,11 @@
 #N canvas 1267 226 854 514 10;
 #X obj 71 302 acre/count_until;
 #X obj 73 345 tabwrite \$1-channel-order;
-#X obj 73 318 t f f;
+#X obj 75 322 t f f;
 #X text 130 321 SID order;
-#X msg 242 317 read ../data/acn.txt;
-#X obj 242 342 array define -yrange 0 121 \$1-channel-order;
-#X msg 378 319 read ../data/fuma.txt;
+#X msg 260 319 read ../data/acn.txt;
+#X obj 259 345 array define -yrange 0 121 \$1-channel-order;
+#X msg 423 320 read ../data/fuma.txt;
 #X obj 70 214 r \$1/channel/order;
 #X obj 71 242 sel 0 1 2;
 #X obj 65 34 loadbang;
@@ -19,13 +19,16 @@
 #X text 185 20 amb/amb/channel_order_table <id> [chanel order];
 #X text 188 43 genrate and provide a channel order table which can
 be switched from 0=SID \, 1=ACN and 2=FUMA;
+#X obj 39 267 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 71 264 121;
 #X connect 0 0 2 0;
 #X connect 2 0 1 0;
 #X connect 2 1 1 1;
 #X connect 4 0 5 0;
 #X connect 6 0 5 0;
 #X connect 7 0 8 0;
-#X connect 8 0 0 0;
+#X connect 8 0 20 0;
 #X connect 8 1 4 0;
 #X connect 8 2 6 0;
 #X connect 9 0 11 0;
@@ -33,3 +36,4 @@ be switched from 0=SID \, 1=ACN and 2=FUMA;
 #X connect 13 0 16 0;
 #X connect 13 1 10 0;
 #X connect 16 0 14 0;
+#X connect 20 0 0 0;
