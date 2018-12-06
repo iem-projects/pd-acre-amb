@@ -1,4 +1,4 @@
-#N canvas 279 615 518 264 10;
+#N canvas 352 594 439 264 10;
 #N canvas 396 917 327 132 init 0;
 #X msg 59 50 100;
 #X msg 136 51 0;
@@ -25,8 +25,8 @@ and master-gain.;
 #X obj 7 111 mxr/fader/fader~ \$3;
 #X obj 280 96 r \$3/del;
 #X obj 65 228 mxr/prvu/send~ \$3/vu;
-#X connect 2 0 7 0;
 #X connect 2 0 14 0;
+#X connect 2 0 7 0;
 #X connect 5 0 2 0;
 #X connect 7 0 8 0;
 #X connect 10 0 12 0;

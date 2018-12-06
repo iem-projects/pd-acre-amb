@@ -1,5 +1,5 @@
 #N canvas 1509 454 468 233 10;
-#N canvas 565 343 535 403 contruct-dacs 1;
+#N canvas 565 343 535 403 contruct-dacs 0;
 #X msg 168 93 clear;
 #X obj 41 117 t b f f f;
 #X obj 87 17 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -117,13 +117,7 @@
 #X obj 16 54 r /amb/businit;
 #X obj 77 112 max 1;
 #X text 123 119 dyn set nr of channels;
-#N canvas 340 140 680 239 \$0-dacs 1;
-#X obj 0 10 r~ mo-1~;
-#X obj 0 50 dac~ 7;
-#X obj 80 30 r~ mo-2~;
-#X obj 80 50 dac~ 8;
-#X connect 0 0 1 0;
-#X connect 2 0 3 0;
+#N canvas 340 140 680 239 \$0-dacs 0;
 #X restore 17 30 pd \$0-dacs;
 #X text 51 71 reconstruct;
 #X obj 77 94 r \$1/number;
@@ -136,6 +130,7 @@ offset], f 63;
 #X obj 146 53 t b f;
 #X obj 173 74 max 0;
 #X text 229 33 carefully \, since a reconstruct is done;
+#X text 325 12 number of first channel;
 #X connect 1 0 12 0;
 #X connect 2 0 0 1;
 #X connect 4 0 12 0;
