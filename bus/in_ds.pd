@@ -1,5 +1,5 @@
-#N canvas 1298 271 450 203 10;
+#N canvas 912 271 450 203 10;
 #X text 62 110 (c) GPL - acre \, ritsch;
-#X text 27 25 amb/bus/in_ds <domain> <in-id>;
 #X obj 41 77 mxr/fader/fader_ds \$1 \$2;
 #X text 42 58 mainly a fader;
+#X text 27 25 amb/bus/in_ds <domain> <id>;
