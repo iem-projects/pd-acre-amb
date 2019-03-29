@@ -51,8 +51,8 @@
 #X connect 13 0 7 4;
 #X connect 16 0 14 0;
 #X restore 183 130 pd contruct-spats_ds;
-#X text 33 11 amb/spazs_ds <storage domain> <ID> <nr channels> [offset]
-, f 84;
+#X text 35 11 amb/spat/spats_ds <storage domain> <ID> <nr channels>
+[offset], f 84;
 #X connect 0 0 9 1;
 #X connect 2 0 9 0;
 #X connect 4 0 9 0;
