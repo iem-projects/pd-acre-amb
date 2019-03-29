@@ -8,7 +8,7 @@
 #X msg 423 320 read ../data/fuma.txt;
 #X obj 70 214 r \$1/channel/order;
 #X obj 71 242 sel 0 1 2;
-#X obj 65 34 loadbang;
+#X obj 67 12 loadbang;
 #X obj 130 129 array size \$1-channel-order;
 #X msg 67 79 121;
 #X text 98 77 max 10.order;
@@ -22,7 +22,6 @@ be switched from 0=SID \, 1=ACN and 2=FUMA;
 #X obj 39 267 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X msg 71 264 121;
-#X obj 107 11 r /amb/businit;
 #X obj 11 11 inlet;
 #X msg 239 84 0;
 #X msg 273 83 1;
@@ -43,7 +42,6 @@ be switched from 0=SID \, 1=ACN and 2=FUMA;
 #X connect 16 0 14 0;
 #X connect 20 0 0 0;
 #X connect 21 0 11 0;
-#X connect 22 0 11 0;
+#X connect 22 0 16 0;
 #X connect 23 0 16 0;
 #X connect 24 0 16 0;
-#X connect 25 0 16 0;
