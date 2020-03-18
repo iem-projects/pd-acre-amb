@@ -8,14 +8,14 @@ Ambisonics Toolbox
 :Author: Winfried Ritsch
 :Contact: ritsch _at_ algo.mur.at, ritsch _at_ iem.at
 :Copyright: winfried ritsch - IEM / algorythmics 2012+
-:Version: 0.83-dev
+:Version: 0.9
 :git master repo: https://git.iem.at/pd/acre-amb
 
-Ambisonics Toolbox is a collection of high level Pd abstraction, to implement Ambisonics functionality for Ambisonics mixer and processor, especially compositions and effects using ``iem-ambi`` external library.
-One goal is to easily integrate Ambisonics encoder, decoder and processing for various purposes as modules providing dynamic multichannel operations and signaling enabling fast prototyping of Ambisonics algorithms.
+Ambisonics Toolbox is a collection of high level Pd abstraction, to implement Ambisonics functionality for Ambisonics mixing and processing, especially making compositions and effects using ``iem-ambi`` external library.
+One goal is to easily integrate Ambisonics encoder, decoder and processing for various purposes as modules providing dynamic multichannel operations and signaling enabling fast prototyping of Ambisonics algorithms. So a main target is dynamic multichannel patching.
 
-This module extend the acre library with the base modules ``acre/acre``, ``acre/mxr`` and ``acre/ds``, which has to be installed.
-It is based on the `iem_ambi` and some parts also on the `iem_bin_ambi` Pd-library using also`iemmatrix`, iemlib and zexy Pd-library, trying to minimize dependencies.
+This module extend the acre library with the base modules ``acre/acre``, ``acre/mxr``, ``acre/ds`` and ``acre/rc``.
+The Ambisonic functions using spherical harmonics are based on the `iem_ambi` library and some parts also on the `iem_bin_ambi` Pd-library using also`iemmatrix`, iemlib and zexy Pd-library, but trying to minimize dependencies.
 
 Most and more actual documentation is in the abstractions in the libraries as comments.
 
@@ -26,9 +26,9 @@ In Ambisonics domain an 3D or 2D Ambisonics signal the signals can been seen as 
 Also multichannel buses should be treated as one bus signal.
 Additionally, the channel count should be changeable during runtime.
 With higher orders a better spatial resolution is provided and more Ambisonics channels are needed.
-With more speakers, real or virtual more signals as multisignal are used.
-The channel count is calculated by the formulas ``n=(order+1)²`` for 3D and ``n=2*order+1`` for 2D and arbritary for multisignals.
-Therefore Ambisonics buses and multichannel buses has to be implemented, which handle, for example on 5th order 3D 36 channels or 32 virtual speaker channels.
+With more speakers, real or virtual signals are seen as multichannel signal.
+The channel count is calculated by the formulas ``n=(order+1)²`` for 3D and ``n=2*order+1``.
+Therefore Ambisonics buses and multichannel buses are implemented, which handle, for example on 5th order 3D 36 channels or 32 virtual speaker channels.
 Until there is a snake functionality standard in Pd[snake]_ , we handle Ambisonics buses with abstraction and dynamic generated ``catch~/throw~`` and/or ``send~/receive~`` pairs to prevent excessive Pd cabling.
 The alignments of the Ambisonics channels is important. 
 Within the ambisonics functions it should comply with the ACN N3D standard [ACN], which is used throughout the iem_ambi library.
@@ -38,7 +38,7 @@ Structure
 ---------
 
 All objects as functions ``amb/<function>`` have, if they are control-able a corresponding ``amb/<function>_ctl`` or  ``amb/<function>_ctl~``, if signal processing is involved, and ``amb/<function>_ds`` data storage for settings in a preset module.
-Function dedicated to Ambisonics signals have Dimension ``<3D|2D>`` and ``<order>`` as arguments for easier handing and common buses the channel count, but they can be mixed arbitrarily, so operations somestimes are only for buses can be used also for Ambisonics when the channel count is calculated by hand as shown above.
+Function dedicated to Ambisonics signals have Dimension ``<3D|2D>`` and ``<order>`` as arguments for easier handling and common buses uses the channel count, but they can be mixed arbitrarily, so operations sometimes are only for buses can be used also for Ambisonics when the channel count is calculated by hand as shown above.
 
 Buses
 .....
@@ -49,8 +49,8 @@ On the other side a ``amb/bus/mix~`` can mix the signal to buses as also ``encod
 ``amb/bus/adcs~`` and ``amb/bus/dacs~`` are used to map audio inputs and outputs into Pd for bus operations.
 Such operations like ``amb/bus/fade~``, ``amb/bus/mtx~`` and ``amb/bus/ops~`` can be used to set up an processing line.
 
-Some often needed has been done in advance like ``amb/bus/outs~`` which combines calibration of outputs with individual delays, fader and mute and a master fader for calibration and better control. 
-Testones for an bus are implemented with ``amb/bus/tones~``, where channel orde can be heard by testtones, especially for testing right cabling of an Ambisonic system.
+Some, like ``amb/bus/outs~``, which combines calibration of outputs with individual delays, fader and mute and a master fader for calibration and better control are implemented.
+Testones for an bus are implemented with ``amb/bus/tones~``, where the ordering of the channels can be heard by different tuned testtones, especially for testing the correct cabling of an Ambisonic system.
 
 
 Encoders and decoders
@@ -58,7 +58,7 @@ Encoders and decoders
 
 Encoders use Ambisonics Buses to throw their signals to them and decoders read from a Ambisonics bus and distribute it to speaker outs, also managing the decoder matrix files.
 
-Making Ambisonics decoder matrices abd  for calibration of the system to feed the outs objects see ``amb/tools`` docu.
+Making Ambisonics decoder matrices and for calibration of the system some ``amb/tools`` are provided. (see documentation there).
 
 Visualization
 .............
@@ -66,12 +66,12 @@ Visualization
 For debugging visualization done by GUI objects with ``ctl`` postfix.
 Additional a GUIs for control of the Ambisonics space the iemgui is used for better control of many channels, see ``amb/sphere``.
 
-Another tool using the GEM library for rendering an Amisonics bus with Open-GL in different maps. A rough version started which is refactored from works done  on the IEM, see ``amb/tools/vi``
+Another tool using the GEM library for rendering an Amisonics bus with Open-GL in different maps. A rough version started which is refactored from works done  on the IEM, see ``amb/tools/vi`` - to be cleaned and fixed again.
 
 Binaural rendering
 ..................
 
-of an Ambisonics signal is implemented by a really early version used within the CUBEmixer and will completed with the new version when the fast convolving engine object is ready to be included and Rendering presets from the Ambix library can be used.
+of an Ambisonics signal is implemented by a really early version used within the CUBEmixer and will completed with the new version when the fast convolution engine object is ready to be included and Rendering presets from the Ambix library can be used.
 
 Player
 ......
@@ -115,7 +115,6 @@ Notes
 
 - To prevent unnecessary warnings a little bit more, the initialization order is important, see example, using own initbang order in ``amb/amb/initbang``.
 
-
 Todo
 ----
 
@@ -131,8 +130,8 @@ ambisonics mixer::
  - rotate, mirror
  - widening
  - virtual microphones
- - recoder dsp, ctl ds
- - renaming old objets from ``../dsp~`` to more descriptive names.
+ - recorder dsp, ctl ds
+ - renaming old objects from ``../dsp~`` to more descriptive names.
 
 processing::
 
