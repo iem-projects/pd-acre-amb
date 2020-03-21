@@ -1,0 +1,12 @@
+#N canvas 1091 154 450 300 10;
+#X text 33 204 (c) GPL \, acre winfried ritsch;
+#X text 35 2 amb/sf/player_rc <connection> <id>;
+#X obj 32 48 rc/register \$1 \$2/gain;
+#X obj 32 69 rc/register \$1 \$2/loop;
+#X obj 32 90 rc/register \$1 \$2/on;
+#X text 32 166 does not work since filepannel opens remotely. not local
+;
+#X obj 32 111 rc/register \$1 \$2/vu;
+#X obj 35 182 # rc/register \$1 \$2/open;
+#X obj 32 133 rc/register \$1 \$2/play;
+#X text 32 24 controls for multichannel player;
