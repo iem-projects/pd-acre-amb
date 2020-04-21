@@ -6,15 +6,15 @@
 #X declare -lib iemmatrix;
 #X declare -lib iem_ambi;
 #X declare -lib iem_bin_ambi;
-#X declare -path iemlib;
 #X declare -path ../../;
+#X declare -path iemlib -lib iemlib;
 #X text 28 13 example Decoder matrix calc;
 #N canvas 373 337 842 400 init 0;
 #X obj 120 80 loadbang;
 #X msg 123 137 \; order 2 \; 3D 1 \; speaker 13 \; phantoms 5;
 #X connect 0 0 1 0;
 #X restore 260 7 pd init;
-#N canvas 569 241 303 290 declares 0;
+#N canvas 1651 591 303 290 declares 0;
 #X obj 18 78 declare -lib iemlib1;
 #X obj 18 131 declare -lib zexy;
 #X obj 18 114 declare -stdpath iemlib;
@@ -25,18 +25,18 @@
 #X text 41 230 for binaural tools;
 #X obj 17 210 declare -lib iem_ambi;
 #X obj 17 258 declare -lib iem_bin_ambi;
-#X obj 20 28 declare -path iemlib;
 #X obj 22 7 declare -path ../../;
+#X obj 20 28 declare -path iemlib -lib iemlib;
 #X restore 317 9 pd declares;
 #X obj 199 77 tgl 15 0 3D 3D 3D 17 7 0 10 -262144 -1 -1 1 1;
 #X obj 111 76 nbx 3 14 -1e+37 1e+37 0 0 order order ORDER 0 -8 0 10
--262144 -1 -1 5 256;
+-262144 -1 -1 3 256;
 #X text 87 636 https://bitbucket.org/ambidecodertoolbox/adt.git;
 #X text 28 69 1.) Enter;
 #X text 196 93 else 2D;
 #N canvas 706 557 336 265 ambisonics 0;
 #X obj 19 165 amb/amb/n;
-#X floatatom 19 187 5 0 0 0 - - -, f 5;
+#X floatatom 19 187 5 0 0 0 - - -;
 #X msg 23 111 3D;
 #X obj 27 88 sel 1 0;
 #X msg 60 114 2D;
@@ -55,7 +55,7 @@
 #X connect 8 0 0 0;
 #X connect 8 1 0 1;
 #X restore 87 124 pd ambisonics channel count;
-#X floatatom 86 147 5 0 0 0 - - ambi_channels, f 5;
+#X floatatom 86 147 5 0 0 0 - - ambi_channels;
 #X text 125 146 ambisonics channels in BUS;
 #X text 31 286 3.) how Phantom channels;
 #X text 50 343 with 2D you normally do not need them;
@@ -89,15 +89,15 @@ bang \;;
 #X obj 71 280 s pd-decoder-config;
 #N canvas 575 57 449 240 decoder-config 0;
 #X obj 10 10 r dc;
-#X obj 10 30 ambi_decode3 5 3 24 5;
+#X obj 10 30 ambi_decode3 3 3 6 5;
 #X obj 10 50 s dc-out;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X restore 71 301 pd decoder-config;
-#X floatatom 61 83 5 0 0 0 - - -, f 5;
-#X floatatom 152 80 5 0 0 0 - - -, f 5;
-#X floatatom 104 103 5 0 0 0 - - -, f 5;
-#X floatatom 248 87 5 0 0 0 - - -, f 5;
+#X floatatom 61 83 5 0 0 0 - - -;
+#X floatatom 152 80 5 0 0 0 - - -;
+#X floatatom 104 103 5 0 0 0 - - -;
+#X floatatom 248 87 5 0 0 0 - - -;
 #X text 216 141 generate decoder object;
 #X msg 131 173 clear \, obj 10 10 r dc;
 #X msg 92 221 obj 10 50 s dc-out;
@@ -237,7 +237,7 @@ understanding);
 #X restore 164 438 pd calculation;
 #X text 30 183 2.)set speaker channel count;
 #X obj 80 258 nbx 5 14 -1e+37 1e+37 0 0 speaker speaker speaker 0 -8
-0 10 -262144 -1 -1 24 256;
+0 10 -262144 -1 -1 6 256;
 #X text 23 255 Enter;
 #X obj 78 317 nbx 5 14 -1e+37 1e+37 0 0 phantoms phantoms phantoms
 0 -8 0 10 -262144 -1 -1 5 256;
@@ -245,10 +245,9 @@ understanding);
 #X text 45 68 Example for 2D 8 speaker;
 #X text 307 58 Example for 3D 13 speaker;
 #X msg 574 114 \; dc real_ls 1 0 0;
-#X text 583 84 own list;
 #X obj 269 28 r get-speaker;
 #X text 228 8 Make a own list and connect to [r get-speaker];
-#X text 297 80 NOTE: first index \, second elevation \, third azimuth
+#X text 256 76 NOTE: first index \, second elevation \, third azimuth
 !;
 #X msg 376 105 \; dc real_ls 1 0 320 \; dc real_ls 2 0 0 \; dc real_ls
 3 0 40 \; dc real_ls 4 0 90 \; dc real_ls 5 0 130 \; dc real_ls 6 0
@@ -274,7 +273,14 @@ real_ls 16 40 30 \; dc real_ls 17 40 90 \; dc real_ls 18 40 130 \;
 dc real_ls 19 40 180 \; dc real_ls 20 40 220 \; dc real_ls 21 40 270
 \; dc real_ls 22 30 40 \; dc real_ls 23 90 130 \; dc real_ls 24 70
 230;
-#X connect 4 0 11 0;
+#X text 578 328 stereo+rev-top;
+#X text 415 325 surround+rev-top;
+#X msg 574 354 \; dc real_ls 1 0 315 \; dc real_ls 2 0 45 \; dc real_ls
+3 90 0 \;;
+#X msg 409 352 \; dc real_ls 1 0 -30 \; dc real_ls 2 0 30 \; dc real_ls
+3 0 0 \; dc real_ls 4 10 -120 \; dc real_ls 5 10 120 dc real_ls 6 90
+0 \;;
+#X connect 3 0 16 0;
 #X restore 270 253 pd speaker-list;
 #N canvas 1183 193 450 300 helps 0;
 #X obj 32 22 r vis_speakerlist;
@@ -285,11 +291,11 @@ dc real_ls 19 40 180 \; dc real_ls 20 40 220 \; dc real_ls 21 40 270
 #X connect 2 0 3 0;
 #X restore 406 7 pd helps;
 #X obj 180 258 tgl 15 0 vis_speakerlist vis_speakerlist speakerlist
-17 7 0 10 -262144 -1 -1 1 1;
+17 7 0 10 -262144 -1 -1 0 1;
 #X obj 190 319 tgl 15 0 vis_phantomlist vis_phantomlist phantomlist
 17 7 0 10 -262144 -1 -1 0 1;
 #X text 178 242 Edit;
-#N canvas 763 434 523 300 phantom-list 0;
+#N canvas 421 576 595 424 phantom-list 0;
 #X text 13 64 on 2D normally none;
 #X text 222 17 3D hemisphere;
 #X text 257 77 at least south pole;
@@ -299,7 +305,13 @@ dc real_ls 19 40 180 \; dc real_ls 20 40 220 \; dc real_ls 21 40 270
 #X text 238 135 help reduce loudness on horizent;
 #X msg 213 153 \; dc pht_ls 1 -90 0 \; dc pht_ls 2 -45 45 \; dc pht_ls
 3 -45 135 \; dc pht_ls 4 -45 225 \; dc pht_ls 5 -45 315 \;;
-#X connect 3 0 5 0;
+#X text 211 248 stereo+rev-top;
+#X msg 203 266 \; dc pht_ls 1 0 135 \; dc pht_ls 2 0 225 \; dc pht_ls
+3 -90 0;
+#X text 58 239 surr+rev-top;
+#X msg 51 272 \; dc pht_ls 1 -30 -30 \; dc pht_ls 2 -30 30 \; dc pht_ls
+1 -30 120 \; dc pht_ls 2 -30 -120 \; dc pht_ls 3 -90 0;
+#X connect 3 0 11 0;
 #X restore 280 320 pd phantom-list;
 #X text 189 305 Edit;
 #X text 37 404 4.) Do calculation;
@@ -314,7 +326,7 @@ count, f 38;
 #X text 234 527 or save to;
 #X text 41 501 5.) If output non singular and plausibel Save to a filename
 with preferrable .mtx extension;
-#X symbolatom 327 545 10 0 0 0 filename.mtx - save_to, f 10;
+#X symbolatom 327 545 10 0 0 0 filename.mtx - save_to;
 #X text 41 568 6 copy matrix to your Ambisonics decoder application
 and enjoy;
 #X text 43 621 Better use ALLRAD Decoder with better results \, see:
