@@ -116,7 +116,7 @@ obj 175 5 throw~ \$1-ch1;
 #X obj 365 91 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 30 226 s \$0-player;
-#N canvas 613 61 594 839 \$0-player 0;
+#N canvas 219 61 594 393 \$0-player 0;
 #X restore 30 56 pd \$0-player;
 #X obj 120 127 openpanel;
 #X obj 30 126 t b b;
