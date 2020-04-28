@@ -1,0 +1,7 @@
+#N canvas 916 242 444 190 10;
+#X text 308 111 only used on 3D;
+#X text 30 146 (c)GPL \, algorythmics \, winfried ritsch;
+#X obj 37 60 rc/register \$2 \$1/dist;
+#X obj 37 89 rc/register \$2 \$1/azimuth;
+#X obj 39 117 rc/register \$2 \$1/elevation;
+#X text 32 30 amb/spat/ch_rc <ch id> <remote>;
