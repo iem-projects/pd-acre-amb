@@ -10,8 +10,8 @@
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X restore 356 82 pd init;
-#X obj 276 104 switch~;
-#X obj 276 82 r \$1/on;
+#X obj 284 85 switch~;
+#X obj 284 63 r \$1/on;
 #N canvas 686 433 483 296 contruct-outs 0;
 #X msg 167 49 clear;
 #X obj 81 15 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -76,6 +76,15 @@
 #X text 172 35 dyn set channel count;
 #X obj 33 120 t b b;
 #N canvas 201 486 362 410 \$0-dsp-tones 0;
+#X obj 10 20 tones_osc~ MUSICIAN-0 TTs 0;
+#X obj 10 40 tones_osc~ MUSICIAN-1 TTs 1;
+#X obj 10 60 tones_osc~ MUSICIAN-2 TTs 2;
+#X obj 10 80 tones_osc~ MUSICIAN-3 TTs 3;
+#X obj 10 100 tones_osc~ MUSICIAN-4 TTs 4;
+#X obj 10 120 tones_osc~ MUSICIAN-5 TTs 5;
+#X obj 10 140 tones_osc~ MUSICIAN-6 TTs 6;
+#X obj 10 160 tones_osc~ MUSICIAN-7 TTs 7;
+#X obj 10 180 tones_osc~ MUSICIAN-8 TTs 8;
 #X restore 33 53 pd \$0-dsp-tones;
 #N canvas 722 694 450 300 init 0;
 #X obj 231 61 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -174,20 +183,20 @@
 #X connect 23 0 22 0;
 #X connect 24 0 7 0;
 #X restore 211 192 pd tables-setup;
-#N canvas 59 667 595 175 pulse 0;
-#X obj 66 67 metro 500;
-#X obj 16 68 sel 0;
-#X obj 16 39 t f f;
-#X msg 16 90 1;
-#X obj 16 120 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#N canvas 301 406 595 229 pulse 1;
+#X obj 65 95 metro 500;
+#X obj 15 96 sel 0;
+#X obj 16 69 t f f;
+#X msg 15 118 1;
+#X obj 15 148 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 176 73 spigot 0;
 #X obj 176 94 sel 1;
 #X obj 176 17 r \$1/pulse/amp;
 #X obj 221 49 r \$1/seq/auto;
 #X obj 176 115 s \$1/seq/next;
-#X obj 16 147 s \$1/pulse/amp;
-#X obj 79 44 r \$1/pulse/time;
+#X obj 15 175 s \$1/pulse/amp;
+#X obj 82 64 r \$1/pulse/time;
 #X obj 16 9 r \$1/pulse/on;
 #X obj 310 49 i 0;
 #X obj 310 16 r \$1/seq/next;
@@ -201,6 +210,9 @@
 #X obj 405 16 r \$1/channels;
 #X obj 405 41 - 1;
 #X obj 442 44 t b f;
+#X obj 114 8 r \$1/on;
+#X obj 16 38 i 0;
+#X obj 78 38 sel 1;
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;
 #X connect 2 0 1 0;
@@ -212,7 +224,7 @@
 #X connect 7 0 5 0;
 #X connect 8 0 5 1;
 #X connect 11 0 0 1;
-#X connect 12 0 2 0;
+#X connect 12 0 26 0;
 #X connect 13 0 15 0;
 #X connect 13 0 17 0;
 #X connect 14 0 13 0;
@@ -229,6 +241,10 @@
 #X connect 23 0 21 0;
 #X connect 24 0 21 0;
 #X connect 24 1 21 1;
+#X connect 25 0 27 0;
+#X connect 26 0 2 0;
+#X connect 27 0 26 0;
+#X connect 27 1 2 0;
 #X restore 213 171 pd pulse sequence;
 #X obj 487 78 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
