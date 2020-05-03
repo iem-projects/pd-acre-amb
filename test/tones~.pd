@@ -183,7 +183,7 @@
 #X connect 23 0 22 0;
 #X connect 24 0 7 0;
 #X restore 211 192 pd tables-setup;
-#N canvas 562 655 595 229 pulse 1;
+#N canvas 562 655 595 229 pulse 0;
 #X obj 67 127 metro 500;
 #X obj 17 128 sel 0;
 #X obj 18 101 t f f;
@@ -214,8 +214,6 @@
 #X obj 14 45 i 0;
 #X obj 111 58 sel 1;
 #X obj 15 72 && 0;
-#X obj 163 176 print a;
-#X obj 243 176 print b;
 #X obj 114 31 t f f;
 #X connect 0 0 4 0;
 #X connect 1 0 3 0;
@@ -229,7 +227,6 @@
 #X connect 8 0 5 1;
 #X connect 11 0 0 1;
 #X connect 12 0 26 0;
-#X connect 12 0 29 0;
 #X connect 13 0 15 0;
 #X connect 13 0 17 0;
 #X connect 14 0 13 0;
@@ -246,14 +243,13 @@
 #X connect 23 0 21 0;
 #X connect 24 0 21 0;
 #X connect 24 1 21 1;
-#X connect 25 0 30 0;
-#X connect 25 0 31 0;
+#X connect 25 0 29 0;
 #X connect 26 0 28 0;
 #X connect 27 0 26 0;
 #X connect 27 1 2 0;
 #X connect 28 0 2 0;
-#X connect 31 0 27 0;
-#X connect 31 1 28 1;
+#X connect 29 0 27 0;
+#X connect 29 1 28 1;
 #X restore 213 171 pd pulse sequence;
 #X obj 487 78 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
