@@ -22,7 +22,7 @@ Most and more actual documentation is in the abstractions in the libraries as co
 Background
 ----------
 
-In Ambisonics domain an 3D or 2D Ambisonics signal the signals can been seen as one multichannel audio-signal. 
+In the Ambisonics domain, the signals forming the 2D or 3D Ambisonics bus can been seen as one multichannel audio-signal. 
 Also multichannel buses should be treated as one bus signal.
 Additionally, the channel count should be changeable during runtime.
 With higher orders a better spatial resolution is provided and more Ambisonics channels are needed.
