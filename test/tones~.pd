@@ -75,16 +75,7 @@
 #X obj 174 54 r \$1/channels;
 #X text 172 35 dyn set channel count;
 #X obj 33 120 t b b;
-#N canvas 201 486 362 410 \$0-dsp-tones 0;
-#X obj 10 20 tones_osc~ MUSICIAN-0 TTs 0;
-#X obj 10 40 tones_osc~ MUSICIAN-1 TTs 1;
-#X obj 10 60 tones_osc~ MUSICIAN-2 TTs 2;
-#X obj 10 80 tones_osc~ MUSICIAN-3 TTs 3;
-#X obj 10 100 tones_osc~ MUSICIAN-4 TTs 4;
-#X obj 10 120 tones_osc~ MUSICIAN-5 TTs 5;
-#X obj 10 140 tones_osc~ MUSICIAN-6 TTs 6;
-#X obj 10 160 tones_osc~ MUSICIAN-7 TTs 7;
-#X obj 10 180 tones_osc~ MUSICIAN-8 TTs 8;
+#N canvas 201 606 362 410 \$0-dsp-tones 0;
 #X restore 33 53 pd \$0-dsp-tones;
 #N canvas 722 694 450 300 init 0;
 #X obj 231 61 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1

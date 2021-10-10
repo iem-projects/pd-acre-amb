@@ -1,9 +1,9 @@
-#N canvas 819 509 514 317 10;
+#N canvas 1034 692 514 317 10;
 #X text 86 24 (c) GPL \, acre - winfried ritsch;
 #N canvas 1046 726 852 257 \$0-gui 0;
 #X coords 48 85 770 225 0 0 0;
 #X restore 195 110 pd \$0-gui;
-#N canvas 663 622 407 291 contruct-outs 1;
+#N canvas 663 682 407 291 contruct-outs 0;
 #X obj 41 2 inlet;
 #X obj 40 187 pack 10 1 s;
 #X obj 36 242 s pd-\$0-gui;
@@ -45,16 +45,16 @@
 #X msg 134 193 \; pd-\$2-gui vis \$1;
 #X obj 134 171 pack 0 \$0;
 #X obj 109 116 tgl 25 0 empty empty V 8 13 0 14 -262130 -1 -1 1 1;
-#X text 93 58 amb/bus/outs_ctl <ID> <nr of outs> <out-id>;
 #X obj 282 236 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 302 232 Clear before save;
 #X obj 274 112 r /amb/guiinit;
 #X obj 284 151 r \$1/channels;
+#X text 93 58 amb/bus/outs_ctl <ID> <nr of outs>;
 #X connect 3 0 2 0;
 #X connect 6 0 5 0;
 #X connect 7 0 6 0;
-#X connect 9 0 2 1;
+#X connect 8 0 2 1;
+#X connect 10 0 2 0;
 #X connect 11 0 2 0;
-#X connect 12 0 2 0;
 #X coords 0 -1 1 1 50 50 2 100 100;
