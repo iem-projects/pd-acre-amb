@@ -28,8 +28,6 @@
 #X declare -lib iem_bin_ambi;
 #X declare -lib iem_ambi;
 #X declare -lib iemmatrix;
-#X declare -path libs/iemlib -stdpath iemlib;
-#X declare -lib iemlib/iemlib1 -lib iemlib/iemlib2;
 #X declare -path libs/iemmatrix -stdpath iemmatrix;
 #X declare -path libs/iem_ambi -stdpath iem_ambi;
 #X declare -path libs/acre -stdpath acre;
@@ -37,6 +35,9 @@
 #X declare -path libs/iem_spec2 -stdpath iem_spec2;
 #X declare -lib iem_spec2;
 #X declare -path . -path abs -path data -path libs;
+#X declare -path libs/iemlib -stdpath iemlib -lib iemlib/iemlib1 -lib
+iemlib/iemlib2;
+#X declare -path iemlib -lib iemlib;
 #X obj 31 283 declare -lib zexy;
 #N canvas 659 253 424 343 matrix_specialnames 0;
 #X obj 13 15 declare -lib iemmatrix/mtx_mul~;
@@ -68,8 +69,6 @@
 #X obj 16 510 declare -lib iem_bin_ambi;
 #X obj 22 414 declare -lib iem_ambi;
 #X obj 24 349 declare -lib iemmatrix;
-#X obj 31 199 declare -path libs/iemlib -stdpath iemlib;
-#X obj 32 219 declare -lib iemlib/iemlib1 -lib iemlib/iemlib2;
 #X obj 24 327 declare -path libs/iemmatrix -stdpath iemmatrix;
 #X obj 22 395 declare -path libs/iem_ambi -stdpath iem_ambi;
 #X obj 25 553 declare -path libs/acre -stdpath acre;
@@ -103,3 +102,8 @@ f 65;
 calcs and useful;
 #X text 14 441 for binaural tools an old binaural decoder iem_spec2
 needed;
+#X obj 31 219 declare -path libs/iemlib -stdpath iemlib -lib iemlib/iemlib1
+-lib iemlib/iemlib2;
+#X text 49 201 old;
+#X obj 321 220 declare -path iemlib -lib iemlib;
+#X text 327 200 newer;

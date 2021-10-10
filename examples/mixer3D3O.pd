@@ -1,24 +1,20 @@
 #N canvas 331 474 881 471 10;
 #X declare -path ../../acre -path ../..;
 #X declare -path ../../../acre -path ../../..;
-#X declare -lib iemlib1;
 #X declare -lib zexy;
-#X declare -stdpath iemlib;
-#X declare -lib iemlib2;
 #X declare -lib iemmatrix;
 #X declare -lib iem_ambi;
 #X declare -lib iem_bin_ambi;
 #X declare -path libs -path libs/acre -path iemlib;
 #X declare -path libs -lib iemgui -path iemgui -stdpath iemgui;
+#X declare -path iemlib -lib iemlib;
+#X declare -lib iemgui;
 #X obj 609 61 declare -path ../../acre -path ../..;
 #X obj 610 98 declare -path ../../../acre -path ../../..;
-#N canvas 530 644 560 317 declares 0;
-#X obj 18 58 declare -lib iemlib1;
-#X obj 18 111 declare -lib zexy;
-#X obj 18 92 declare -stdpath iemlib;
+#N canvas 530 644 560 317 declares 1;
+#X obj 17 95 declare -lib zexy;
 #X text 33 30 for acre;
 #X text 38 141 for amb;
-#X obj 17 75 declare -lib iemlib2;
 #X obj 20 164 declare -lib iemmatrix;
 #X text 44 248 for binaural tools;
 #X obj 17 190 declare -lib iem_ambi;
@@ -26,8 +22,12 @@
 #X obj 15 11 declare -path libs -path libs/acre -path iemlib;
 #X obj 20 211 declare -path libs -lib iemgui -path iemgui -stdpath
 iemgui;
+#X obj 18 58 declare -path iemlib -lib iemlib;
+#X obj 17 117 declare -lib iemgui;
+#X text 148 115 Note download if cube_sphere is not found and place
+in a folder within search path;
 #X restore 16 54 pd declares;
-#N canvas 177 420 751 222 init 1;
+#N canvas 177 420 751 222 init 0;
 #X msg 44 115 \; pd-GUI vis 1;
 #X obj 45 32 acre/initbang;
 #X obj 44 93 r second_init;
