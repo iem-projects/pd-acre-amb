@@ -1,4 +1,4 @@
-#N canvas 786 370 710 162 10;
+#N canvas 1473 386 710 162 10;
 #N canvas 438 138 621 474 contruct-buses 0;
 #X msg 173 71 clear;
 #X obj 38 5 inlet;
@@ -111,6 +111,9 @@ to extent bus], f 71;
 to send~, f 71;
 #X text 11 44 Extend option is to extend an Ambisonics bus to higher
 order (eg. 16 from 3D3O to 3D4O), f 88;
+#X obj 531 75 inlet~;
+#X obj 531 116 outlet~;
+#X text 541 97 for order forcing if needed;
 #X connect 2 0 0 0;
 #X connect 3 0 0 1;
 #X connect 5 0 2 0;

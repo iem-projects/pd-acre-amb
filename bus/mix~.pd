@@ -1,4 +1,4 @@
-#N canvas 988 461 630 233 10;
+#N canvas 2063 657 630 233 10;
 #X obj 26 101 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 121 169 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -13,6 +13,54 @@
 #X text 158 124 Be carfully some system go crazy with this;
 #X obj 11 124 t b;
 #N canvas 271 127 1041 337 \$0-mix 0;
+#X obj 0 10 r~ /musician/0-1~;
+#X obj 0 70 throw~ AMB-1~;
+#X obj 80 30 r~ /musician/0-2~;
+#X obj 80 50 throw~ AMB-2~;
+#X obj 160 10 r~ /musician/0-3~;
+#X obj 160 70 throw~ AMB-3~;
+#X obj 240 30 r~ /musician/0-4~;
+#X obj 240 50 throw~ AMB-4~;
+#X obj 320 10 r~ /musician/0-5~;
+#X obj 320 70 throw~ AMB-5~;
+#X obj 400 30 r~ /musician/0-6~;
+#X obj 400 50 throw~ AMB-6~;
+#X obj 480 10 r~ /musician/0-7~;
+#X obj 480 70 throw~ AMB-7~;
+#X obj 560 30 r~ /musician/0-8~;
+#X obj 560 50 throw~ AMB-8~;
+#X obj 0 90 r~ /musician/0-9~;
+#X obj 0 150 throw~ AMB-9~;
+#X obj 80 110 r~ /musician/0-10~;
+#X obj 80 130 throw~ AMB-10~;
+#X obj 160 90 r~ /musician/0-11~;
+#X obj 160 150 throw~ AMB-11~;
+#X obj 240 110 r~ /musician/0-12~;
+#X obj 240 130 throw~ AMB-12~;
+#X obj 320 90 r~ /musician/0-13~;
+#X obj 320 150 throw~ AMB-13~;
+#X obj 400 110 r~ /musician/0-14~;
+#X obj 400 130 throw~ AMB-14~;
+#X obj 480 90 r~ /musician/0-15~;
+#X obj 480 150 throw~ AMB-15~;
+#X obj 560 110 r~ /musician/0-16~;
+#X obj 560 130 throw~ AMB-16~;
+#X connect 0 0 1 0;
+#X connect 2 0 3 0;
+#X connect 4 0 5 0;
+#X connect 6 0 7 0;
+#X connect 8 0 9 0;
+#X connect 10 0 11 0;
+#X connect 12 0 13 0;
+#X connect 14 0 15 0;
+#X connect 16 0 17 0;
+#X connect 18 0 19 0;
+#X connect 20 0 21 0;
+#X connect 22 0 23 0;
+#X connect 24 0 25 0;
+#X connect 26 0 27 0;
+#X connect 28 0 29 0;
+#X connect 30 0 31 0;
 #X restore 11 57 pd \$0-mix;
 #N canvas 631 383 716 403 contruct-mix 0;
 #X msg 168 93 clear;
@@ -145,8 +193,11 @@
 #X restore 11 190 pd contruct-mix;
 #X text 13 1 amb/bus/mix~ <ID> <nr channels> <ID received signals>
 <Bus ID> [in offset] [bus offset], f 89;
-#X text 18 23 Collects signals from s~ and mix in multi channel bus
+#X text 8 18 Collects signals from s~ and mix in multi channel bus
 with throw~ with optional number ins offset and outs., f 76;
+#X obj 285 48 inlet~;
+#X obj 285 89 outlet~;
+#X text 295 70 for order forcing if needed;
 #X connect 0 0 10 0;
 #X connect 1 0 12 1;
 #X connect 3 0 10 0;
