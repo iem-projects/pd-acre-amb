@@ -1,4 +1,4 @@
-#N canvas 694 469 744 292 10;
+#N canvas 1025 753 744 292 10;
 #X obj 20 30 ds/register_map \$1 \$2/1/pos/azm;
 #X obj 20 49 ds/register_map \$1 \$2/1/pos/elv;
 #X obj 19 69 ds/register_map \$1 \$2/2/pos/azm;
@@ -35,4 +35,4 @@
 #X obj 481 204 ds/register_map \$1 \$2/17/pos/elv;
 #X obj 481 223 ds/register_map \$1 \$2/18/pos/azm;
 #X obj 481 242 ds/register_map \$1 \$2/18/pos/elv;
-#X text 21 6 amb/spat/ds <domain> <rrr id>;
+#X text 20 6 amb/rrr/abs/spat_ds <domain> <rrr id>;

@@ -1,0 +1,17 @@
+#N canvas 1132 378 339 401 10;
+#X obj 21 42 ds/register \$2 \$1/eq/1/freq;
+#X obj 21 62 ds/register \$2 \$1/eq/2/freq;
+#X obj 21 82 ds/register \$2 \$1/eq/3/freq;
+#X obj 21 102 ds/register \$2 \$1/eq/4/freq;
+#X obj 21 122 ds/register \$2 \$1/eq/5/freq;
+#X obj 21 162 ds/register \$2 \$1/eq/1/q;
+#X obj 21 182 ds/register \$2 \$1/eq/2/q;
+#X obj 21 202 ds/register \$2 \$1/eq/3/q;
+#X obj 21 222 ds/register \$2 \$1/eq/4/q;
+#X obj 21 242 ds/register \$2 \$1/eq/5/q;
+#X obj 21 282 ds/register \$2 \$1/eq/1/gain;
+#X obj 21 362 ds/register \$2 \$1/eq/5/gain;
+#X obj 21 342 ds/register \$2 \$1/eq/4/gain;
+#X obj 21 322 ds/register \$2 \$1/eq/3/gain;
+#X obj 21 302 ds/register \$2 \$1/eq/2/gain;
+#X text 22 9 amb/rrr/abs/eq_ds <domain> <id>;

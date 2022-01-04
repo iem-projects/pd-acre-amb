@@ -38,8 +38,9 @@
 #X obj 337 326 ds/register_map \$1 \$2/rev/mod/amp/min;
 #X obj 337 346 ds/register_map \$1 \$2/rev/mod/freq/max;
 #X obj 337 366 ds/register_map \$1 \$2/rev/mod/freq/min;
-#X text 34 14 edit_pars_ds <domain> <REV ID>;
 #X obj 30 85 ds/register_map \$1 \$2/early/gain;
 #X obj 30 105 ds/register_map \$1 \$2/early/q;
 #X obj 30 125 ds/register_map \$1 \$2/early/cutoff;
 #X obj 338 389 ds/register_map \$1 \$2/set/name;
+#X text 34 14 amb/rrr/abs/rev_parameter_ds <domain> <REV ID>;
+#X text 31 35 comment;

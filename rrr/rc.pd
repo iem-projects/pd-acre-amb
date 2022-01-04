@@ -1,0 +1,10 @@
+#N canvas 1010 165 450 300 10;
+#X text 32 24 Parameter for RRR;
+#X text 39 215 (c) GPL \, acre winfried ritsch;
+#X text 37 6 amb/rrr/rc <id> <onnection>;
+#X obj 39 63 rc/register \$2 \$1/on;
+#X obj 38 86 # rc/register \$2 \$1/gain;
+#X obj 41 190 rc/register \$2 \$1/spat/jitter;
+#X obj 41 120 abs/rev_parameter_rc \$1 \$2;
+#X obj 39 144 abs/eq_rc \$1 \$2;
+#X obj 38 166 abs/spat_rc \$1 \$2;

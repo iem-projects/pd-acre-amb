@@ -1,4 +1,4 @@
-#N canvas 890 417 339 401 10;
+#N canvas 1132 378 339 401 10;
 #X obj 21 42 ds/register_map \$1 \$2/eq/1/freq;
 #X obj 21 62 ds/register_map \$1 \$2/eq/2/freq;
 #X obj 21 82 ds/register_map \$1 \$2/eq/3/freq;
@@ -14,3 +14,4 @@
 #X obj 21 342 ds/register_map \$1 \$2/eq/4/gain;
 #X obj 21 322 ds/register_map \$1 \$2/eq/3/gain;
 #X obj 21 302 ds/register_map \$1 \$2/eq/2/gain;
+#X text 20 10 amb/rrr/abs/eq_ds <domain> <id>;
