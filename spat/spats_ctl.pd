@@ -1,0 +1,65 @@
+#N canvas 1812 450 514 317 10;
+#X text 86 24 (c) GPL \, acre - winfried ritsch;
+#N canvas 1046 726 1219 149 \$0-gui 0;
+#X coords 48 85 770 225 0 0 0;
+#X restore 195 110 pd \$0-gui;
+#X obj 291 179 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 101 101 cnv 25 48 48 empty empty \$1 2 7 0 8 #b8b8b8 #404040
+0;
+#X msg 134 193 \; pd-\$2-gui vis \$1;
+#X obj 134 171 pack 0 \$0;
+#X obj 109 116 tgl 25 0 empty empty V 8 13 0 14 #fcfcc4 #000000 #000000
+0 1;
+#X obj 282 236 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X text 302 232 Clear before save;
+#X obj 274 112 r /amb/guiinit;
+#X obj 284 151 r \$1/channels;
+#N canvas 2089 451 514 352 contruct 1;
+#X obj 41 2 inlet;
+#X obj 36 242 s pd-\$0-gui;
+#X obj 36 114 t f f b;
+#X obj 158 24 inlet;
+#X obj 36 137 - 1;
+#X obj 38 85 acre/count_until \$2;
+#X obj 39 29 i \$2;
+#X obj 40 53 t f b;
+#X msg 193 155 clear \, text 0 10 \$1;
+#X msg 96 114 clear;
+#X obj 85 138 symbol \$1;
+#X obj 193 132 symbol \$1;
+#X text 193 174 no good for clear before save !;
+#X msg 38 215 obj \$1 10 amb/spat/ch_ctl \$3-\$2 \$4;
+#X obj 40 187 pack 10 1 s s;
+#X obj 111 162 symbol \$3;
+#X obj 36 159 * 100;
+#X connect 0 0 6 0;
+#X connect 2 0 4 0;
+#X connect 2 1 14 1;
+#X connect 2 2 10 0;
+#X connect 2 2 15 0;
+#X connect 3 0 11 0;
+#X connect 3 0 9 0;
+#X connect 4 0 16 0;
+#X connect 5 0 2 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 0;
+#X connect 7 1 9 0;
+#X connect 9 0 1 0;
+#X connect 10 0 14 2;
+#X connect 11 0 8 0;
+#X connect 13 0 1 0;
+#X connect 14 0 13 0;
+#X connect 15 0 14 3;
+#X connect 16 0 14 0;
+#X restore 274 199 pd contruct;
+#X text 93 58 amb/spat/spats_ctl <ID> <nr of channels> <dimen 2D|3D>
+;
+#X connect 2 0 11 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 0;
+#X connect 7 0 11 1;
+#X connect 9 0 11 0;
+#X connect 10 0 11 0;
+#X coords 0 -1 1 1 50 50 2 100 100;
