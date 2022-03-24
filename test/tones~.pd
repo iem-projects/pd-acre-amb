@@ -1,8 +1,8 @@
-#N canvas 365 136 619 277 10;
+#N canvas 196 533 619 277 10;
 #N canvas 575 372 450 300 init 0;
 #X obj 103 58 loadbang;
-#X obj 231 68 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 231 68 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 104 106 list append \$1;
 #X msg 104 128 \; \$1/pulse/on 0 \; \$1/pulse/time 500 \; \$1/sel 0
 \; \$1/pitch 40 \; \$1/vol 60;
@@ -14,8 +14,8 @@
 #X obj 284 63 r \$1/on;
 #N canvas 686 433 483 296 contruct-outs 0;
 #X msg 167 49 clear;
-#X obj 81 15 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 81 15 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 37 15 inlet;
 #X obj 37 136 t f f b;
 #X obj 37 160 * 20;
@@ -64,10 +64,10 @@
 #X connect 23 0 12 1;
 #X connect 24 0 15 1;
 #X restore 65 169 pd contruct-outs;
-#X obj 79 126 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 175 147 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 79 126 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 175 147 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X text 194 147 clear before save !;
 #X obj 33 81 r /amb/businit;
 #X obj 174 76 max 1;
@@ -75,11 +75,11 @@
 #X obj 174 54 r \$1/channels;
 #X text 172 35 dyn set channel count;
 #X obj 33 120 t b b;
-#N canvas 201 606 362 410 \$0-dsp-tones 0;
+#N canvas 90 329 362 410 \$0-dsp-tones 0;
 #X restore 33 53 pd \$0-dsp-tones;
 #N canvas 722 694 450 300 init 0;
-#X obj 231 61 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 231 61 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 103 85 list append \$1;
 #X obj 103 58 inlet;
 #X msg 103 107 \; \$1/pulse/on 0 \; \$1/pulse/time 500 \; \$1/sel 0
@@ -95,18 +95,18 @@
 #X obj 43 196 symbol \$3;
 #X obj 211 214 table \$1-sweep;
 #X obj 212 237 table \$1-tab;
-#N canvas 879 108 681 248 tables-setup 0;
+#N canvas 837 233 681 248 tables-setup 0;
 #X obj 44 58 loadbang;
 #X obj 46 131 soundfiler;
 #X obj 44 79 symbol \$1-sweep;
-#X obj 111 56 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 111 56 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X msg 46 110 read -resize sweep.wav \$1;
 #X obj 46 178 s \$1/sweep/size;
 #X obj 216 59 loadbang;
 #X obj 218 139 soundfiler;
-#X obj 283 57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 283 57 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X msg 218 111 read -resize tab.wav \$1;
 #X obj 216 80 symbol \$1-tab;
 #X obj 218 171 s \$1/tab/size;
@@ -115,8 +115,8 @@
 #X obj 371 92 list append \$1-tab;
 #X msg 371 113 read -resize \$1 \$2;
 #N canvas 1344 91 408 358 helper 0;
-#X obj 42 161 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 42 161 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 44 185 symbol \$1-tab;
 #X msg 44 208 write -wave tab.wav \$1;
 #X obj 44 227 soundfiler;
@@ -124,8 +124,8 @@
 #X text 68 248 test;
 #X msg 61 270 symbol sweep.wav;
 #X obj 252 163 noise~;
-#X obj 350 188 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 350 188 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X obj 252 184 bp~ 1000 500;
 #X obj 251 250 tabwrite~ \$1-tab;
 #X obj 252 121 s \$1-tab;
@@ -179,8 +179,8 @@
 #X obj 17 128 sel 0;
 #X obj 18 101 t f f;
 #X msg 17 150 1;
-#X obj 17 180 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
-1;
+#X obj 17 180 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
 #X obj 176 73 spigot 0;
 #X obj 176 94 sel 1;
 #X obj 176 17 r \$1/pulse/amp;
@@ -242,18 +242,18 @@
 #X connect 29 0 27 0;
 #X connect 29 1 28 1;
 #X restore 213 171 pd pulse sequence;
-#X obj 487 78 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 487 78 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 480 175 acre/arg_default 1 \$4;
 #X obj 421 80 loadbang;
 #X obj 421 126 sel test-0;
 #X msg 420 147 0;
 #X obj 482 154 t b;
 #X obj 421 105 symbol test-\$4;
-#X text 36 7 amb/bus/tones~ <id> <nr channels> <out receives> [start
-channel \, default 1], f 77;
 #X obj 477 244 s \$1/offset;
 #X obj 476 221 max 0;
+#X text 36 7 amb/bus/tones~ <id> <nr channels> <out throws> [start
+channel \, default 1], f 77;
 #X connect 2 0 1 0;
 #X connect 4 0 12 0;
 #X connect 5 0 3 2;
@@ -267,11 +267,11 @@ channel \, default 1], f 77;
 #X connect 17 0 18 0;
 #X connect 19 0 15 0;
 #X connect 24 0 30 0;
-#X connect 25 0 33 0;
+#X connect 25 0 32 0;
 #X connect 26 0 30 0;
 #X connect 27 0 28 0;
 #X connect 27 1 29 0;
-#X connect 28 0 33 0;
+#X connect 28 0 32 0;
 #X connect 29 0 25 0;
 #X connect 30 0 27 0;
-#X connect 33 0 32 0;
+#X connect 32 0 31 0;
