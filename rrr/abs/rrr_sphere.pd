@@ -212,7 +212,7 @@
 #X restore 277 4 pd config;
 #X obj 31 31 cnv 15 298 298 empty empty empty 20 12 0 14 #e0e0e0 #404040
 0;
-#N canvas 1767 903 1001 897 send_receive_azm_elv_18x 0;
+#N canvas 919 76 1001 897 send_receive_azm_elv_18x 1;
 #X obj 28 79 unpack 0 0;
 #X obj 28 117 t b f;
 #X obj 69 117 t b f;
@@ -327,8 +327,6 @@
 #X obj 108 138 sendreceive \$1/2/pos/elv;
 #X obj 28 861 s \$1/sphere/togui;
 #X obj 301 10 r \$1/sphere/fromgui;
-#X obj 123 28 print xxx;
-#X obj 157 5 r \$1/1/pos/azm;
 #X connect 0 0 3 0;
 #X connect 0 1 4 0;
 #X connect 1 0 5 0;
@@ -337,7 +335,6 @@
 #X connect 2 1 5 2;
 #X connect 3 0 1 0;
 #X connect 4 0 2 0;
-#X connect 4 0 114 0;
 #X connect 5 0 6 0;
 #X connect 6 0 112 0;
 #X connect 7 0 111 0;
@@ -514,7 +511,6 @@
 #X connect 110 0 9 0;
 #X connect 111 0 8 0;
 #X connect 113 0 32 0;
-#X connect 115 0 114 0;
 #X restore 193 403 pd send_receive_azm_elv_18x;
 #X msg 362 62 1 1.22977 -68.7948 \, 2 13.5462 -100.911 \, 3 9.12002
 74.0986 \, 4 0 123.611 \, 5 7.90402 -17.6365 \, 6 23.4041 -68.4876
