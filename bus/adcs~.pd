@@ -1,8 +1,8 @@
-#N canvas 577 813 630 233 10;
-#X obj 26 101 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
-#X obj 121 169 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#N canvas 600 413 630 233 10;
+#X obj 26 101 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
+#X obj 121 169 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
 #X text 140 169 clear before save !;
 #X obj 11 81 r /amb/businit;
 #X obj 72 143 max 1;
@@ -12,13 +12,13 @@
 #X text 16 212 (c) GPL - acre \, ritsch;
 #X text 158 124 Be carfully some system go crazy with this;
 #X obj 11 124 t b;
-#N canvas 87 377 680 239 \$0-adcs 0;
+#N canvas 2020 155 680 239 \$0-adcs 0;
 #X restore 11 57 pd \$0-adcs;
 #N canvas 631 412 716 403 contruct-adcs 0;
 #X msg 168 93 clear;
 #X obj 41 117 t b f f f;
-#X obj 87 17 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
--1;
+#X obj 87 17 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000;
 #X obj 479 209 symbol \$3;
 #X obj 371 112 t f f b;
 #X obj 42 186 * 2;
@@ -118,6 +118,7 @@
 #X connect 33 0 34 0;
 #X connect 33 1 0 0;
 #X connect 33 1 38 0;
+#X connect 33 1 53 0;
 #X connect 34 0 1 0;
 #X connect 37 0 38 0;
 #X connect 38 0 40 0;

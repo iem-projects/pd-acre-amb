@@ -5,19 +5,21 @@
 #X text 18 282 REVERBERATION;
 #X text 19 305 Thomas Musil;
 #X text 18 293 IEM;
-#X obj 18 232 cnv 15 180 25 empty empty !_FEEDBACK_! 0 12 0 24 -258699
--66577 0;
+#X obj 18 232 cnv 15 180 25 empty empty !_FEEDBACK_! 0 12 0 24 #fc2828
+#404040 0;
 #X text 18 317 adapted by Winfried Ritsch;
 #X obj 714 25 rrr_sphere \$1;
 #X obj 212 330 namecanvas \$1-EDIT;
 #X text 86 294 V 2 \, 2006 \, 2010+;
 #X obj 14 25 ds/ctl /rrr;
 #X obj 214 25 rev_ctl \$1;
-#N canvas 199 561 338 173 PRE-equalizer 0;
+#N canvas 199 561 338 173 PRE-equalizer 1;
 #X obj 4 5 eq_ctl \$1;
 #X obj 2 110 namecanvas \$1-PRE-equalizer;
 #X text 4 131 First Five prominet feedbacks can be reduced;
 #X text 5 149 doit by ear !;
+#X obj 216 111 nbx 5 14 2 20000 1 0 \$1/hp/freq \$1/hp/freq hp_Hz 55
+8 0 10 #fcfcfc #000000 #000000 0 256;
 #X restore 360 331 pd PRE-equalizer;
 #X obj 114 25 master_ctl \$1;
 #X coords 0 0 1 1 720 280 0;
