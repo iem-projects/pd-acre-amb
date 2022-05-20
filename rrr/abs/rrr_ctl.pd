@@ -1,4 +1,4 @@
-#N canvas 332 69 1030 355 10;
+#N canvas 556 427 1030 355 10;
 #X text 18 261 ROOM;
 #X text 51 265 in;
 #X text 18 271 ROOM;
@@ -20,6 +20,24 @@
 #X text 5 149 doit by ear !;
 #X obj 216 111 nbx 5 14 2 20000 1 0 \$1/hp/freq \$1/hp/freq hp_Hz 55
 8 0 10 #fcfcfc #000000 #000000 0 256;
+#N canvas 0 673 450 300 freq 0;
+#X floatatom 72 90 8 0 0 0 - - - 0;
+#X floatatom 265 90 7 0 0 0 - - - 0;
+#X text 137 89 pitch;
+#X obj 72 64 sigmund~ -hop 4096 pitch env;
+#X obj 72 112 mtof;
+#X floatatom 72 135 7 0 0 0 - - - 0;
+#X obj 72 13 r~ mic-1~;
+#X obj 162 14 tgl 15 0 empty empty empty 17 7 0 10 #fcfcfc #000000
+#000000 0 1;
+#X obj 162 34 switch~;
+#X connect 0 0 4 0;
+#X connect 3 0 0 0;
+#X connect 3 1 1 0;
+#X connect 4 0 5 0;
+#X connect 6 0 3 0;
+#X connect 7 0 8 0;
+#X restore 150 151 pd freq;
 #X restore 360 331 pd PRE-equalizer;
 #X obj 114 25 master_ctl \$1;
 #X coords 0 0 1 1 720 280 0;

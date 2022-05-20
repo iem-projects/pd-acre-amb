@@ -1,4 +1,4 @@
-#N canvas 2443 540 836 528 10;
+#N canvas 2443 491 836 528 10;
 #X obj 58 324 t b f;
 #X obj 29 383 pack 0 0;
 #X obj 29 406 list prepend \$2;
@@ -27,7 +27,6 @@
 #X msg 11 95 1;
 #X obj 114 274 spigot 1;
 #X obj 26 67 t b l b;
-#X obj 184 181 * -1;
 #X obj 28 297 * -1;
 #X obj 12 39 r \$1/sphere/fromgui;
 #X obj 30 456 s \$1/sphere/togui;
@@ -37,11 +36,12 @@
 #X obj 136 240 r \$1/\$2/elevation;
 #X obj 29 240 r \$1/\$2/azimuth;
 #X obj 28 212 s \$1/\$2/elevation;
+#X obj 184 181 * 1;
 #X connect 0 0 1 0;
 #X connect 0 1 12 0;
 #X connect 1 0 2 0;
 #X connect 2 0 4 0;
-#X connect 4 0 31 0;
+#X connect 4 0 30 0;
 #X connect 5 0 6 0;
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
@@ -56,10 +56,10 @@
 #X connect 17 0 10 0;
 #X connect 19 0 20 0;
 #X connect 19 1 22 0;
-#X connect 19 1 28 0;
-#X connect 20 0 37 0;
+#X connect 19 1 37 0;
+#X connect 20 0 36 0;
 #X connect 21 0 19 0;
-#X connect 23 0 29 0;
+#X connect 23 0 28 0;
 #X connect 24 0 23 1;
 #X connect 24 0 26 1;
 #X connect 25 0 23 1;
@@ -68,9 +68,9 @@
 #X connect 27 0 25 0;
 #X connect 27 1 21 0;
 #X connect 27 2 24 0;
-#X connect 28 0 34 0;
-#X connect 29 0 1 0;
-#X connect 30 0 27 0;
-#X connect 33 0 5 0;
-#X connect 35 0 26 0;
-#X connect 36 0 23 0;
+#X connect 28 0 1 0;
+#X connect 29 0 27 0;
+#X connect 32 0 5 0;
+#X connect 34 0 26 0;
+#X connect 35 0 23 0;
+#X connect 37 0 33 0;
