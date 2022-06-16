@@ -19,15 +19,13 @@
 #X obj 163 219 i \$2;
 #X obj 163 264 /;
 #X obj 31 123 t b b b;
-#X msg 28 341 \; \$2-\$1/azimuth \$3 \; \$2-\$1/elevation 0 \; \$2-\$1/dist
-1;
 #X text 24 6 amb/spat/mics~ <ID> <nr channels> <bus ID> <AMBI bus>
 <dimen> <order> [in offset] [ch order], f 93;
 #X text 25 25 create a set of mics with optional offset in an ambisonics
 bus, f 71;
 #N canvas 742 706 306 562 \$0-dsp-mics 0;
 #X restore 31 56 pd \$0-dsp-mics;
-#N canvas 1480 742 886 452 contruct-mics 1;
+#N canvas 1480 742 886 452 contruct-mics 0;
 #X msg 156 150 clear;
 #X obj 81 15 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
 #000000;
@@ -116,21 +114,23 @@ bus, f 71;
 #X connect 34 0 11 0;
 #X connect 39 0 36 0;
 #X restore 59 187 pd contruct-mics;
+#X msg 28 341 \; \$2\$1/azimuth \$3 \; \$2\$1/elevation 0 \; \$2\$1/dist
+1;
 #X connect 0 0 17 0;
-#X connect 1 0 22 1;
+#X connect 1 0 21 1;
 #X connect 3 0 17 0;
-#X connect 4 0 22 0;
+#X connect 4 0 21 0;
 #X connect 6 0 4 0;
 #X connect 9 0 11 0;
 #X connect 10 0 12 1;
 #X connect 11 0 12 0;
 #X connect 11 1 10 0;
 #X connect 11 3 13 0;
-#X connect 12 0 18 0;
+#X connect 12 0 22 0;
 #X connect 13 0 12 2;
 #X connect 14 0 16 0;
 #X connect 15 0 14 0;
 #X connect 16 0 13 1;
 #X connect 17 0 9 0;
-#X connect 17 1 22 0;
+#X connect 17 1 21 0;
 #X connect 17 2 15 0;
