@@ -1,19 +1,19 @@
-#N canvas 680 327 534 246 10;
-#X obj 334 109 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
-#000000 #000000;
+#N canvas 735 531 534 246 10;
+#X obj 334 109 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X text 334 128 clear before save !;
 #X obj 183 60 r /amb/encinit;
 #X text 21 205 (c) GPL - acre \, ritsch;
 #X obj 246 94 max 1;
 #X obj 296 61 r \$1/number;
-#X obj 142 96 bng 15 250 50 0 empty empty reconstruct 17 7 0 10 #fcfcfc
-#000000 #000000;
-#N canvas 78 207 383 521 \$0-ds-ins 0;
+#X obj 142 96 bng 15 250 50 0 empty empty reconstruct 17 7 0 10 -262144
+-1 -1;
+#N canvas 78 297 383 521 \$0-ds-ins 0;
 #X restore 49 59 pd \$0-ds-ins;
-#N canvas 746 377 433 351 contruct-in_ds 0;
+#N canvas 833 683 433 351 contruct-in_ds 0;
 #X msg 154 70 clear;
-#X obj 59 40 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc #000000
-#000000;
+#X obj 59 40 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X obj 41 15 inlet;
 #X obj 36 150 t f f b;
 #X obj 31 174 * 20;
@@ -53,6 +53,7 @@
 #X text 36 34 Data storage for amb/ins~;
 #X text 33 11 amb/ins_ds <storage domain> <ID> <nr channels> <ID-prefix>
 <ID-prefix in> [offset], f 84;
+#X text 369 36 ID-prefix in not used !;
 #X connect 0 0 8 1;
 #X connect 2 0 8 0;
 #X connect 4 0 8 0;
